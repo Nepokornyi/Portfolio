@@ -29,7 +29,7 @@ setTimeout(function(){
 
     const appearOptions = {
         threshold:0.75,
-        rootMargin: "0px 0px 0px 0px",
+        rootMargin: "200px 200px 500px 200px",
     };
 
     const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){

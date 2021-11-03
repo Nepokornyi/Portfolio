@@ -106,9 +106,64 @@
 
 @media (max-width:950px){
 
-    .social-container{
+        /*Main*/
+    p{
+        font-size: 16px;
+    }
+
+    h3{
+        font-size: 30px;
+    }
+
+    .section-container{
+        min-width: 300px;
+    }
+    section{
+        min-width: 375px;
+    }
+
+    .header-line{
+        width: 0px;
+    }
+
+   .social-container{
+    display: none;
+    }
+    /*Main End*/
+
+
+    /*Header*/
+    .logo{
+        width:100vw;
+    }
+    nav{
+        min-width: 300px;
+        height: 200px;
+        left: 0; 
+        right: 0; 
+        margin-left: auto; 
+        margin-right: auto; 
+    }
+    .cv-load{
         display: none;
     }
+    nav a{
+
+        margin-right: 10px;
+    }
+    /*Header End*/
+
+    /*Intro*/
+    #intro{
+        text-align: center;
+    }
+    .my-description{
+        width: 300px;
+    }
+
+    /*Intro End*/
+
+
 
     /*About*/
 
@@ -116,10 +171,29 @@
         flex-direction: column;
         height: 1000px;
     }
+    .about-content-container{
+
+        width: 350px;
+    }
+    .about-head-line{
+        width: 300px;
+        justify-content: center;
+
+    }
+    .about-text{
+        width: 300px;
+        min-width: none;
+    }
+    .about-tech{
+        margin-left: 25px;
+        width: 300px;
+    }
 
     .resize{
         height: 1000px;
     }
+
+    /*About End*/
 
     /*Work*/
 
@@ -135,7 +209,7 @@
     }
     .work-exp-wrapper{
         margin-top: 25px;
-        width: 700px;
+        width: 300px;
         height: 700px;
 
         display: flex;
@@ -144,15 +218,20 @@
 
     .work-menu{
         flex-direction: row;
-        width: 500px;
-        height: 100px;
+        width: 350px;
+    }
+
+    #current-text, #CSOB-text, #Havas-text{
+        width: 350px;
     }
 
 
 
     .button-work{
         border: none;
+        height: 50px;
         border-bottom: 1px solid var(--main-text-opacity);
+        text-align: center;
     }
     .button-work:hover{
         border-bottom: 3px solid var(--special-red);
@@ -160,5 +239,32 @@
     .apply-hover{
 
         border-bottom:3px solid var(--special-red);
+    }
+}
+
+@media(max-width:400px){
+
+    .project-text1, .project-text2{
+        width: 350px;
+    }
+    .project-text1{
+        left:-350px;
+    }
+    .project-text2{
+        right:-350px;
+    }
+
+    .project-img{
+        height: 200px;
+        width: 350px;
+        opacity: 0.35;
+    }
+
+
+    .project-image-wrapper1::before{
+        visibility: hidden;
+    }
+    .project-image-wrapper2::before{
+        visibility: hidden;
     }
 }

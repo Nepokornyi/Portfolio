@@ -161,6 +161,7 @@ header{
     visibility: hidden;
 
     transition: var(--basic-transition);
+    
 }
 #arrow:hover{
     width: 20px;
@@ -177,6 +178,7 @@ header{
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    z-index: 3;
 }
   
 /*Arrow End*/
