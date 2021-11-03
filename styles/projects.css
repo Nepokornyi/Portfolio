@@ -48,7 +48,6 @@
 
 .project-text-wrapper{
     width: 350px;
-    height: px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -147,10 +146,10 @@
     background-color: var(--hover-red);
     border-radius: 4px;
     width: 500px;
-    height: 275px;
+    height: 276px;
 
     transition:var(--basic-transition);
-z-index: 2;
+    z-index: 2;
 }
 .project-image-wrapper1:hover::before{
     content:'';
@@ -172,10 +171,10 @@ z-index: 2;
     background-color: var(--hover-red);
     border-radius: 4px;
     width: 500px;
-    height: 275px;
+    height: 276px;
 
     transition:var(--basic-transition);
-z-index: 2;
+    z-index: 2;
 }
 .project-image-wrapper2:hover::before{
     content:'';

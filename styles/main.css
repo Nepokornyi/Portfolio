@@ -22,6 +22,7 @@
     /* Colors */
     --background:#0a192f;
     --background-special:#071120;
+    --background-transparent:#0a192fd7;
     --background-light:#112240;
     --main-text:#8892b0;
     --main-text-opacity:rgba(136, 146, 176,0.5);
@@ -114,7 +115,6 @@ section{
 
     padding: 0;
     margin: 0;
-
 
 }
 
