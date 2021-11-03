@@ -106,6 +106,10 @@
 
 @media (max-width:950px){
 
+    html{
+        scroll-behavior:auto;
+    }
+
         /*Main*/
     p{
         font-size: 16px;
