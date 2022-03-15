@@ -244,6 +244,11 @@
 
         border-bottom:3px solid var(--special-red);
     }
+
+
+    .project-image-wrapper2::before, .project-image-wrapper1::before{
+        left: 0px;
+    }
 }
 
 @media(max-width:400px){
