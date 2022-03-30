@@ -1,3 +1,5 @@
+/* Loading Div */
+/*-------------*/
 .loading-container{
     width: 100vw;
     height: 100vh;
@@ -14,3 +16,8 @@
     width: 200px;
     background-image: url('../media/logo/logo-anim.svg');
 }
+
+
+/* Reveal Elements when Loading is Completed */
+/*-------------*/
+

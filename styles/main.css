@@ -106,6 +106,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    
 }
 
 section{
@@ -115,6 +116,8 @@ section{
     padding: 0;
     margin: 0;
 
+    opacity:0;
+    transition-duration: 1200ms;
 }
 
 /*Global styles*/
@@ -137,9 +140,9 @@ section{
 /*Reveal Content*/
 .fade-in{
     opacity: 0 !important;
-    transition-duration: 400ms;
+    transition-duration: 1200ms;
 }
-.fade-in.appear{
+.appear{
     opacity: 1 !important;
 }
 

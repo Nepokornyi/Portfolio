@@ -15,6 +15,9 @@ header{
         display: flex;
         justify-content: center;
         align-items: center;
+
+        opacity: 0;
+        transition-duration: 1200ms;
     }
 
     /*Menu*/
@@ -44,12 +47,18 @@ header{
         font-family: basic;
     }
 
+    .menu{
+        opacity: 0;
+        transition-duration: 1200ms;
+    }
+
 
     .cv-load{
         border:1px solid var(--special-red);
         border-radius: 4px;
         transition: var(--basic-transition);
         padding: 10px;
+        opacity: 0;
     }
         .cv-load:hover{
             background-color:var(--hover-red);
@@ -82,7 +91,8 @@ header{
     align-items: flex-end;
     justify-content: center;
 
-    
+    opacity: 0;
+    transition-duration: 1200ms;
 }
 
 .social-container li{

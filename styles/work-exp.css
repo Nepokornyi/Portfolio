@@ -16,7 +16,7 @@
 
 /*Work exp*/
 .exp{
-    width: 700px;
+    min-width: 700px;
     height: 300px;
 
     display: flex;

@@ -15,37 +15,36 @@ function scrollFunction() {
   }
 }
 
-// When the user clicks on the button, scroll to the top of the document
+// When the user clicks on the button, scrolls to the top of the document
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
 
-//---------------
-//Elements Reveal
-//---------------
-setTimeout(function(){
-    const fader = document.querySelectorAll('.fade-in');
+// ------------
+// reveal animation
 
-    const appearOptions = {
-        threshold:0.75,
-        rootMargin: "200px 200px 500px 200px",
-    };
+function reveal (){
+  const reveals = document.querySelectorAll('.fade-in');
 
-    const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll){
-        entries.forEach(entry =>{
-            if(!entry.isIntersecting){
-                return;
-            }
-            else{
-                entry.target.classList.add('appear');
-                appearOnScroll.unobserve(entry.target);
-            }
-        });
-    }, appearOptions);
+  for (let i = 0; i < reveals.length; i++) {
 
-    fader.forEach(fader =>{
-        appearOnScroll.observe(fader);
-    });
+      
+      let windowHeight = window.innerHeight;
+      let revealTop    = reveals[i].getBoundingClientRect().top;
+      let revealPoint  = 150;
+      
+      if (revealTop < windowHeight - revealPoint) {
+          reveals[i].classList.add('appear');
 
-},400);
+      }
+      else{
+          reveals[i].classList.remove('appear');
+
+      }
+  }
+}
+
+  // listener
+window.addEventListener('scroll', reveal);
+// ------------
