@@ -14,9 +14,11 @@
   "dependencies": {
     "@react-three/drei": "^9.88.0",
     "@react-three/fiber": "^8.14.3",
+    "i18next": "^23.5.1",
     "prettier": "^3.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-i18next": "^13.3.0",
     "react-router-dom": "^6.16.0",
     "simplex-noise": "^4.0.1",
     "three": "^0.157.0"

@@ -1,0 +1,10 @@
+{
+    "pages":{
+        "landing":{
+            "title_1": "Hi, I'm Vadym",
+            "title_2": "Web Developer",
+            "subtitle_1": "Front-end developer, making things happen from 2020.",
+            "subtitle_2": "Currently working my magic at Partners."
+        }
+    }
+}
