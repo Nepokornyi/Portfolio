@@ -42,3 +42,11 @@ export const MainContainer = styled.div`
     position: relative;
 `;
 
+export const MainHeading = styled.h1`
+    font-size: 80px;
+    font-weight: 600;
+    line-height: 95%;
+    letter-spacing: 8px;
+`;
+
+export const SubHeading = styled.h2``;
