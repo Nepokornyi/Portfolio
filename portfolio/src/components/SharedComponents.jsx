@@ -47,6 +47,10 @@ export const MainHeading = styled.h1`
     font-weight: 600;
     line-height: 95%;
     letter-spacing: 8px;
+    margin-bottom: 15px;
 `;
 
-export const SubHeading = styled.h2``;
+export const SubHeading = styled.h2`
+    font-size: 20px;
+    font-weight: 400;
+`;
