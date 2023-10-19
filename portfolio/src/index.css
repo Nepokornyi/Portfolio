@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Montserrat-Alt';
+  src: url('./assets/fonts/Montserrat-Alt1/MontserratAlt1-SemiBold.ttf');
+}
+
 :root {
   font-family: 'Montserrat', sans-serif;
   /* font-family: 'Inter', sans-serif; */
@@ -33,6 +38,10 @@ body {
   place-items: center;
   width: 100%;
   height: 100%;
+}
+
+h1{
+  font-family: 'Montserrat-Alt';
 }
 
 
