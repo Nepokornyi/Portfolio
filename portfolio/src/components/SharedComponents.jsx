@@ -33,7 +33,7 @@ export const FrameRectangle = styled.div`
     }
 `;
 
-export const MainContainer = styled.div`
+export const MainContainer = styled.section`
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -53,4 +53,32 @@ export const MainHeading = styled.h1`
 export const SubHeading = styled.h2`
     font-size: 20px;
     font-weight: 400;
+`;
+
+export const CallButton = styled.button`
+    min-width: 145px;
+    padding: 10px 15px;
+    color: #000;
+    background-color: ${(props) => props.color || 'white'};
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.2px;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 100%;
+        height: 100%;
+        border: 1px solid ${(props) => props.color || 'white'};
+        z-index: -1;
+        transition-duration: 300ms;
+    }
+    &:hover::before {
+        top: -1px;
+        left: -1px;
+    }
 `;
