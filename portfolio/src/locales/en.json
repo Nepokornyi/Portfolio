@@ -6,5 +6,12 @@
             "subtitle_1": "Front-end developer, making things happen from 2020.",
             "subtitle_2": "Currently working my magic at Partners."
         }
+    },
+    "menu":{
+        "about": "<about>",
+        "experience": "<experience>",
+        "work": "<work>",
+        "services": "<services>",
+        "contact": "<contact>"
     }
 }
