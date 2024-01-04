@@ -1,11 +1,28 @@
-import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import styled from 'styled-components'
 
-import icoLogo from '../../assets/static/icoLogo.png';
+import icoLogo from '../../assets/static/icoLogo.png'
+import { useLayoutBreakpoint } from '../../hooks/useWindowDimension'
+import { HamburgerIcon } from './HamburgerIcon'
+
+//* This one is used to add blur to icon
+
+const LogoWrapper = styled.div`
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0775bd;
+        filter: blur(40px);
+    }
+`
 
 const Navigation = styled.nav`
-    position: absolute;
+    position: ${(props) =>
+        props.$primary ? 'absolute' : 'relative'};
     top: 0;
     left: 0;
     width: 100%;
@@ -13,42 +30,21 @@ const Navigation = styled.nav`
     justify-content: space-between;
     align-items: center;
     padding: 30px;
-`;
+`
 
-const MenuOption = styled(Link)`
-    margin: 0px 15px;
-    text-decoration: none;
-    color: #fff;
-    &:hover {
-        cursor: pointer;
-    }
-`;
-
-function Header() {
-    const { t } = useTranslation();
-
-    const menuOptions = [
-        { text: t('menu.about'), destination: 'about' },
-        { text: t('menu.experience'), destination: 'experience' },
-        { text: t('menu.work'), destination: 'work' },
-        { text: t('menu.services'), destination: 'services' },
-        { text: t('menu.contact'), destination: 'contact' }
-    ];
+export const Header = ({ children }) => {
+    const primary = useLayoutBreakpoint()
 
     return (
-        <Navigation>
-            <img src={icoLogo} alt="Logo image" />
-            <ul>
-                {menuOptions.map((option) => {
-                    return (
-                        <MenuOption key={option.text} to={option.destination}>
-                            {option.text}
-                        </MenuOption>
-                    );
-                })}
-            </ul>
+        <Navigation $primary={primary}>
+            <LogoWrapper>
+                <img src={icoLogo} alt="Logo image" />
+            </LogoWrapper>
+            {primary ? (
+                <ul>{children}</ul>
+            ) : (
+                <HamburgerIcon />
+            )}
         </Navigation>
-    );
+    )
 }
-
-export default Header;
