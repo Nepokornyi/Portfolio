@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Montserrat-Alt';
-  src: url('./assets/fonts/Montserrat-Alt1/MontserratAlt1-SemiBold.ttf');
+  src: url('./assets/fonts/Montserrat-Alt1/MontserratAlt1-ExtraBold.ttf');
 }
 
 :root {
@@ -29,7 +29,7 @@
 
 #root{
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 body {
