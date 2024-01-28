@@ -7,11 +7,9 @@ import { useLayoutBreakpoint } from '../../hooks/useWindowDimension'
 const MainContainer = styled.section`
     position: relative;
     width: 100%;
-    min-height: ${(props) =>
-        props.$expand ? '100vh' : 'auto'};
+    min-height: ${(props) => (props.$expand ? '100vh' : 'auto')};
     display: grid;
-    padding: clamp(25px, 6.5vw, 100px)
-        clamp(25px, 10vw, 250px);
+    padding: clamp(25px, 6.5vw, 100px) clamp(25px, 10vw, 250px);
     //* This is used to match line to padding and create 3d rectangle
     //! try remove it to see what it does
     overflow: hidden;
@@ -28,7 +26,10 @@ const StyledFrameRectangle = styled.div`
     width: 100%;
     border: 1px solid rgba(166, 234, 255, 0.25);
     display: grid;
-    place-items: center;
+    grid-template-rows: ${(props) => (props.$expand ? '1fr' : 'auto 1fr')};
+    grid-template-columns: ${(props) =>
+        props.$removeColumns ? '1fr' : '1fr 1fr'};
+    align-items: center;
     & .line {
         position: absolute;
         width: 100%;
@@ -58,9 +59,16 @@ const StyledFrameRectangle = styled.div`
     }
 `
 
-const FrameRectangle = ({ children }) => {
+const StyledWideScreenHeader = styled.div`
+    grid-area: 1 / 1 / 2 / 3;
+`
+
+const FrameRectangle = ({ children, isExpanded, removeColumns }) => {
     return (
-        <StyledFrameRectangle>
+        <StyledFrameRectangle
+            $expand={isExpanded}
+            $removeColumns={removeColumns}
+        >
             <div className="line top-head" />
             <div className="line top-left" />
             <div className="line top-right" />
@@ -70,27 +78,29 @@ const FrameRectangle = ({ children }) => {
     )
 }
 
-export const Frame = ({ header, children }) => {
+export const Frame = ({ header, removeGridColumns, children }) => {
     const layoutBreakpoint = useLayoutBreakpoint()
 
     return (
         <>
             {layoutBreakpoint ? (
                 <MainContainer $expand>
-                    <FrameRectangle>
-                        {header}
+                    <FrameRectangle removeColumns={removeGridColumns}>
+                        <StyledWideScreenHeader>
+                            {header}
+                        </StyledWideScreenHeader>
                         {children}
                     </FrameRectangle>
                 </MainContainer>
             ) : (
                 <MobileContainer>
                     <MainContainer>
-                        <FrameRectangle>
+                        <FrameRectangle removeColumns={removeGridColumns}>
                             {header}
                         </FrameRectangle>
                     </MainContainer>
                     <MainContainer>
-                        <FrameRectangle>
+                        <FrameRectangle removeColumns isExpanded>
                             {children}
                         </FrameRectangle>
                     </MainContainer>
