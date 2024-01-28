@@ -7,6 +7,7 @@ import { useLayoutBreakpoint } from '../../../hooks/useWindowDimension'
 
 const HeadingsWrapper = styled.div`
     width: 90%;
+    margin-left: 30px;
 `
 
 const Slash = styled.span`
