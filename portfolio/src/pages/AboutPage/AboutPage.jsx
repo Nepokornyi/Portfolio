@@ -5,7 +5,8 @@ import { Heading } from '../../components/Heading/Heading'
 import { AboutPageDescription } from './components/AboutPageDescription'
 import { AboutPagePicture } from './components/AboutPagePicture'
 
-const AppHeader = <Heading variant="title">Experiment</Heading>
+const AppHeaderText = '<About me>'
+const AppHeader = <Heading variant="chapter">{AppHeaderText}</Heading>
 
 export const AboutPage = () => {
     return (
