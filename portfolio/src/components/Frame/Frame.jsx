@@ -24,7 +24,7 @@ const MobileContainer = styled.section`
 const StyledFrameRectangle = styled.div`
     position: relative;
     width: 100%;
-    border: 1px solid rgba(166, 234, 255, 0.25);
+    border: ${(props) => props.theme.border};
     display: grid;
     grid-template-rows: ${(props) => (props.$expand ? '1fr' : 'auto 1fr')};
     grid-template-columns: ${(props) =>
@@ -33,7 +33,7 @@ const StyledFrameRectangle = styled.div`
     & .line {
         position: absolute;
         width: 100%;
-        border: 1px solid rgba(166, 234, 255, 0.25);
+        border: ${(props) => props.theme.border};
     }
     & .top-head {
         top: clamp(-127px, -6.63vw, -27px);
