@@ -1,0 +1,54 @@
+.line {
+    position: absolute;
+    width: 1px;
+    height: 100px;
+    background: #a6eaff;
+}
+
+.rectangle {
+    border: 1px solid #a6eaff;
+    border-radius: 1px;
+}
+
+.top-left {
+    top: -1px;
+    left: 0;
+    transform: rotate(110deg);
+    transform-origin: top left;
+    border-bottom-left-radius: 5px;
+}
+
+.top-right {
+    top: 0;
+    right: 0;
+    transform: rotate(110deg);
+    transform-origin: top right;
+}
+
+.top-horizontal {
+    position: absolute;
+    top: calc(103px * cos(110deg));
+    left: -94px;
+    height: 1px;
+    width: 100%;
+    background-color: #a6eaff;
+    border-top-right-radius: 5px;
+}
+
+.bottom-left {
+    bottom: -1px;
+    left: -1px;
+    transform: rotate(-70deg);
+    transform-origin: bottom left;
+}
+
+@media (min-width: 1024px) {
+    .line {
+        height: 150px;
+    }
+
+    .top-horizontal {
+        top: calc(153px * cos(110deg));
+        left: -140px;
+    }
+}
