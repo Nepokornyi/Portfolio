@@ -2770,6 +2770,11 @@ potpack@^1.0.1:
   resolved "https://registry.yarnpkg.com/potpack/-/potpack-1.0.2.tgz#23b99e64eb74f5741ffe7656b5b5c4ddce8dfc14"
   integrity sha512-choctRBIV9EMT9WGAZHn3V7t0Z2pMQyl0EZE6pFc/6ml3ssw7Dlf/oAOvFwjm1HVsqfQN8GfeFyJ+d8tRzqueQ==
 
+powerglitch@^2.3.2:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/powerglitch/-/powerglitch-2.3.3.tgz#ce573060da25dfcf5bd2d6316b0f18b610f2de68"
+  integrity sha512-S4XmfeZl0cnD70iZ6cxfU9O3QBWjn09gmHReJW0nQWLcfZQB8a3B9CxmuYZCyvDCXD4o75d9y/qiC+WZtN1IyA==
+
 prelude-ls@^1.2.1:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
@@ -2835,6 +2840,13 @@ react-is@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+
+react-powerglitch@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/react-powerglitch/-/react-powerglitch-1.0.3.tgz#19acd8572b28a6d515be76118c34cb68156fda8a"
+  integrity sha512-jYIcvZJQoRWKckOWfgc59Bju6tLiBl2sRkWIr8X8/8RYXd/e07H7k+jJXinlemM/IGGrcG0Iq0HmJbAP13FrVg==
+  dependencies:
+    powerglitch "^2.3.2"
 
 react-reconciler@^0.27.0:
   version "0.27.0"

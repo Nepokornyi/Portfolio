@@ -7,6 +7,8 @@ type FlexContainerProps = {
     className?: string
 }
 
+//* I'm playing with flexbox by adding w-full to see if it fits better to my design and reusability
+
 export const FlexContainer = ({
     children,
     flexDirection = 'flex-row',
@@ -14,7 +16,7 @@ export const FlexContainer = ({
     className = '',
 }: FlexContainerProps) => {
     return (
-        <div className={`flex ${flexDirection} ${gap} ${className}`}>
+        <div className={`w-full flex ${flexDirection} ${gap} ${className}`}>
             {children}
         </div>
     )

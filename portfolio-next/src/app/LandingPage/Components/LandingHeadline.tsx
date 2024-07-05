@@ -2,7 +2,7 @@ import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import {
     MainHeadline,
     SubHeadline,
-} from '@/components/Text/Components/TextVariants'
+} from '@/components/Text/components/TextVariants'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 
