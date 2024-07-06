@@ -7,7 +7,9 @@ type FrameProps = {
     header?: ReactNode
     layout?: 'h-screen' | 'min-h-full'
     width?: 'w-full' | 'w-1/2'
+    removeRightPadding?: boolean
     hideHeaderOnWideScreen?: boolean
+    contentFlexDirection?: 'flex-col' | 'flex-row'
 }
 
 export const Frame = ({
@@ -15,25 +17,33 @@ export const Frame = ({
     header,
     width = 'w-full',
     layout = 'h-screen',
+    removeRightPadding = false,
     hideHeaderOnWideScreen = true,
+    contentFlexDirection,
 }: FrameProps) => {
     const shouldRenderHeader = !!header
 
     return (
         <>
             <section
-                className={`${width} ${layout} flex flex-col justify-center relative`}
+                className={`w-full lg:${width} ${layout} flex flex-col justify-center relative`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer
                         className={`${
                             hideHeaderOnWideScreen && 'lg:hidden'
-                        } mt-12 mb-0 mx-10 lg:mx-28`}
+                        } mt-12 mb-0 ml-10 lg:ml-28 mr-10 ${
+                            removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
+                        }`}
                     >
                         {header}
                     </FrameContainer>
                 )}
-                <FrameContainer className="h-full mx-10 my-12 lg:mx-28 lg:my-24">
+                <FrameContainer
+                    className={`h-full ${contentFlexDirection} lg:flex-row my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
+                        removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
+                    } `}
+                >
                     {children}
                 </FrameContainer>
             </section>
