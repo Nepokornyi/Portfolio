@@ -23,7 +23,7 @@ export const ServicesPage = () => {
                 <div>Basic third party integration</div>
                 <div>Total Price</div>
                 <div>Ideal For Small Businesses</div>
-                <FlexContainer className="relative w-fit">
+                <FlexContainer width="w-fit" className="relative">
                     <Button>order</Button>
                 </FlexContainer>
             </FlexContainer>
@@ -40,7 +40,7 @@ export const ServicesPage = () => {
                 <div>Basic third party integration</div>
                 <div>Total Price</div>
                 <div>Ideal For Small Businesses</div>
-                <FlexContainer className="relative w-fit">
+                <FlexContainer width="w-fit" className="relative">
                     <Button>order</Button>
                 </FlexContainer>
             </FlexContainer>
@@ -57,7 +57,7 @@ export const ServicesPage = () => {
                 <div>Basic third party integration</div>
                 <div>Total Price</div>
                 <div>Ideal For Small Businesses</div>
-                <FlexContainer className="relative w-fit">
+                <FlexContainer width="w-fit" className="relative">
                     <Button>order</Button>
                 </FlexContainer>
             </FlexContainer>

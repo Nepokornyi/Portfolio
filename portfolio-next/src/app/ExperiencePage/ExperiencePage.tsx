@@ -11,7 +11,7 @@ export const ExperiencePage = () => {
                 header={
                     <SubHeadline className="py-8">{'<experience>'}</SubHeadline>
                 }
-                width="w-1/2"
+                isHalfWidth={true}
                 hideHeaderOnWideScreen={false}
                 removeRightPadding={true}
             >

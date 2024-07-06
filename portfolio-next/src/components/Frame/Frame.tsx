@@ -6,7 +6,7 @@ type FrameProps = {
     children: ReactNode
     header?: ReactNode
     layout?: 'h-screen' | 'min-h-full'
-    width?: 'w-full' | 'w-1/2'
+    isHalfWidth?: boolean
     removeRightPadding?: boolean
     hideHeaderOnWideScreen?: boolean
     contentFlexDirection?: 'flex-col' | 'flex-row'
@@ -15,7 +15,7 @@ type FrameProps = {
 export const Frame = ({
     children,
     header,
-    width = 'w-full',
+    isHalfWidth = false,
     layout = 'h-screen',
     removeRightPadding = false,
     hideHeaderOnWideScreen = true,
@@ -26,7 +26,9 @@ export const Frame = ({
     return (
         <>
             <section
-                className={`w-full lg:${width} ${layout} flex flex-col justify-center relative`}
+                className={`w-full ${
+                    isHalfWidth && 'lg:w-1/2'
+                } ${layout} flex flex-col justify-center relative`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer

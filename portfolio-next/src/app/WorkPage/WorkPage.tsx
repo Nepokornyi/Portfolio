@@ -36,7 +36,7 @@ export const WorkPage = () => {
                         <Text>Figma, Postman, VSCode, GitLab</Text>
                     </FlexContainer>
                 </FlexContainer>
-                <FlexContainer className="relative w-fit">
+                <FlexContainer width="w-fit" className="relative">
                     <Button>see more</Button>
                 </FlexContainer>
             </FlexContainer>

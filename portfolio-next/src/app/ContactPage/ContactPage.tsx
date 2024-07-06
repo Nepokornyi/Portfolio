@@ -17,7 +17,7 @@ export const ContactPage = () => {
                 <label htmlFor="message">Message</label>
                 <textarea name="message" id="message" />
                 <div>social media</div>
-                <FlexContainer className="relative w-fit">
+                <FlexContainer width="w-fit" className="relative">
                     <Button>send</Button>
                 </FlexContainer>
             </FlexContainer>
