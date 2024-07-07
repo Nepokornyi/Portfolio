@@ -19,9 +19,9 @@ export const GlitchedLogo = () => {
 
     // gradient has same props as design
     return (
-        <div className="relative p-4">
+        <div className="relative">
             <div
-                className={`absolute top-0 pointer-events-none left-0 w-full h-full rounded-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0775bd] to-black blur-[32px] lg:blur-2xl z-10`}
+                className={`absolute top-0 left-0 w-full h-full scale-150 rounded-full pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0775bd] to-black blur-[14px] lg:blur-[30px] z-10`}
             />
             <Image
                 ref={glitch.ref}
