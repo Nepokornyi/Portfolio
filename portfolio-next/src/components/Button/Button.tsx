@@ -1,5 +1,5 @@
 'use client'
-import React, { ReactNode, useEffect } from 'react'
+import React, { ReactNode } from 'react'
 
 type ButtonProps = {
     children: ReactNode
@@ -18,7 +18,7 @@ export const Button = ({
 
     return (
         <button
-            className={`px-4 py-2 lg:px-6 lg:py-3 ${colorVariants[color][0]} text-black font-bold text-base lg:text-xl italic group ${className} `}
+            className={`w-[110px] lg:w-[180px] py-2 lg:py-3 font-bold text-xs lg:text-xl italic group text-black ${colorVariants[color][0]} ${className} `}
         >
             <span
                 className={`absolute border ${colorVariants[color][1]} inset-2 w-full h-full -z-10 duration-300 group-hover:inset-1`}

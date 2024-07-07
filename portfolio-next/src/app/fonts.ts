@@ -4,6 +4,7 @@ import MontserratAlt from 'next/font/local'
 export const montserrat = Montserrat({
     subsets: ['latin'],
     display: 'swap',
+    style: ['italic', 'normal'],
 })
 
 export const montserratAlt = MontserratAlt({

@@ -10,7 +10,7 @@ type TextProps = {
 export const MainHeadline = ({ children }: TextProps) => {
     return (
         <Text
-            className={`${montserratAlt.className} tracking-widest md:tracking-wide text-2xl sm:text-5xl md:text-7xl xl:text-8xl 2xl:text-9xl`}
+            className={`${montserratAlt.className} tracking-widest md:tracking-wide text-2xl sm:text-5xl md:text-7xl xl:text-8xl`}
         >
             {children}
         </Text>
@@ -19,7 +19,25 @@ export const MainHeadline = ({ children }: TextProps) => {
 
 export const SubHeadline = ({ children, className = '' }: TextProps) => {
     return (
-        <Text className={`text-sm sm:text-base xl:text-xl ml-12 ${className}`}>
+        <Text className={`text-sm md:text-base xl:text-xl ${className}`}>
+            {children}
+        </Text>
+    )
+}
+
+export const SectionHeadline = ({ children, className = '' }: TextProps) => {
+    return (
+        <Text className={`text-xl lg:text-4xl py-8 ${className}`}>
+            {children}
+        </Text>
+    )
+}
+
+export const BasicText = ({ children, className = '' }: TextProps) => {
+    return (
+        <Text
+            className={`font-extralight text-base lg:text-lg mb-5 lg:mb-6 ${className}`}
+        >
             {children}
         </Text>
     )

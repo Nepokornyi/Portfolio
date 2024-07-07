@@ -12,7 +12,7 @@ export const Navigation = () => {
     return (
         <nav className={'flex gap-8'}>
             {navigationList.map((item) => (
-                <span key={item.text}>
+                <span key={item.text} className="text-lg">
                     <a href={item.link}>{item.text}</a>
                 </span>
             ))}

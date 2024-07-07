@@ -1,16 +1,17 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { Text } from '@/components/Text/Text'
-import { SubHeadline } from '@/components/Text/components/TextVariants'
+import {
+    SectionHeadline,
+    SubHeadline,
+} from '@/components/Text/components/TextVariants'
 import React from 'react'
 //* react node for a future scroll text effect
 export const ExperiencePage = () => {
     return (
         <>
             <Frame
-                header={
-                    <SubHeadline className="py-8">{'<experience>'}</SubHeadline>
-                }
+                header={<SectionHeadline>{'<experience>'}</SectionHeadline>}
                 isHalfWidth={true}
                 hideHeaderOnWideScreen={false}
                 removeRightPadding={true}
