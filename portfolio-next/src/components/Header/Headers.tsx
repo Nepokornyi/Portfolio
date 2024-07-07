@@ -1,6 +1,6 @@
 import React from 'react'
 import { FlexContainer } from '../FlexContainer/FlexContainer'
-import { HamburgerMenu } from './components/HamburgerMenu'
+import { HamburgerMenu } from './components/HamburgerMenu/HamburgerMenu'
 import { GlitchedLogo } from './components/GlitchedLogo/GlitchedLogo'
 import { Navigation } from './components/Navigation'
 
