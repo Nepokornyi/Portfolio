@@ -5,7 +5,6 @@ import { FrameContainer } from './components/FrameContainer'
 type FrameProps = {
     children: ReactNode
     header?: ReactNode
-    layout?: 'h-screen' | 'min-h-full'
     isHalfWidth?: boolean
     removeRightPadding?: boolean
     hideHeaderOnWideScreen?: boolean
@@ -16,7 +15,6 @@ export const Frame = ({
     children,
     header,
     isHalfWidth = false,
-    layout = 'h-screen',
     removeRightPadding = false,
     hideHeaderOnWideScreen = true,
     contentFlexDirection,
@@ -28,7 +26,7 @@ export const Frame = ({
             <section
                 className={`w-full ${
                     isHalfWidth && 'lg:w-1/2'
-                } ${layout} flex flex-col justify-center relative`}
+                } min-h-screen h-screen flex flex-col justify-center relative`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer
@@ -42,7 +40,7 @@ export const Frame = ({
                     </FrameContainer>
                 )}
                 <FrameContainer
-                    className={`h-full ${contentFlexDirection} lg:flex-row my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
+                    className={`h-full flex-grow ${contentFlexDirection} lg:flex-row my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
                         removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
                     } `}
                 >
