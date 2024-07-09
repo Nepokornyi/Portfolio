@@ -27,18 +27,12 @@ export const SubHeadline = ({ children, className = '' }: TextProps) => {
 
 export const SectionHeadline = ({ children, className = '' }: TextProps) => {
     return (
-        <Text className={`text-xl lg:text-4xl py-8 ${className}`}>
+        <Text className={`text-xl lg:text-4xl py-10 ${className}`}>
             {children}
         </Text>
     )
 }
 
 export const BasicText = ({ children, className = '' }: TextProps) => {
-    return (
-        <Text
-            className={`font-extralight text-base lg:text-lg mb-5 lg:mb-6 ${className}`}
-        >
-            {children}
-        </Text>
-    )
+    return <Text className={`font-extralight ${className}`}>{children}</Text>
 }

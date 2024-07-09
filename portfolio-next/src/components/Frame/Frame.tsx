@@ -26,7 +26,7 @@ export const Frame = ({
             <section
                 className={`w-full ${
                     isHalfWidth && 'lg:w-1/2'
-                } min-h-screen h-screen flex flex-col justify-center relative`}
+                } min-h-screen lg:h-screen flex flex-col justify-center relative`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer
