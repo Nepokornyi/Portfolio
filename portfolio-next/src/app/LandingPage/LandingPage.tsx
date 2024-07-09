@@ -11,7 +11,10 @@ import { Header, MobileHeader } from '@/components/Header/Headers'
 export const LandingPage = () => {
     return (
         <Frame header={<MobileHeader />}>
-            <FlexContainer flexDirection="flex-col">
+            <FlexContainer
+                flexDirection="flex-col"
+                className="min-h-[300px] justify-center"
+            >
                 <Header />
                 <LandingHeadline />
                 {/* <Sphere /> */}

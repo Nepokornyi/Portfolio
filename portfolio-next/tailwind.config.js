@@ -39,6 +39,9 @@ module.exports = {
                     red: '#FF3D29',
                 },
             },
+            fontSize: {
+                'about-clamp': 'clamp(1rem, 2.5vh, 3rem)',
+            },
         },
     },
     plugins: [rotateX],
