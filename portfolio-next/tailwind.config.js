@@ -40,7 +40,7 @@ module.exports = {
                 },
             },
             fontSize: {
-                'about-clamp': 'clamp(1rem, 2.5vh, 3rem)',
+                'about-clamp': 'clamp(1rem, 1.35vw, 3rem)',
             },
         },
     },
