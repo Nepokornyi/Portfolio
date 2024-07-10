@@ -13,7 +13,7 @@ export const LandingPage = () => {
         <Frame header={<MobileHeader />}>
             <FlexContainer
                 flexDirection="flex-col"
-                className="min-h-[300px] justify-center"
+                className="min-h-[300px] lg:min-h-[500px] justify-center"
             >
                 <Header />
                 <LandingHeadline />
