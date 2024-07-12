@@ -11,7 +11,7 @@ export const FrameContainer = ({
 }: FrameContainerProps) => {
     return (
         <div
-            className={`rectangle w-auto flex items-center relative ${className}`}
+            className={`rectangle w-auto grid items-center relative ${className}`}
         >
             <div className="line top-left" />
             <div className="line top-right" />

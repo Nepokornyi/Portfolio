@@ -8,7 +8,7 @@ type FrameProps = {
     isHalfWidth?: boolean
     removeRightPadding?: boolean
     hideHeaderOnWideScreen?: boolean
-    contentFlexDirection?: 'flex-col' | 'flex-row'
+    contentGridLayout?: string
 }
 
 export const Frame = ({
@@ -17,7 +17,7 @@ export const Frame = ({
     isHalfWidth = false,
     removeRightPadding = false,
     hideHeaderOnWideScreen = true,
-    contentFlexDirection,
+    contentGridLayout = '',
 }: FrameProps) => {
     const shouldRenderHeader = !!header
 
@@ -26,7 +26,7 @@ export const Frame = ({
             <section
                 className={`w-full ${
                     isHalfWidth && 'lg:w-1/2'
-                } min-h-screen lg:h-screen flex flex-col justify-center relative`}
+                } min-h-screen flex flex-col justify-center relative`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer
@@ -40,7 +40,7 @@ export const Frame = ({
                     </FrameContainer>
                 )}
                 <FrameContainer
-                    className={`h-full flex-grow ${contentFlexDirection} lg:flex-row my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
+                    className={`flex-grow ${contentGridLayout} my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
                         removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
                     } `}
                 >
