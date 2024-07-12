@@ -23,32 +23,33 @@ const descriptionText = [
 
 export const AboutDescription = () => {
     return (
-        <FlexContainer
-            flexDirection="flex-col"
-            className="h-full lg:border-r border-primary-stroke"
-        >
-            <SectionHeadline className="hidden lg:block">
-                {'<about me>'}
-            </SectionHeadline>
+        <>
             <FlexContainer
                 flexDirection="flex-col"
-                className="h-full border-b border-primary-stroke gap-10 py-10 lg:py-0 lg:pb-10"
+                className="h-full lg:border-r border-primary-stroke"
             >
-                {descriptionText.map((item) => {
-                    return (
-                        <BasicText
-                            key={item.id}
-                            className="lg:text-about-clamp"
-                        >
-                            {item.text}
-                        </BasicText>
-                    )
-                })}
+                <SectionHeadline className="hidden lg:block">
+                    {'<about me>'}
+                </SectionHeadline>
+                <FlexContainer
+                    flexDirection="flex-col"
+                    className="h-full border-b border-primary-stroke gap-10 py-10 lg:py-0 lg:pb-10"
+                >
+                    {descriptionText.map((item) => {
+                        return (
+                            <BasicText
+                                key={item.id}
+                                className="lg:text-about-clamp"
+                            >
+                                {item.text}
+                            </BasicText>
+                        )
+                    })}
+                </FlexContainer>
             </FlexContainer>
-
-            <Text className="xm:text-lg sm:text-xl xl:text-3xl py-5 lg:py-6">
+            <Text className="h-full flex items-center xm:text-lg sm:text-xl xl:text-3xl py-5 lg:py-6 border-t lg:border-t-0 lg:border-r border-primary-stroke row-start-4 row-end-5 lg:row-auto">
                 Lets make things happen!
             </Text>
-        </FlexContainer>
+        </>
     )
 }

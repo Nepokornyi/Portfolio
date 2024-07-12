@@ -7,7 +7,7 @@ import portrait from '../../../assets/static/portraitEffect.png'
 
 export const AboutPicture = () => {
     return (
-        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full relative">
+        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full row-span-2 relative">
             <Image
                 src={portrait}
                 alt="portrait photo"

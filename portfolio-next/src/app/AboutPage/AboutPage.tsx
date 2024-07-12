@@ -4,11 +4,13 @@ import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { AboutDescription } from './components/AboutDescription'
 import { AboutPicture } from './components/AboutPicture'
 
+//  auto-rows-max
+
 export const AboutPage = () => {
     return (
         <Frame
             header={<SectionHeadline>{'<about me>'}</SectionHeadline>}
-            contentFlexDirection="flex-col"
+            contentGridLayout="lg:grid-cols-2 lg:grid-flow-col"
         >
             <AboutDescription />
             <AboutPicture />
