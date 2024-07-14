@@ -19,6 +19,22 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
+
+    --color-primary-highlight: #ffc700;
+    --color-primary-button: #ffd600;
+    --color-primary-light-green: #40c8a5;
+    --color-primary-green: #40c8c8;
+    --color-primary-dark-blue: #039bb8;
+    --color-primary-blue: #29a1f8;
+    --color-primary-stroke: #a6eaff;
+    --color-primary-background: #000000;
+    --color-primary-text: #ffffff;
+    --color-secondary-discord: #9e52ff;
+    --color-secondary-github: #b540c8;
+    --color-secondary-linkedin: #1867ff;
+    --color-secondary-yellow: #ffd600;
+    --color-secondary-green: #adff00;
+    --color-secondary-red: #ff3d29;
 }
 
 * {
