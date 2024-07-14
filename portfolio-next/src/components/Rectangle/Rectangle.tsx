@@ -2,27 +2,16 @@ import React from 'react'
 
 type RectangleProps = {
     variant: 'default' | 'small'
-    color: 'button' | 'empty'
     className?: string
 }
 
 const RectangleConfig = {
-    default: 'w-6 h-6',
+    default: 'w-4 h-4 lg:w-6 lg:h-6',
     small: '',
-    color: {
-        button: 'bg-primary-highlight',
-        empty: 'border border-primary-highlight',
-    },
 }
 
-export const Rectangle = ({
-    variant,
-    color,
-    className = '',
-}: RectangleProps) => {
+export const Rectangle = ({ variant, className = '' }: RectangleProps) => {
     return (
-        <div
-            className={`rotate-45 ${RectangleConfig[variant]} ${RectangleConfig.color[color]} ${className}`}
-        />
+        <div className={`rotate-45 ${RectangleConfig[variant]} ${className}`} />
     )
 }
