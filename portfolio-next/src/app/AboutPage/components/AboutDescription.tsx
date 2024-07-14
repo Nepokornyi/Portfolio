@@ -47,9 +47,11 @@ export const AboutDescription = () => {
                     })}
                 </FlexContainer>
             </FlexContainer>
-            <Text className="h-full flex items-center xm:text-lg sm:text-xl xl:text-3xl py-5 lg:py-6 border-t lg:border-t-0 lg:border-r border-primary-stroke row-start-4 row-end-5 lg:row-auto">
-                Lets make things happen!
-            </Text>
+            <FlexContainer className="h-full w-full border-t lg:border-t-0 lg:border-r border-primary-stroke py-5 lg:py-6 row-start-4 row-end-5 lg:row-auto">
+                <Text className="flex items-center xm:text-lg sm:text-xl xl:text-3xl">
+                    Lets make things happen!
+                </Text>
+            </FlexContainer>
         </>
     )
 }

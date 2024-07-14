@@ -27,7 +27,7 @@ export const SubHeadline = ({ children, className = '' }: TextProps) => {
 
 export const SectionHeadline = ({ children, className = '' }: TextProps) => {
     return (
-        <Text className={`text-xl lg:text-4xl py-10 ${className}`}>
+        <Text className={`text-xl lg:text-4xl my-10 ${className}`}>
             {children}
         </Text>
     )

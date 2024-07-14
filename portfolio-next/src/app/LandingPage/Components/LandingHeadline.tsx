@@ -17,10 +17,10 @@ export const LandingHeadline = () => {
                 >
                     {'//'}
                 </Text>
-                <SubHeadline className="mt-4 sm:mt-0 ml-12">
+                <SubHeadline className="mt-4 sm:mt-0 pl-12">
                     Front-end developer making things happen from 2020
                 </SubHeadline>
-                <SubHeadline className="ml-12">
+                <SubHeadline className="pl-12">
                     Currently working my magic at Skoda Auto
                 </SubHeadline>
             </FlexContainer>

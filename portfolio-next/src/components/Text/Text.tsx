@@ -7,7 +7,7 @@ type TextProps = {
 
 export const Text = ({ children, className = '' }: TextProps) => {
     return (
-        <span className={`px-6 lg:px-12 leading-tight ${className}`}>
+        <span className={`mx-6 lg:mx-12 leading-tight ${className}`}>
             {children}
         </span>
     )
