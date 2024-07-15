@@ -26,14 +26,14 @@ export const AboutDescription = () => {
         <>
             <FlexContainer
                 flexDirection="flex-col"
-                className="h-full lg:border-r border-primary-stroke"
+                className="h-full lg:border-r"
             >
                 <SectionHeadline className="hidden lg:block">
                     {'<about me>'}
                 </SectionHeadline>
                 <FlexContainer
                     flexDirection="flex-col"
-                    className="h-full border-b border-primary-stroke gap-10 py-10 lg:py-0 lg:pb-10"
+                    className="h-full border-b gap-10 py-10 lg:py-0 lg:pb-10"
                 >
                     {descriptionText.map((item) => {
                         return (
@@ -47,7 +47,7 @@ export const AboutDescription = () => {
                     })}
                 </FlexContainer>
             </FlexContainer>
-            <FlexContainer className="h-full w-full border-t lg:border-t-0 lg:border-r border-primary-stroke py-5 lg:py-6 row-start-4 row-end-5 lg:row-auto">
+            <FlexContainer className="h-full w-full border-t lg:border-t-0 lg:border-r py-5 lg:py-6 row-start-4 row-end-5 lg:row-auto">
                 <Text className="flex items-center xm:text-lg sm:text-xl xl:text-3xl">
                     Lets make things happen!
                 </Text>
