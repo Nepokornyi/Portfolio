@@ -35,11 +35,21 @@
     border-top-right-radius: 5px;
 }
 
+.left-vertical {
+    position: absolute;
+    top: calc(150px * cos(110deg));
+    left: -141px;
+    height: 100%;
+    width: 1px;
+    background-color: var(--color-primary-stroke);
+}
+
 .bottom-left {
     bottom: -1px;
     left: -1px;
     transform: rotate(-70deg);
     transform-origin: bottom left;
+    border-top-right-radius: 5px;
 }
 
 @media (min-width: 1024px) {
