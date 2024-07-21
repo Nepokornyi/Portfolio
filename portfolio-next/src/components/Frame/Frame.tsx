@@ -25,24 +25,24 @@ export const Frame = ({
         <>
             <section
                 className={`w-full ${
-                    isHalfWidth && 'lg:w-1/2'
-                } min-h-screen flex flex-col justify-center relative`}
+                    isHalfWidth ? 'lg:w-1/2 items-end' : 'items-center'
+                } min-h-screen flex flex-col justify-center relative py-12 lg:py-24 pl-10 lg:pl-28 pr-10 ${
+                    removeRightPadding ? 'lg:pr-0' : 'lg:pr-28'
+                }`}
             >
                 {shouldRenderHeader && (
                     <FrameContainer
                         className={`${
                             hideHeaderOnWideScreen && 'lg:hidden'
-                        } mt-12 mb-0 ml-10 lg:ml-28 mr-10 ${
-                            removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
-                        }`}
+                        } mb-12 lg:mb-20`}
+                        isHalfWidth={isHalfWidth}
                     >
                         {header}
                     </FrameContainer>
                 )}
                 <FrameContainer
-                    className={`flex-grow ${contentGridLayout} my-12 lg:my-24 ml-10 lg:ml-28 mr-10 ${
-                        removeRightPadding ? 'lg:mr-0' : 'lg:mr-28'
-                    } `}
+                    className={`flex-grow ${contentGridLayout}`}
+                    isHalfWidth={isHalfWidth}
                 >
                     {children}
                 </FrameContainer>
