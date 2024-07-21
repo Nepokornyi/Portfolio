@@ -5,10 +5,7 @@ import React from 'react'
 
 export const ContactPage = () => {
     return (
-        <Frame
-            header={<h1>{'<contact me>'}</h1>}
-            contentFlexDirection="flex-col"
-        >
+        <Frame header={<h1>{'<contact me>'}</h1>}>
             <FlexContainer flexDirection="flex-col">
                 <label htmlFor="name">Name</label>
                 <input type="text" name="name" id="name" />

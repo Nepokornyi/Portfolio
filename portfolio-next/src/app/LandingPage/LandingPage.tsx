@@ -2,8 +2,8 @@ import React from 'react'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { Button } from '@/components/Button/Button'
-import { LandingHeadline } from './Components/LandingHeadline'
-import { Sphere } from './Components/Sphere/Sphere'
+import { LandingHeadline } from './components/LandingHeadline'
+import { Sphere } from './components/Sphere/Sphere'
 import { Header, MobileHeader } from '@/components/Header/Headers'
 
 //* didn't think of better solution than create two separate headers for mobile and desktop layout because of design specifics
