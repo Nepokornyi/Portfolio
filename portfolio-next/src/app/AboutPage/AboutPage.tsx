@@ -4,8 +4,6 @@ import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { AboutDescription } from './components/AboutDescription'
 import { AboutPicture } from './components/AboutPicture'
 
-//  auto-rows-max
-
 export const AboutPage = () => {
     return (
         <Frame
