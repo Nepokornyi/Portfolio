@@ -1,9 +1,18 @@
 'use client'
 import React, { ReactNode } from 'react'
 
+const colorVariants = {
+    default: ['bg-primary-button', 'border-primary-button'],
+    lightGreen: ['bg-primary-light-green', 'border-primary-light-green'],
+    darkBlue: ['bg-primary-dark-blue', 'border-primary-dark-blue'],
+    blue: ['bg-primary-blue', 'border-primary-blue'],
+}
+
+export type ButtonColorVariants = keyof typeof colorVariants
+
 type ButtonProps = {
     children: ReactNode
-    color?: 'default'
+    color?: ButtonColorVariants
     className?: string
 }
 
@@ -12,10 +21,6 @@ export const Button = ({
     color = 'default',
     className = '',
 }: ButtonProps) => {
-    const colorVariants = {
-        default: ['bg-primary-button', 'border-primary-button'],
-    }
-
     return (
         <button
             className={`w-[110px] lg:w-[180px] py-2 lg:py-3 font-bold text-xs lg:text-xl italic group text-black ${colorVariants[color][0]} ${className} `}

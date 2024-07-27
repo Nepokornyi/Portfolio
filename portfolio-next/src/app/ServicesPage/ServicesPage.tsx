@@ -1,65 +1,61 @@
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
-import { SubHeadline } from '@/components/Text/components/TextVariants'
+import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import React from 'react'
+import { ServiceItem } from './components/ServiceItem'
+import { Text } from '@/components/Text/Text'
+
+import { servicesContent } from './const'
 
 export const ServicesPage = () => {
     return (
-        <Frame
-            header={<SubHeadline>{'<services>'}</SubHeadline>}
-            contentFlexDirection="flex-col"
-        >
-            <FlexContainer
-                flexDirection="flex-col"
-                className="justify-center border h-full"
-            >
-                <h1>Starter Pack</h1>
-                <div>Basic Design and Web Development</div>
-                <div>Basic SEO setup</div>
-                <div>Basic Website support and maintenance</div>
-                <div>Shared Website hosting for 1 year</div>
-                <div>Domain Registration</div>
-                <div>Basic third party integration</div>
-                <div>Total Price</div>
-                <div>Ideal For Small Businesses</div>
-                <FlexContainer width="w-fit" className="relative">
-                    <Button>order</Button>
-                </FlexContainer>
-            </FlexContainer>
-            <FlexContainer
-                flexDirection="flex-col"
-                className="justify-center border h-full"
-            >
-                <h1>Starter Pack</h1>
-                <div>Basic Design and Web Development</div>
-                <div>Basic SEO setup</div>
-                <div>Basic Website support and maintenance</div>
-                <div>Shared Website hosting for 1 year</div>
-                <div>Domain Registration</div>
-                <div>Basic third party integration</div>
-                <div>Total Price</div>
-                <div>Ideal For Small Businesses</div>
-                <FlexContainer width="w-fit" className="relative">
-                    <Button>order</Button>
-                </FlexContainer>
-            </FlexContainer>
-            <FlexContainer
-                flexDirection="flex-col"
-                className="justify-center border h-full"
-            >
-                <h1>Starter Pack</h1>
-                <div>Basic Design and Web Development</div>
-                <div>Basic SEO setup</div>
-                <div>Basic Website support and maintenance</div>
-                <div>Shared Website hosting for 1 year</div>
-                <div>Domain Registration</div>
-                <div>Basic third party integration</div>
-                <div>Total Price</div>
-                <div>Ideal For Small Businesses</div>
-                <FlexContainer width="w-fit" className="relative">
-                    <Button>order</Button>
-                </FlexContainer>
+        <Frame header={<SectionHeadline>{'<services>'}</SectionHeadline>}>
+            <SectionHeadline className="hidden lg:block">
+                {'<services>'}
+            </SectionHeadline>
+            <FlexContainer className="flex-col lg:flex-row">
+                {servicesContent.map((card) => (
+                    <FlexContainer
+                        key={card.name}
+                        flexDirection="flex-col"
+                        className="justify-evenly h-full"
+                    >
+                        <FlexContainer className="border-y border-r">
+                            <Text
+                                className={`text-3xl font-bold my-5 text-${card.color}`}
+                            >
+                                {card.title}
+                            </Text>
+                        </FlexContainer>
+
+                        {card.items.map((item) => (
+                            <ServiceItem
+                                key={item.description}
+                                description={item.description}
+                                price={item.price}
+                            />
+                        ))}
+
+                        <FlexContainer className="border-b border-r py-5">
+                            <Text className="font-bold">
+                                Total: {card.totalPrice}
+                            </Text>
+                        </FlexContainer>
+
+                        <FlexContainer className="border-b border-r py-5">
+                            <Text className={`text-${card.color}`}>
+                                {card.motivation}
+                            </Text>
+                        </FlexContainer>
+
+                        <FlexContainer className="border-r justify-center py-5">
+                            <FlexContainer width="w-fit" className="relative">
+                                <Button color={card.button}>order</Button>
+                            </FlexContainer>
+                        </FlexContainer>
+                    </FlexContainer>
+                ))}
             </FlexContainer>
         </Frame>
     )
