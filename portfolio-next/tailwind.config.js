@@ -28,6 +28,7 @@ module.exports = {
                     blue: 'var(--color-primary-blue)',
                     stroke: 'var(--color-primary-stroke)',
                     background: 'var(--color-primary-background)',
+                    'input-background': 'var(--color-primary-input-background)',
                     text: 'var(--color-primary-text)',
                 },
                 secondary: {
