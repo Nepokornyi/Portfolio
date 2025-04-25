@@ -5,7 +5,7 @@ export const servicesContent: ServiceCard[] = [
         name: 'start',
         color: 'primary-light-green',
         button: 'lightGreen',
-        title: 'Starter Pack',
+        title: 'Starter',
         items: [
             {
                 description: 'Basic website design and development',
@@ -32,7 +32,7 @@ export const servicesContent: ServiceCard[] = [
         name: 'pro',
         color: 'primary-dark-blue',
         button: 'darkBlue',
-        title: 'Pro Pack',
+        title: 'Pro',
         items: [
             {
                 description: 'Advanced website design and development',
@@ -62,7 +62,7 @@ export const servicesContent: ServiceCard[] = [
         name: 'enterprise',
         color: 'primary-blue',
         button: 'blue',
-        title: 'Enterprise Pack',
+        title: 'Enterprise',
         items: [
             {
                 description: 'Custom website design & development',

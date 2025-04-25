@@ -1,58 +1,101 @@
-import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
+import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { ServiceItem } from './components/ServiceItem'
-import { Text } from '@/components/Text/Text'
-
+import { Button } from '@/components/Button/Button'
 import { servicesContent } from './const'
 
 export const ServicesPage = () => {
+    const maxItems = Math.max(
+        ...servicesContent.map((service) => service.items.length)
+    )
+
+    const itemRows = []
+    for (let i = 0; i < maxItems; i++) {
+        const row = servicesContent.map((service) => ({
+            key: `item-${service.name}-${i}`,
+            content: service.items[i] || null,
+            name: service.name,
+        }))
+        itemRows.push(row)
+    }
+
     return (
         <Frame header={<SectionHeadline>{'<services>'}</SectionHeadline>}>
             <SectionHeadline className="hidden lg:block">
                 {'<services>'}
             </SectionHeadline>
-            <FlexContainer className="flex-col lg:flex-row">
-                {servicesContent.map((card) => (
+
+            <FlexContainer className="flex-row w-full">
+                {servicesContent.map((service) => (
                     <FlexContainer
-                        key={card.name}
-                        flexDirection="flex-col"
-                        className="justify-evenly h-full"
+                        key={`title-${service.name}`}
+                        className=" border-y border-r"
                     >
-                        <FlexContainer className="border-y border-r">
-                            <Text
-                                className={`text-3xl font-bold my-5 text-${card.color}`}
-                            >
-                                {card.title}
-                            </Text>
-                        </FlexContainer>
+                        <Text
+                            className={`text-3xl font-bold my-5 text-${service.color}`}
+                        >
+                            {service.title}
+                        </Text>
+                    </FlexContainer>
+                ))}
+            </FlexContainer>
 
-                        {card.items.map((item) => (
+            {itemRows.map((row, rowIndex) => (
+                <FlexContainer
+                    key={`row-${rowIndex}`}
+                    className="flex-row w-full"
+                >
+                    {row.map((service) => (
+                        <FlexContainer
+                            key={`item-${service.key}`}
+                            className=" border-b border-r py-3"
+                        >
                             <ServiceItem
-                                key={item.description}
-                                description={item.description}
-                                price={item.price}
+                                description={service.content.description}
+                                price={service.content.price}
                             />
-                        ))}
-
-                        <FlexContainer className="border-b border-r py-5">
-                            <Text className="font-bold">
-                                Total: {card.totalPrice}
-                            </Text>
                         </FlexContainer>
+                    ))}
+                </FlexContainer>
+            ))}
 
-                        <FlexContainer className="border-b border-r py-5">
-                            <Text className={`text-${card.color}`}>
-                                {card.motivation}
-                            </Text>
-                        </FlexContainer>
+            <FlexContainer className="flex-row w-full">
+                {servicesContent.map((service) => (
+                    <FlexContainer
+                        key={`total-${service.name}`}
+                        className=" border-b border-r py-5"
+                    >
+                        <Text className="font-bold">
+                            Total: {service.totalPrice}
+                        </Text>
+                    </FlexContainer>
+                ))}
+            </FlexContainer>
 
-                        <FlexContainer className="border-r justify-center py-5">
-                            <FlexContainer width="w-fit" className="relative">
-                                <Button color={card.button}>order</Button>
-                            </FlexContainer>
+            <FlexContainer className="flex-row w-full">
+                {servicesContent.map((service) => (
+                    <FlexContainer
+                        key={`motivation-${service.name}`}
+                        className=" border-b border-r py-5"
+                    >
+                        <Text className={`text-${service.color}`}>
+                            {service.motivation}
+                        </Text>
+                    </FlexContainer>
+                ))}
+            </FlexContainer>
+
+            <FlexContainer className="flex-row w-full">
+                {servicesContent.map((service) => (
+                    <FlexContainer
+                        key={`button-${service.name}`}
+                        className=" border-r py-5 justify-center"
+                    >
+                        <FlexContainer width="w-fit" className="relative">
+                            <Button color={service.button}>order</Button>
                         </FlexContainer>
                     </FlexContainer>
                 ))}
