@@ -11,6 +11,7 @@ export const FrameContainer = ({
     className,
     isHalfWidth = false,
 }: FrameContainerProps) => {
+    // items-center affects services grid
     return (
         <div
             className={`rectangle w-full ${

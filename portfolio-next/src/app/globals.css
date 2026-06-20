@@ -45,3 +45,12 @@
     min-width: 0;
     min-height: 0;
 }
+
+/*  */
+pre[class*='language-'] {
+    background: transparent !important;
+}
+
+code[class*='language-'] {
+    background: transparent !important;
+}

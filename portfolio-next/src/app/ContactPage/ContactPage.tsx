@@ -1,24 +1,49 @@
 import { Button } from '@/components/Button/Button'
+import { CodeBlock } from '@/components/CodeEditor/CodeEditor'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
+import { Input } from '@/components/Input/Input'
+import { SectionHeadline } from '@/components/Text/components/TextVariants'
+import { Textarea } from '@/components/Textarea/Textarea'
 import React from 'react'
+// import { CodeEditor } from '@/components/CodeEditor/CodeEditor'
 
 export const ContactPage = () => {
     return (
-        <Frame header={<h1>{'<contact me>'}</h1>}>
-            <FlexContainer flexDirection="flex-col">
-                <label htmlFor="name">Name</label>
-                <input type="text" name="name" id="name" />
-                <label htmlFor="email">Email</label>
-                <input type="email" name="email" id="email" />
-                <label htmlFor="message">Message</label>
-                <textarea name="message" id="message" />
-                <div>social media</div>
-                <FlexContainer width="w-fit" className="relative">
-                    <Button>send</Button>
+        <Frame header={<SectionHeadline>{'<contact me>'}</SectionHeadline>}>
+            <SectionHeadline className="hidden lg:block">
+                {'<contact me>'}
+            </SectionHeadline>
+            <FlexContainer className="flex-col lg:flex-row">
+                <FlexContainer flexDirection="flex-col">
+                    <FlexContainer className="flex-col my-6">
+                        <Input
+                            label="Name"
+                            name="name"
+                            type="text"
+                            placeholder="Elon Musk"
+                        />
+                        <Input
+                            label="Email"
+                            name="email"
+                            type="email"
+                            placeholder="elonmusk@domain.com"
+                        />
+                        <Textarea />
+                    </FlexContainer>
+
+                    <FlexContainer className="justify-between px-6 lg:px-12">
+                        <div>social media</div>
+                        <FlexContainer width="w-fit" className="relative">
+                            <Button>send</Button>
+                        </FlexContainer>
+                    </FlexContainer>
+                </FlexContainer>
+
+                <FlexContainer>
+                    <CodeBlock />
                 </FlexContainer>
             </FlexContainer>
-            <FlexContainer>SomeGraphic</FlexContainer>
         </Frame>
     )
 }
