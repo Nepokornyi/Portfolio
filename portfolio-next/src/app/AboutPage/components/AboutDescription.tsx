@@ -39,7 +39,7 @@ export const AboutDescription = () => {
                         return (
                             <BasicText
                                 key={item.id}
-                                className="lg:text-about-clamp"
+                                className="text-sm lg:text-lg"
                             >
                                 {item.text}
                             </BasicText>
@@ -49,7 +49,7 @@ export const AboutDescription = () => {
             </FlexContainer>
             <FlexContainer className="h-full w-full border-t lg:border-t-0 lg:border-r py-5 lg:py-6 row-start-4 row-end-5 lg:row-auto">
                 <Text className="flex items-center xm:text-lg sm:text-xl xl:text-3xl">
-                    Lets make things happen!
+                    Let&apos;s make things happen!
                 </Text>
             </FlexContainer>
         </>
