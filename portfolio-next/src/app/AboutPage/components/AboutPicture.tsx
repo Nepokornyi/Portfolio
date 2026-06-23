@@ -3,12 +3,18 @@ import Image from 'next/image'
 import React from 'react'
 import portrait from '../../../assets/static/portraitEffect.png'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
+import { Glow } from '@/components/Glow/Glow'
 
 // https://picsum.photos/1920/1080
 
 export const AboutPicture = () => {
     return (
-        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full row-span-2 relative">
+        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full row-span-2 relative border border-primary-hairline">
+            <Glow
+                color="rgba(76, 161, 174, 0.55)"
+                blur="blur-[110px]"
+                className="-inset-8"
+            />
             <Rectangle
                 variant="default"
                 className="absolute top-1/4 -right-2 lg:-right-3 z-10 border border-primary-highlight"

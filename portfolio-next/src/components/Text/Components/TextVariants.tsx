@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react'
 import { Text } from '../Text'
-import { montserratAlt } from '@/app/fonts'
+import { montserratAlt, mavenPro } from '@/app/fonts'
 
 type TextProps = {
     children: ReactNode
@@ -27,7 +27,9 @@ export const SubHeadline = ({ children, className = '' }: TextProps) => {
 
 export const SectionHeadline = ({ children, className = '' }: TextProps) => {
     return (
-        <Text className={`text-xl lg:text-4xl my-10 ${className}`}>
+        <Text
+            className={`${mavenPro.className} tracking-wide text-xl lg:text-4xl my-10 ${className}`}
+        >
             {children}
         </Text>
     )

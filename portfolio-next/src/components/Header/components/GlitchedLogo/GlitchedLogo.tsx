@@ -19,15 +19,12 @@ export const GlitchedLogo = () => {
 
     // gradient has same props as design
     return (
-        <div className="relative">
-            <div
-                className={`absolute top-0 left-0 w-full h-full scale-150 rounded-full pointer-events-none bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#0775bd] to-black blur-[14px] lg:blur-[30px] z-10`}
-            />
+        <div className="relative w-fit">
             <Image
                 ref={glitch.ref}
                 src={logo}
                 alt="logo"
-                className={`object-fill w-[32px] lg:w-[64px] hover:${glitch.stopGlitch}`}
+                className={`object-fill w-[32px] lg:w-[64px] bg-primary-background hover:${glitch.stopGlitch}`}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             />

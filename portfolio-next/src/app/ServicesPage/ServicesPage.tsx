@@ -6,6 +6,7 @@ import React from 'react'
 import { ServiceItem } from './components/ServiceItem'
 import { Button } from '@/components/Button/Button'
 import { servicesContent } from './const'
+import { jura, mavenPro } from '@/app/fonts'
 
 export const ServicesPage = () => {
     const maxItems = Math.max(
@@ -35,7 +36,7 @@ export const ServicesPage = () => {
                         className=" border-y border-r"
                     >
                         <Text
-                            className={`text-3xl font-bold my-5 text-${service.color}`}
+                            className={`${mavenPro.className} text-3xl lg:text-4xl font-bold my-5 text-${service.color}`}
                         >
                             {service.title}
                         </Text>
@@ -68,8 +69,8 @@ export const ServicesPage = () => {
                         key={`total-${service.name}`}
                         className=" border-b border-r py-5"
                     >
-                        <Text className="font-bold">
-                            Total: {service.totalPrice}
+                        <Text className={`${jura.className} font-bold`}>
+                            Total: ${service.totalPrice}
                         </Text>
                     </FlexContainer>
                 ))}

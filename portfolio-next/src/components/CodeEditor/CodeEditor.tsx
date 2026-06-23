@@ -58,7 +58,7 @@ export const CodeBlock = () => {
     }, [displayedCode])
 
     return (
-        <div className="code-block-container">
+        <div className="code-block-container max-w-full overflow-x-auto text-sm">
             <pre className="line-numbers">
                 <code ref={codeRef} className="language-jsx">
                     {displayedCode}

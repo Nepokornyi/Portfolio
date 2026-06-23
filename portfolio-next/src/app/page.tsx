@@ -4,6 +4,7 @@ import { ExperiencePage } from './ExperiencePage/ExperiencePage'
 import { LandingPage } from './LandingPage/LandingPage'
 import { ServicesPage } from './ServicesPage/ServicesPage'
 import { WorkPage } from './WorkPage/WorkPage'
+import { Footer } from '@/components/Footer/Footer'
 
 export default function App() {
     return (
@@ -14,6 +15,7 @@ export default function App() {
             <WorkPage />
             <ServicesPage />
             <ContactPage />
+            <Footer />
         </>
     )
 }
