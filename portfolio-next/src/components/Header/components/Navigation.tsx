@@ -1,4 +1,5 @@
 import React from 'react'
+import { mavenPro } from '@/app/fonts'
 
 const navigationList = [
     { text: '<about>', link: '/about' },
@@ -10,7 +11,7 @@ const navigationList = [
 
 export const Navigation = () => {
     return (
-        <nav className={'flex gap-8'}>
+        <nav className={`${mavenPro.className} flex gap-8 tracking-wide`}>
             {navigationList.map((item) => (
                 <span key={item.text} className="text-lg">
                     <a href={item.link}>{item.text}</a>
