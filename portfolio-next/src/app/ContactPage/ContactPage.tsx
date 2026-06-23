@@ -2,7 +2,9 @@ import { Button } from '@/components/Button/Button'
 import { CodeBlock } from '@/components/CodeEditor/CodeEditor'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
+import { Glow } from '@/components/Glow/Glow'
 import { Input } from '@/components/Input/Input'
+import { SocialIcons } from '@/components/SocialIcons/SocialIcons'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { Textarea } from '@/components/Textarea/Textarea'
 import React from 'react'
@@ -32,8 +34,8 @@ export const ContactPage = () => {
                         <Textarea />
                     </FlexContainer>
 
-                    <FlexContainer className="justify-between px-6 lg:px-12">
-                        <div>social media</div>
+                    <FlexContainer className="items-center justify-between px-6 lg:px-12">
+                        <SocialIcons />
                         <FlexContainer width="w-fit" className="relative">
                             <Button>send</Button>
                         </FlexContainer>
