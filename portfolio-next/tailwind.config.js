@@ -27,6 +27,7 @@ module.exports = {
                     'dark-blue': 'var(--color-primary-dark-blue)',
                     blue: 'var(--color-primary-blue)',
                     stroke: 'var(--color-primary-stroke)',
+                    hairline: 'var(--color-primary-hairline)',
                     background: 'var(--color-primary-background)',
                     'input-background': 'var(--color-primary-input-background)',
                     text: 'var(--color-primary-text)',
@@ -39,9 +40,6 @@ module.exports = {
                     green: 'var(--color-secondary-green)',
                     red: 'var(--color-secondary-red)',
                 },
-            },
-            fontSize: {
-                'about-clamp': 'clamp(1rem, 1.35vw, 3rem)',
             },
         },
     },

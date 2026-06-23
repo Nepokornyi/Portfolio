@@ -12,7 +12,7 @@
     font-weight: 400;
 
     color: rgba(255, 255, 255, 0.87);
-    background-color: #000000;
+    background-color: #0c0c0c;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -27,7 +27,11 @@
     --color-primary-dark-blue: #039bb8;
     --color-primary-blue: #29a1f8;
     --color-primary-stroke: #a6eaff;
-    --color-primary-background: #000000;
+    /* faint hairline that matches Figma's 0.2px strokes: a 0.2px opaque line
+       rasterizes to roughly a 1px line at ~20% alpha, so we keep 1px and lower
+       the opacity instead of fighting sub-pixel border widths */
+    --color-primary-hairline: rgba(166, 234, 255, 0.22);
+    --color-primary-background: #0c0c0c;
     --color-primary-input-background: #171717;
     --color-primary-text: #ffffff;
     --color-secondary-discord: #9e52ff;
@@ -44,6 +48,24 @@
     padding: 0;
     min-width: 0;
     min-height: 0;
+}
+
+/* decorative glows / frame lines bleed past the edges by design — clip the
+   horizontal overflow so they never create a sideways scrollbar */
+html,
+body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+/* full-page grain to match the design's noise/texture overlay */
+.noise-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.04;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /*  */

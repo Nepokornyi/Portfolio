@@ -2,11 +2,11 @@
     position: absolute;
     width: 1px;
     height: 100px;
-    background: var(--color-primary-stroke);
+    background: var(--color-primary-hairline);
 }
 
 .rectangle {
-    border: 1px solid var(--color-primary-stroke);
+    border: 1px solid var(--color-primary-hairline);
     border-radius: 1px;
 }
 
@@ -31,7 +31,7 @@
     left: -94px;
     height: 1px;
     width: 100%;
-    background-color: var(--color-primary-stroke);
+    background-color: var(--color-primary-hairline);
     border-top-right-radius: 5px;
 }
 
@@ -41,7 +41,7 @@
     left: -141px;
     height: 100%;
     width: 1px;
-    background-color: var(--color-primary-stroke);
+    background-color: var(--color-primary-hairline);
 }
 
 .bottom-left {

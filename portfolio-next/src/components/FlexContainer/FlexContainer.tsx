@@ -5,7 +5,7 @@ type FlexContainerProps = {
     flexDirection?: 'flex-row' | 'flex-col'
     width?: 'w-full' | 'w-fit'
     gap?: 'gap-0' | 'gap-12'
-    border?: 'border-primary-stroke' | ''
+    border?: 'border-primary-hairline' | 'border-primary-stroke' | ''
     className?: string
 }
 
@@ -16,7 +16,7 @@ export const FlexContainer = ({
     flexDirection = 'flex-row',
     width = 'w-full',
     gap = 'gap-0',
-    border = 'border-primary-stroke',
+    border = 'border-primary-hairline',
     className = '',
 }: FlexContainerProps) => {
     return (
