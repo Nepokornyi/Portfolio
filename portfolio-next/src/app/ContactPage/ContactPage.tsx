@@ -40,7 +40,12 @@ export const ContactPage = () => {
                     </FlexContainer>
                 </FlexContainer>
 
-                <FlexContainer>
+                <FlexContainer className="relative items-center justify-center">
+                    <Glow
+                        color="rgba(7, 117, 189, 0.4)"
+                        blur="blur-[120px]"
+                        className="inset-0"
+                    />
                     <CodeBlock />
                 </FlexContainer>
             </FlexContainer>

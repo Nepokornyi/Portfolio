@@ -2,6 +2,7 @@ import React from 'react'
 import { Card } from '@/components/Card/Card'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
+import { Glow } from '@/components/Glow/Glow'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 
 const experienceData = [
@@ -47,8 +48,13 @@ export const ExperiencePage = () => {
             >
                 <FlexContainer
                     flexDirection="flex-col"
-                    className="justify-evenly h-full py-10 gap-6"
+                    className="justify-evenly h-full py-10 gap-6 relative"
                 >
+                    <Glow
+                        color="rgba(7, 117, 189, 0.3)"
+                        blur="blur-[150px]"
+                        className="left-0 top-1/4 h-1/2 w-2/3"
+                    />
                     {experienceData.map((item) => {
                         return (
                             <Card
