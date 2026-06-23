@@ -27,9 +27,6 @@
     --color-primary-dark-blue: #039bb8;
     --color-primary-blue: #29a1f8;
     --color-primary-stroke: #a6eaff;
-    /* faint hairline that matches Figma's 0.2px strokes: a 0.2px opaque line
-       rasterizes to roughly a 1px line at ~20% alpha, so we keep 1px and lower
-       the opacity instead of fighting sub-pixel border widths */
     --color-primary-hairline: rgba(166, 234, 255, 0.22);
     --color-primary-background: #0c0c0c;
     --color-primary-input-background: #171717;
@@ -50,8 +47,6 @@
     min-height: 0;
 }
 
-/* decorative glows / frame lines bleed past the edges by design — clip the
-   horizontal overflow so they never create a sideways scrollbar */
 html,
 body {
     max-width: 100%;
