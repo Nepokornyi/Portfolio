@@ -1,15 +1,14 @@
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
-import Image from 'next/image'
 import React from 'react'
-import portrait from '../../../assets/static/portraitEffect.png'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
 import { Glow } from '@/components/Glow/Glow'
+import { Particles } from '@/components/Particles/Particles'
 
 // https://picsum.photos/1920/1080
 
 export const AboutPicture = () => {
     return (
-        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full row-span-2 relative border border-primary-hairline">
+        <FlexContainer className="min-h-[350px] max-md:min-h-[700px] h-[50vh] lg:h-full row-span-2 relative">
             <Glow
                 color="rgba(76, 161, 174, 0.55)"
                 blur="blur-[110px]"
@@ -23,14 +22,9 @@ export const AboutPicture = () => {
                 variant="default"
                 className="absolute top-1/3 -right-2 lg:-right-3 z-10 bg-primary-highlight"
             />
-            <Image
-                src={portrait}
-                alt="portrait photo"
-                fill
-                style={{
-                    objectFit: 'cover',
-                    objectPosition: 'center',
-                }}
+            <Particles
+                label="Portrait of Vadym made of glowing dots"
+                className="inset-0"
             />
         </FlexContainer>
     )

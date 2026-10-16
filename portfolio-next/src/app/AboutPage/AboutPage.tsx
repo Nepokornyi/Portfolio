@@ -1,4 +1,3 @@
-import React from 'react'
 import { Frame } from '@/components/Frame/Frame'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { AboutDescription } from './components/AboutDescription'

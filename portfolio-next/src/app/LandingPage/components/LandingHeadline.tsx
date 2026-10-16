@@ -11,9 +11,9 @@ export const LandingHeadline = () => {
     return (
         <FlexContainer flexDirection="flex-col" className="relative w-fit">
             <Glow
-                color="rgba(0, 194, 255, 0.45)"
+                color="rgba(0, 194, 255, 0.2)"
                 blur="blur-[90px]"
-                className="-top-10 left-0 h-[140%] w-full"
+                className="hidden lg:block -top-10 left-0 h-[140%] w-[70%]"
             />
             <MainHeadline>Hi, I&apos;m Vadym</MainHeadline>
             <MainHeadline>Web Developer</MainHeadline>
