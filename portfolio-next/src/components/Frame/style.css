@@ -1,3 +1,5 @@
+/* Bracket angles, cos(110deg) offsets and px values are tuned by eye against the Figma design.
+   Change them only with a side-by-side check against .figma-ref exports. */
 .line {
     position: absolute;
     width: 1px;

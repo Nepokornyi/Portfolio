@@ -9,7 +9,7 @@ const experienceData = [
     {
         date: 'Jun 2024 - present',
         position: 'Front-End Developer',
-        company: '{ Skoda Auto }',
+        company: '{ Škoda Auto }',
         bgColor: 'bg-primary-light-green',
         fontColor: 'text-primary-light-green',
     },
