@@ -14,7 +14,7 @@ import {
 import { useHasBeenSeen } from './useHasBeenSeen'
 import { HeadDots, useHeadDots } from './useHeadDots'
 import { MousePosition, useMousePosition } from './useMousePosition'
-import { usePrefersReducedMotion, useShouldAnimate } from './useShouldAnimate'
+import { usePrefersReducedMotion, useShouldAnimate } from '@/app/hooks/useShouldAnimate'
 
 const DESKTOP_QUERY = '(min-width: 1024px)'
 const DESKTOP_DOT_COUNT = 200_000

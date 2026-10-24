@@ -1,6 +1,8 @@
 export const glitchConfig = {
+    playMode: 'manual' as const,
     timing: {
         duration: 1150,
+        iterations: Infinity,
         easing: 'ease-in-out',
     },
     glitchTimeSpan: {

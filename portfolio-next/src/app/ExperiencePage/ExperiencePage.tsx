@@ -4,6 +4,8 @@ import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { Glow } from '@/components/Glow/Glow'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
+import { TechCloud } from './components/TechCloud'
+import { techCloudDesktop, techCloudMobile } from './const'
 
 const experienceData = [
     {
@@ -39,7 +41,7 @@ const experienceData = [
 //* react node for a future scroll text effect
 export const ExperiencePage = () => {
     return (
-        <>
+        <div className="flex flex-col lg:flex-row">
             <Frame
                 header={<SectionHeadline>{'<experience>'}</SectionHeadline>}
                 isHalfWidth={true}
@@ -69,6 +71,10 @@ export const ExperiencePage = () => {
                     })}
                 </FlexContainer>
             </Frame>
-        </>
+            <TechCloud layout={techCloudMobile} className="lg:hidden -mt-8" />
+            <div className="hidden lg:flex lg:w-1/2 items-center">
+                <TechCloud layout={techCloudDesktop} className="max-w-[960px]" />
+            </div>
+        </div>
     )
 }
