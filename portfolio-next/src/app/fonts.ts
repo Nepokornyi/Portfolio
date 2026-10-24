@@ -21,6 +21,12 @@ export const jura = Jura({
     weight: ['400', '700'],
 })
 
+export const interBlack = MontserratAlt({
+    src: '../assets/fonts/Inter/Inter-Black.woff2',
+    display: 'swap',
+    weight: '900',
+})
+
 export const montserratAlt = MontserratAlt({
     src: '../assets/fonts/Montserrat-Alt1/MontserratAlt1-Bold.ttf',
     display: 'swap',
