@@ -14,7 +14,6 @@
     "next": "16.4.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
-    "react-powerglitch": "^1.0.3",
     "three": "^0.186.1"
   },
   "devDependencies": {
