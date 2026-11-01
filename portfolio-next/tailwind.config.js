@@ -41,6 +41,17 @@ module.exports = {
                     red: 'var(--color-secondary-red)',
                 },
             },
+            keyframes: {
+                blink: { '50%': { opacity: '0' } },
+                'fade-in-up': {
+                    from: { opacity: '0', transform: 'translateY(0.5em)' },
+                    to: { opacity: '1', transform: 'none' },
+                },
+            },
+            animation: {
+                blink: 'blink 1s step-end infinite',
+                'fade-in-up': 'fade-in-up 400ms ease-out',
+            },
         },
     },
     plugins: [rotateX],

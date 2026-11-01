@@ -1,5 +1,5 @@
+import { LiveCodeDemo } from '@/app/ContactPage/components/LiveCodeDemo/LiveCodeDemo'
 import { Button } from '@/components/Button/Button'
-import { CodeBlock } from '@/components/CodeEditor/CodeEditor'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { Glow } from '@/components/Glow/Glow'
@@ -8,7 +8,6 @@ import { SocialIcons } from '@/components/SocialIcons/SocialIcons'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { Textarea } from '@/components/Textarea/Textarea'
 import React from 'react'
-// import { CodeEditor } from '@/components/CodeEditor/CodeEditor'
 
 export const ContactPage = () => {
     return (
@@ -42,13 +41,13 @@ export const ContactPage = () => {
                     </FlexContainer>
                 </FlexContainer>
 
-                <FlexContainer className="relative items-center justify-center">
+                <FlexContainer className="relative hidden items-center justify-center lg:flex">
                     <Glow
                         color="rgba(7, 117, 189, 0.4)"
                         blur="blur-[120px]"
                         className="inset-0"
                     />
-                    <CodeBlock />
+                    <LiveCodeDemo />
                 </FlexContainer>
             </FlexContainer>
         </Frame>
