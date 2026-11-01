@@ -21,7 +21,7 @@
     -webkit-text-size-adjust: 100%;
 
     --color-primary-highlight: #ffc700;
-    --color-primary-button: #ffd600;
+    --color-primary-button: var(--color-primary-stroke);
     --color-primary-light-green: #40c8a5;
     --color-primary-green: #40c8c8;
     --color-primary-dark-blue: #039bb8;
