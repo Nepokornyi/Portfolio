@@ -7,6 +7,7 @@ type CardProps = {
     date: string
     position: string
     company: string
+    clients?: string[]
     link?: string
     rectangleBackground: string
     color: string
@@ -16,6 +17,7 @@ export const Card = ({
     date,
     position,
     company,
+    clients,
     color,
     link,
     rectangleBackground,
@@ -27,6 +29,18 @@ export const Card = ({
                 <Text className="lg:text-sm xl:text-base">{date}</Text>
                 <Text className="xl:text-2xl">{position}</Text>
                 <Text className="font-bold text-xl xl:text-2xl">{company}</Text>
+                {clients && clients.length > 0 && (
+                    <Text className="font-light lg:text-sm xl:text-base">
+                        {clients.map((client, index) => (
+                            <React.Fragment key={client}>
+                                {index > 0 && '\u00a0· '}
+                                <span className="whitespace-nowrap">
+                                    {client}
+                                </span>
+                            </React.Fragment>
+                        ))}
+                    </Text>
+                )}
                 <Text className={`cursor-pointer mt-2.5 w-fit ${color}`}>
                     Read more ↓
                 </Text>

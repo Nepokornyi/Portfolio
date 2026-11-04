@@ -9,6 +9,7 @@ type FrameProps = {
     removeRightPadding?: boolean
     hideHeaderOnWideScreen?: boolean
     contentGridLayout?: string
+    isContentFramed?: boolean
 }
 
 export const Frame = ({
@@ -18,6 +19,7 @@ export const Frame = ({
     removeRightPadding = false,
     hideHeaderOnWideScreen = true,
     contentGridLayout = '',
+    isContentFramed = true,
 }: FrameProps) => {
     const shouldRenderHeader = !!header
 
@@ -40,12 +42,16 @@ export const Frame = ({
                         {header}
                     </FrameContainer>
                 )}
-                <FrameContainer
-                    className={`flex-grow ${contentGridLayout}`}
-                    isHalfWidth={isHalfWidth}
-                >
-                    {children}
-                </FrameContainer>
+                {isContentFramed ? (
+                    <FrameContainer
+                        className={`flex-grow ${contentGridLayout}`}
+                        isHalfWidth={isHalfWidth}
+                    >
+                        {children}
+                    </FrameContainer>
+                ) : (
+                    children
+                )}
             </section>
         </>
     )

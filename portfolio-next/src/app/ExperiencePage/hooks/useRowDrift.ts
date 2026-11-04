@@ -4,7 +4,7 @@ import {
     useShouldAnimate,
 } from '@/app/hooks/useShouldAnimate'
 
-const ROW_DURATIONS_MS = [11000, 9000, 13000, 10000, 12000, 9500, 14000]
+const ROW_DURATIONS_MS = [11000, 9000, 13000, 10000, 12000, 9500, 8000]
 const ROW_PHASE_STEP_MS = 1700
 
 const MAX_PLAYBACK_RATE = 3

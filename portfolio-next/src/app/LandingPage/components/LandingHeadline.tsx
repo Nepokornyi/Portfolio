@@ -6,6 +6,7 @@ import {
 } from '@/components/Text/components/TextVariants'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
+import { heroSubLines, heroTitle } from '@/app/LandingPage/const'
 
 export const LandingHeadline = () => {
     return (
@@ -16,19 +17,21 @@ export const LandingHeadline = () => {
                 className="hidden lg:block -top-10 left-0 h-[140%] w-[70%]"
             />
             <MainHeadline>Hi, I&apos;m Vadym</MainHeadline>
-            <MainHeadline>Web Developer</MainHeadline>
+            <MainHeadline>{heroTitle}</MainHeadline>
             <FlexContainer className="mt-5 relative" flexDirection="flex-col">
                 <Text
                     className={'absolute top-0 left-0 text-4xl tracking-widest'}
                 >
                     {'//'}
                 </Text>
-                <SubHeadline className="mt-4 sm:mt-0 pl-12">
-                    Front-end developer, making things happen from 2020.
-                </SubHeadline>
-                <SubHeadline className="pl-12">
-                    Currently working my magic at Škoda Auto.
-                </SubHeadline>
+                {heroSubLines.map((line, index) => (
+                    <SubHeadline
+                        key={line}
+                        className={`pl-12 text-balance ${index === 0 ? 'mt-4 sm:mt-0' : ''}`}
+                    >
+                        {line}
+                    </SubHeadline>
+                ))}
             </FlexContainer>
         </FlexContainer>
     )

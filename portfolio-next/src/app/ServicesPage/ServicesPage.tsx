@@ -4,6 +4,7 @@ import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { Text } from '@/components/Text/Text'
 import React from 'react'
 import { ServiceItem } from './components/ServiceItem'
+import { ServicePackCard } from './components/ServicePackCard'
 import { Button } from '@/components/Button/Button'
 import { servicesContent } from './const'
 import { jura, mavenPro } from '@/app/fonts'
@@ -24,83 +25,101 @@ export const ServicesPage = () => {
     }
 
     return (
-        <Frame header={<SectionHeadline>{'<services>'}</SectionHeadline>}>
-            <SectionHeadline className="hidden lg:block">
-                {'<services>'}
-            </SectionHeadline>
-
-            <FlexContainer className="flex-row w-full">
-                {servicesContent.map((service) => (
-                    <FlexContainer
-                        key={`title-${service.name}`}
-                        className=" border-y border-r"
-                    >
-                        <Text
-                            className={`${mavenPro.className} text-3xl lg:text-4xl font-bold my-5 text-${service.color}`}
-                        >
-                            {service.title}
-                        </Text>
-                    </FlexContainer>
-                ))}
-            </FlexContainer>
-
-            {itemRows.map((row, rowIndex) => (
-                <FlexContainer
-                    key={`row-${rowIndex}`}
-                    className="flex-row w-full"
+        <>
+            <div className="lg:hidden">
+                <Frame
+                    header={<SectionHeadline>{'<services>'}</SectionHeadline>}
+                    isContentFramed={false}
                 >
-                    {row.map((service) => (
-                        <FlexContainer
-                            key={`item-${service.key}`}
-                            className=" border-b border-r py-3"
-                        >
-                            <ServiceItem
-                                description={service.content.description}
-                                price={service.content.price}
+                    <div className="w-full flex flex-col gap-12">
+                        {servicesContent.map((service) => (
+                            <ServicePackCard
+                                key={service.name}
+                                service={service}
                             />
+                        ))}
+                    </div>
+                </Frame>
+            </div>
+
+            <div className="hidden lg:block">
+                <Frame>
+                    <SectionHeadline>{'<services>'}</SectionHeadline>
+
+                    <FlexContainer className="flex-row w-full">
+                        {servicesContent.map((service) => (
+                            <FlexContainer
+                                key={`title-${service.name}`}
+                                className=" border-y border-r"
+                            >
+                                <Text
+                                    className={`${mavenPro.className} text-3xl lg:text-4xl font-bold my-5 text-${service.color}`}
+                                >
+                                    {service.title}
+                                </Text>
+                            </FlexContainer>
+                        ))}
+                    </FlexContainer>
+
+                    {itemRows.map((row, rowIndex) => (
+                        <FlexContainer
+                            key={`row-${rowIndex}`}
+                            className="flex-row w-full"
+                        >
+                            {row.map((service) => (
+                                <FlexContainer
+                                    key={`item-${service.key}`}
+                                    className=" border-b border-r py-3"
+                                >
+                                    <ServiceItem
+                                        description={service.content.description}
+                                        price={service.content.price}
+                                    />
+                                </FlexContainer>
+                            ))}
                         </FlexContainer>
                     ))}
-                </FlexContainer>
-            ))}
 
-            <FlexContainer className="flex-row w-full">
-                {servicesContent.map((service) => (
-                    <FlexContainer
-                        key={`total-${service.name}`}
-                        className=" border-b border-r py-5"
-                    >
-                        <Text className={`${jura.className} font-bold`}>
-                            Total: ${service.totalPrice}
-                        </Text>
+                    <FlexContainer className="flex-row w-full">
+                        {servicesContent.map((service) => (
+                            <FlexContainer
+                                key={`total-${service.name}`}
+                                className=" border-b border-r py-5"
+                            >
+                                <Text className={`${jura.className} font-bold`}>
+                                    Total: ${service.totalPrice}
+                                </Text>
+                            </FlexContainer>
+                        ))}
                     </FlexContainer>
-                ))}
-            </FlexContainer>
 
-            <FlexContainer className="flex-row w-full">
-                {servicesContent.map((service) => (
-                    <FlexContainer
-                        key={`motivation-${service.name}`}
-                        className=" border-b border-r py-5"
-                    >
-                        <Text className={`text-${service.color}`}>
-                            {service.motivation}
-                        </Text>
+                    <FlexContainer className="flex-row w-full">
+                        {servicesContent.map((service) => (
+                            <FlexContainer
+                                key={`motivation-${service.name}`}
+                                className=" border-b border-r py-5"
+                            >
+                                <Text className={`text-${service.color}`}>
+                                    {service.motivation}
+                                </Text>
+                            </FlexContainer>
+                        ))}
                     </FlexContainer>
-                ))}
-            </FlexContainer>
 
-            <FlexContainer className="flex-row w-full">
-                {servicesContent.map((service) => (
-                    <FlexContainer
-                        key={`button-${service.name}`}
-                        className=" border-r py-5 justify-center"
-                    >
-                        <FlexContainer width="w-fit" className="relative">
-                            <Button color={service.button}>order</Button>
-                        </FlexContainer>
+                    <FlexContainer className="flex-row w-full">
+                        {servicesContent.map((service) => (
+                            <FlexContainer
+                                key={`button-${service.name}`}
+                                className=" border-r py-5 justify-center"
+                            >
+                                <FlexContainer width="w-fit" className="relative">
+                                    <Button color={service.button}>order</Button>
+                                </FlexContainer>
+                            </FlexContainer>
+                        ))}
                     </FlexContainer>
-                ))}
-            </FlexContainer>
-        </Frame>
+                </Frame>
+            </div>
+        </>
     )
 }

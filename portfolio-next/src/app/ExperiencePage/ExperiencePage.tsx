@@ -5,38 +5,7 @@ import { Frame } from '@/components/Frame/Frame'
 import { Glow } from '@/components/Glow/Glow'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { TechCloud } from './components/TechCloud'
-import { techCloudDesktop, techCloudMobile } from './const'
-
-const experienceData = [
-    {
-        date: 'Jun 2024 - present',
-        position: 'Front-End Developer',
-        company: '{ Škoda Auto }',
-        bgColor: 'bg-primary-light-green',
-        fontColor: 'text-primary-light-green',
-    },
-    {
-        date: 'Oct 2023 - Jun 2024',
-        position: 'Front-End Developer',
-        company: '{ Meonzi }',
-        bgColor: 'bg-primary-green',
-        fontColor: 'text-primary-green',
-    },
-    {
-        date: 'Apr 2023 - Oct 2023',
-        position: 'Front-End Developer',
-        company: '{ Škoda Auto }',
-        bgColor: 'bg-primary-dark-blue',
-        fontColor: 'text-primary-dark-blue',
-    },
-    {
-        date: 'Jun 2022 - Apr 2023',
-        position: 'Front-End Developer',
-        company: '{ Hello Bank }',
-        bgColor: 'bg-primary-blue',
-        fontColor: 'text-primary-blue',
-    },
-]
+import { experienceData, techCloudDesktop, techCloudMobile } from './const'
 
 //* react node for a future scroll text effect
 export const ExperiencePage = () => {
@@ -64,6 +33,7 @@ export const ExperiencePage = () => {
                                 date={item.date}
                                 position={item.position}
                                 company={item.company}
+                                clients={item.clients}
                                 rectangleBackground={item.bgColor}
                                 color={item.fontColor}
                             />
