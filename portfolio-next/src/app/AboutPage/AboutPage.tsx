@@ -6,6 +6,7 @@ import { AboutPicture } from './components/AboutPicture'
 export const AboutPage = () => {
     return (
         <Frame
+            id="about"
             header={<SectionHeadline>{'<about me>'}</SectionHeadline>}
             contentGridLayout="lg:grid-cols-2 lg:grid-flow-col"
         >

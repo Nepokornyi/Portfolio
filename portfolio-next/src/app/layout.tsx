@@ -6,7 +6,7 @@ import { montserrat } from './fonts'
 export const metadata: Metadata = {
     title: 'Vadym – Agentic Engineer',
     description:
-        'Renaissance engineer: front-end, full-stack, and AI. I build complete products with AI agents, from interface to backend.',
+        'Front-end, full-stack, and AI. I build complete products with AI agents, from interface to backend.',
 }
 
 export default function RootLayout({

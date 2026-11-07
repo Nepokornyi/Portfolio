@@ -10,7 +10,7 @@ import { experienceData, techCloudDesktop, techCloudMobile } from './const'
 //* react node for a future scroll text effect
 export const ExperiencePage = () => {
     return (
-        <div className="flex flex-col lg:flex-row">
+        <div id="experience" className="flex flex-col lg:flex-row">
             <Frame
                 header={<SectionHeadline>{'<experience>'}</SectionHeadline>}
                 isHalfWidth={true}

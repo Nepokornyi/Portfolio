@@ -11,6 +11,7 @@ import { Text } from '@/components/Text/Text'
 export const WorkPage = () => {
     return (
         <Frame
+            id="work"
             header={<SectionHeadline>{'<work>'}</SectionHeadline>}
             contentGridLayout="lg:grid-cols-2"
         >

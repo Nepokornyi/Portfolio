@@ -24,8 +24,9 @@ export const ServicesPage = () => {
         itemRows.push(row)
     }
 
+    // One id for both layouts: an id on each Frame would point to the hidden one on desktop
     return (
-        <>
+        <div id="services">
             <div className="lg:hidden">
                 <Frame
                     header={<SectionHeadline>{'<services>'}</SectionHeadline>}
@@ -120,6 +121,6 @@ export const ServicesPage = () => {
                     </FlexContainer>
                 </Frame>
             </div>
-        </>
+        </div>
     )
 }

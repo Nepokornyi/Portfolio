@@ -11,7 +11,10 @@ import React from 'react'
 
 export const ContactPage = () => {
     return (
-        <Frame header={<SectionHeadline>{'<contact me>'}</SectionHeadline>}>
+        <Frame
+            id="contact"
+            header={<SectionHeadline>{'<contact me>'}</SectionHeadline>}
+        >
             <SectionHeadline className="hidden lg:block">
                 {'<contact me>'}
             </SectionHeadline>

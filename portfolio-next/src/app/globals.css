@@ -53,6 +53,12 @@ body {
     overflow-x: clip;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+}
+
 /* full-page grain to match the design's noise/texture overlay */
 .noise-overlay {
     position: fixed;

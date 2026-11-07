@@ -4,6 +4,7 @@ import { FrameContainer } from './components/FrameContainer'
 
 type FrameProps = {
     children: ReactNode
+    id?: string
     header?: ReactNode
     isHalfWidth?: boolean
     removeRightPadding?: boolean
@@ -14,6 +15,7 @@ type FrameProps = {
 
 export const Frame = ({
     children,
+    id,
     header,
     isHalfWidth = false,
     removeRightPadding = false,
@@ -26,6 +28,7 @@ export const Frame = ({
     return (
         <>
             <section
+                id={id}
                 className={`w-full ${
                     isHalfWidth ? 'lg:w-1/2 items-end' : 'items-center'
                 } min-h-screen flex flex-col justify-center relative py-12 lg:py-24 pl-10 lg:pl-28 pr-10 ${
