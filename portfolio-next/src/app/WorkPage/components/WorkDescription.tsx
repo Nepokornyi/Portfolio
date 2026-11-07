@@ -17,11 +17,8 @@ export const WorkDescription = ({ project }: WorkDescriptionProps) => {
                 <Text className="text-lg lg:text-4xl font-bold my-6 lg:my-8">
                     {project.title}
                 </Text>
-                <Text className="text-sm md:text-base min-[1700px]:text-xl">
+                <Text className="text-sm md:text-base min-[1700px]:text-xl mb-6 lg:mb-8">
                     {project.description}
-                </Text>
-                <Text className="text-sm md:text-base lg:text-xl my-6 lg:my-8 text-primary-dark-blue">
-                    Read more →
                 </Text>
             </FlexContainer>
 
