@@ -21,7 +21,7 @@ export const experienceData: ExperienceItem[] = [
         date: 'Oct 2023 - Apr 2025',
         position: 'Software Engineer',
         company: '{ Meonzi }',
-        clients: ['Partners Bank', 'Škoda Auto', 'Kooperativa'],
+        clients: ['Partners Banka', 'Škoda Auto', 'Kooperativa'],
         bgColor: 'bg-primary-dark-blue',
         fontColor: 'text-primary-dark-blue',
     },
