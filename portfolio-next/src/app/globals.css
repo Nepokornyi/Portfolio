@@ -53,6 +53,11 @@ body {
     overflow-x: clip;
 }
 
+/* the page behind a modal dialog does not scroll */
+html:has(dialog[open]) {
+    overflow: hidden;
+}
+
 @media (prefers-reduced-motion: no-preference) {
     html {
         scroll-behavior: smooth;

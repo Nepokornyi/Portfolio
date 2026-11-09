@@ -47,10 +47,17 @@ module.exports = {
                     from: { opacity: '0', transform: 'translateY(0.5em)' },
                     to: { opacity: '1', transform: 'none' },
                 },
+                flash: {
+                    from: {
+                        backgroundColor:
+                            'color-mix(in srgb, var(--color-primary-light-green) 25%, transparent)',
+                    },
+                },
             },
             animation: {
                 blink: 'blink 1s step-end infinite',
                 'fade-in-up': 'fade-in-up 400ms ease-out',
+                'slide-in-flash': 'fade-in-up 400ms ease-out, flash 1200ms ease-out',
             },
         },
     },

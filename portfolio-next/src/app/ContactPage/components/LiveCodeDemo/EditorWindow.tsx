@@ -1,5 +1,5 @@
 import { CodeToken, CodeTokenKind } from '@/app/ContactPage/types'
-import { AppWindow } from './AppWindow'
+import { AppWindow } from '@/components/AppWindow/AppWindow'
 
 const tokenColors: Record<CodeTokenKind, string> = {
     plain: 'text-primary-text',

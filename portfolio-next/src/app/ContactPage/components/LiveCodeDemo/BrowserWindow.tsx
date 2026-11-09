@@ -1,5 +1,5 @@
 import { DemoFormField } from '@/app/ContactPage/types'
-import { AppWindow } from './AppWindow'
+import { AppWindow } from '@/components/AppWindow/AppWindow'
 
 const MiniField = ({ component, props }: DemoFormField) => {
     if (component === 'Button')

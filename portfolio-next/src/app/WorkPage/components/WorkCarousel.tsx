@@ -1,8 +1,5 @@
-'use client'
-
-import React, { ReactNode, useRef } from 'react'
+import { ReactNode, RefObject } from 'react'
 import { Glow } from '@/components/Glow/Glow'
-import { useActiveSlide } from '../hooks/useActiveSlide'
 
 type CarouselSlide = {
     label: string
@@ -11,12 +8,17 @@ type CarouselSlide = {
 
 type WorkCarouselProps = {
     slides: CarouselSlide[]
+    trackRef: RefObject<HTMLDivElement | null>
+    activeIndex: number
+    onSelect: (index: number) => void
 }
 
-export const WorkCarousel = ({ slides }: WorkCarouselProps) => {
-    const trackRef = useRef<HTMLDivElement>(null)
-    const { activeIndex, scrollToSlide } = useActiveSlide(trackRef)
-
+export const WorkCarousel = ({
+    slides,
+    trackRef,
+    activeIndex,
+    onSelect,
+}: WorkCarouselProps) => {
     return (
         <div className="relative lg:col-span-2 h-full">
             <Glow
@@ -55,7 +57,7 @@ export const WorkCarousel = ({ slides }: WorkCarouselProps) => {
                             type="button"
                             aria-label={`Show ${label}`}
                             aria-current={isActive}
-                            onClick={() => scrollToSlide(index)}
+                            onClick={() => onSelect(index)}
                             className="p-1.5 lg:p-2.5"
                         >
                             <span

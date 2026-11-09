@@ -1,5 +1,5 @@
 'use client'
-import React, { ReactNode } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
 
 const colorVariants = {
     default: ['bg-primary-button', 'border-primary-button'],
@@ -10,19 +10,19 @@ const colorVariants = {
 
 export type ButtonColorVariants = keyof typeof colorVariants
 
-type ButtonProps = {
-    children: ReactNode
+type ButtonProps = Omit<ComponentPropsWithoutRef<'button'>, 'color'> & {
     color?: ButtonColorVariants
-    className?: string
 }
 
 export const Button = ({
     children,
     color = 'default',
     className = '',
+    ...buttonProps
 }: ButtonProps) => {
     return (
         <button
+            {...buttonProps}
             className={`w-[110px] lg:w-[180px] py-2 lg:py-3 font-bold text-xs lg:text-xl italic group text-black ${colorVariants[color][0]} ${className} `}
         >
             <span
