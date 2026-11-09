@@ -1,8 +1,12 @@
 'use client'
 
 import { useRef } from 'react'
-import { demoFormFields } from '@/app/ContactPage/const'
-import { useTypingLoop } from '@/app/ContactPage/hooks/useTypingLoop'
+import { useStepLoop } from '@/app/hooks/useStepLoop'
+import {
+    demoFormFields,
+    RESTART_DELAY_MS,
+    TYPE_DELAY_MS,
+} from '@/app/ContactPage/const'
 import {
     buildCodeTokens,
     getTypedFields,
@@ -16,7 +20,12 @@ const codeLength = codeTokens.reduce((sum, token) => sum + token.text.length, 0)
 
 export const LiveCodeDemo = () => {
     const containerRef = useRef<HTMLDivElement>(null)
-    const typedCount = useTypingLoop(containerRef, codeLength)
+    const { step: typedCount } = useStepLoop(
+        containerRef,
+        codeLength,
+        TYPE_DELAY_MS,
+        RESTART_DELAY_MS,
+    )
     const typedTokens = sliceTokens(codeTokens, typedCount)
     const typedFields = getTypedFields(demoFormFields, typedTokens)
 

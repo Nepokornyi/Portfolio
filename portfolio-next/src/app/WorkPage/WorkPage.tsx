@@ -1,14 +1,13 @@
-import React from 'react'
-import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
 import { Frame } from '@/components/Frame/Frame'
 import { SectionHeadline } from '@/components/Text/components/TextVariants'
 import { Text } from '@/components/Text/Text'
 
 import { workProjects } from './const'
-import { WorkCarousel } from './components/WorkCarousel'
 import { WorkDescription } from './components/WorkDescription'
+import { WorkDetails } from './components/WorkDetails'
 import { WorkImage } from './components/WorkImage'
+import { WorkShowcase } from './components/WorkShowcase'
 
 export const WorkPage = () => {
     return (
@@ -27,10 +26,10 @@ export const WorkPage = () => {
                 </Text>
             </FlexContainer>
 
-            <WorkCarousel
-                slides={workProjects.map((project) => ({
-                    label: project.title,
-                    content: (
+            <WorkShowcase
+                projects={workProjects.map((project) => ({
+                    title: project.title,
+                    slide: (
                         <div className="grid lg:grid-cols-2 h-full">
                             <WorkImage
                                 image={project.image}
@@ -39,14 +38,9 @@ export const WorkPage = () => {
                             <WorkDescription project={project} />
                         </div>
                     ),
+                    details: <WorkDetails project={project} />,
                 }))}
             />
-
-            <FlexContainer className="lg:col-span-2 justify-center my-12 lg:my-20">
-                <FlexContainer width="w-fit" className="relative ">
-                    <Button>see more</Button>
-                </FlexContainer>
-            </FlexContainer>
         </Frame>
     )
 }
