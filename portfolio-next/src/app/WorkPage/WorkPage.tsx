@@ -20,12 +20,6 @@ export const WorkPage = () => {
                 <Text className="lg:text-4xl my-6 lg:my-8">{'<work>'}</Text>
             </FlexContainer>
 
-            <FlexContainer className="h-full items-center border-b lg:border-l">
-                <Text className="text-lg lg:text-4xl lg:mr-0 my-6 lg:my-8 font-bold text-primary-dark-blue">
-                    Featured Project
-                </Text>
-            </FlexContainer>
-
             <WorkShowcase
                 projects={workProjects.map((project) => ({
                     title: project.title,

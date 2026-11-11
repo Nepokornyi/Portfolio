@@ -3,8 +3,10 @@
 import { ReactNode, useRef, useState } from 'react'
 import { Button } from '@/components/Button/Button'
 import { FlexContainer } from '@/components/FlexContainer/FlexContainer'
+import { Text } from '@/components/Text/Text'
 import { useActiveSlide } from '../hooks/useActiveSlide'
 import { WorkCarousel } from './WorkCarousel'
+import { WorkCarouselControls } from './WorkCarouselControls'
 import { WorkDialog } from './WorkDialog'
 
 type ShowcaseProject = {
@@ -25,6 +27,17 @@ export const WorkShowcase = ({ projects }: WorkShowcaseProps) => {
 
     return (
         <>
+            <FlexContainer className="h-full items-center justify-between border-b lg:border-l">
+                <Text className="text-lg lg:text-4xl lg:mr-0 my-6 lg:my-8 font-bold text-primary-dark-blue">
+                    Featured Projects
+                </Text>
+                <WorkCarouselControls
+                    activeIndex={activeIndex}
+                    slideCount={projects.length}
+                    onSelect={scrollToSlide}
+                />
+            </FlexContainer>
+
             <WorkCarousel
                 slides={projects.map(({ title, slide }) => ({
                     label: title,
