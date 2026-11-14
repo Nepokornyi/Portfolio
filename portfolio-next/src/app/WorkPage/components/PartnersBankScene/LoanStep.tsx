@@ -1,5 +1,5 @@
+import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { LOAN } from './const'
-import { formatCrowns } from './lib/format'
 import { LoanState } from './types'
 
 const LoanFact = ({ label, value }: { label: string; value: string }) => (

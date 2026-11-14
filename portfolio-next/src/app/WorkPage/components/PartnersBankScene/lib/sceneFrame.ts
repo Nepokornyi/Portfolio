@@ -1,3 +1,4 @@
+import { formatCrowns } from '@/app/WorkPage/lib/format'
 import {
     APPLICANT_NAME,
     CHARS_PER_TICK,
@@ -24,7 +25,6 @@ import {
     StepId,
     SummaryRow,
 } from '../types'
-import { formatCrowns } from './format'
 
 const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
