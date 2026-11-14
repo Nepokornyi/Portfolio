@@ -1,4 +1,4 @@
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
 
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
@@ -107,9 +107,7 @@ export type SceneFrame = {
     cursor: { target: CursorTarget; isClicking: boolean }
 }
 
-export type SceneLayout = {
-    aspect: string
-    fontSize: string
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     // The padding of the dashboard and the gaps between its parts
     body: string
     // The padding of a panel
@@ -129,6 +127,4 @@ export type SceneLayout = {
     timelinePanel: string
     // On a small screen, the timeline takes the place of the task list after the selection
     timelineReplacesTasks: boolean
-    cursor: Record<CursorTarget, CursorPosition | null>
-    showPointer: boolean
 }

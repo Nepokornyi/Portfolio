@@ -1,4 +1,4 @@
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -54,9 +54,7 @@ export type SceneFrame = {
     cursor: { target: CursorTarget; isClicking: boolean }
 }
 
-export type SceneLayout = {
-    aspect: string
-    fontSize: string
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     // The car preview and the options panel side by side, or the car above the options
     body: string
     preview: string
@@ -64,6 +62,4 @@ export type SceneLayout = {
     // The model options as a list of rows, or as cards in one row
     modelList: string
     modelOption: string
-    cursor: Record<CursorTarget, CursorPosition | null>
-    showPointer: boolean
 }
