@@ -14,9 +14,13 @@ export const ApprovalStep = ({ approval }: ApprovalStepProps) => {
             </span>
         )
 
+    // The checking view and the approved view have different keys, so each mounts when its phase starts and the fade plays
     if (approval.phase === 'checking')
         return (
-            <div className="flex flex-col gap-[0.8em] motion-safe:animate-fade-in-up">
+            <div
+                key="checking"
+                className="flex flex-col gap-[0.8em] motion-safe:animate-fade-in-up"
+            >
                 <span className="text-[0.9em]">We check your application…</span>
                 <div className="h-[0.4em] bg-primary-input-background">
                     <div
@@ -28,7 +32,10 @@ export const ApprovalStep = ({ approval }: ApprovalStepProps) => {
         )
 
     return (
-        <div className="flex h-full flex-col items-center justify-center gap-[1.4em] text-center motion-safe:animate-fade-in-up">
+        <div
+            key="approved"
+            className="flex h-full flex-col items-center justify-center gap-[1.4em] text-center motion-safe:animate-fade-in-up"
+        >
             <span className="flex size-[3.4em] rotate-45 items-center justify-center border border-primary-light-green text-primary-light-green shadow-[0_0_1.6em_var(--color-primary-light-green)]">
                 <SceneCheckIcon className="size-[2em] -rotate-45" />
             </span>
