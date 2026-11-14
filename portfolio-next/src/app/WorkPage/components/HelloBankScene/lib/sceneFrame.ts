@@ -104,14 +104,14 @@ const getInstalmentPanel = (tick: number): InstalmentPanel => {
     if (tick < checkStartedTick)
         return { view: 'calculator', calculator: getCalculator(tick) }
 
-    // The bar is empty when the check starts and full on the last tick before the approval
+    // The bar is empty when the check starts and full on the last tick before the approval.
+    // The check must last two ticks or more, or the division is 0 / 0.
     const lastCheckTick = STORY.approved - 1
     if (tick <= lastCheckTick)
         return {
             view: 'checking',
-            checkProgress: clamp01(
+            checkProgress:
                 (tick - checkStartedTick) / (lastCheckTick - checkStartedTick),
-            ),
         }
 
     return { view: 'approved', plan: getPlan(getTerm(tick)) }

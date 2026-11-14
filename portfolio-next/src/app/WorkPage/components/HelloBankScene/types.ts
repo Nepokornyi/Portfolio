@@ -1,3 +1,5 @@
+import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+
 export type Product = {
     name: string
     // A short line under the name, for example the colour and the memory
@@ -64,4 +66,16 @@ export type SceneFrame = {
     paymentMethodOptions: PaymentMethodOption[]
     panel: InstalmentPanel
     cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+    // The order and the instalment panel side by side, or the order above the panel
+    body: string
+    order: string
+    panel: string
+    // The product as a tall card with a large picture, or as a compact row
+    productCard: string
+    productPicture: string
+    showPaymentLabel: boolean
+    showPaymentNotes: boolean
 }
