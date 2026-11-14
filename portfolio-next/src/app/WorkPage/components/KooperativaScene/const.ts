@@ -1,5 +1,6 @@
 import {
     DashboardRange,
+    SceneLayout,
     Source,
     SourceId,
     Stage,
@@ -30,7 +31,7 @@ export const COUNT_TICKS = 8
 export const BAR_GROW_TICKS = 6
 export const BAR_STAGGER_TICKS = 1
 // The first event of the timeline shows together with the selection of the row. Then the next event
-// shows after each step, and the total one step after the last event: at tick 92, 8 ticks before LOOP_TICKS.
+// shows after each step, and the total one step after the last event.
 export const TIMELINE_STEP_TICKS = 5
 
 export const SOURCES: Record<SourceId, Source> = {
@@ -218,3 +219,59 @@ export const RANGE_OPTIONS = [
     MONTH_RANGE.label,
     'Last 90 days',
 ]
+
+// The cursor positions follow the em sizes of the dashboard and are measured in a browser render.
+// On desktop, the pointer tip (0.27em right of and 0.13em below the position) is beside the text
+// of the target. On mobile, the tap ring is on the centre. If a size changes, measure them again.
+export const DESKTOP_LAYOUT: SceneLayout = {
+    aspect: 'aspect-[3/2]',
+    fontSize: '1.8cqw',
+    body: 'gap-[0.7em] p-[0.9em]',
+    panel: 'px-[0.8em] py-[0.6em]',
+    showSources: true,
+    statIds: ['leadTime', 'reviewTime', 'mergeRequests', 'coverage'],
+    statGrid: 'grid-cols-4 gap-[0.7em]',
+    showStatDetail: true,
+    middle: 'flex-row gap-[0.7em]',
+    tasksPanel: 'w-[42%] shrink-0',
+    taskRows: 4,
+    timeline: 'steps',
+    timelinePanel: 'h-[8.6em]',
+    timelineReplacesTasks: false,
+    cursor: {
+        // In the empty part of the task panel, below the rows
+        idle: { x: 80, y: 63 },
+        // On the arrow of the picker, beside its label
+        rangePicker: { x: 96, y: 11.2 },
+        // To the right of the label "Last 30 days"
+        rangeOption: { x: 95.5, y: 22.9 },
+        // Between the title and the lead time of the top row
+        taskRow: { x: 87.1, y: 41.2 },
+    },
+    showPointer: true,
+}
+
+export const MOBILE_LAYOUT: SceneLayout = {
+    aspect: 'aspect-[3/4]',
+    fontSize: '3.6cqw',
+    body: 'gap-[0.5em] p-[0.6em]',
+    panel: 'px-[0.6em] py-[0.4em]',
+    showSources: false,
+    statIds: ['leadTime', 'reviewTime'],
+    statGrid: 'grid-cols-2 gap-[0.5em]',
+    showStatDetail: false,
+    middle: 'flex-col gap-[0.5em]',
+    // The same height as the timeline, which takes the place of the list
+    tasksPanel: 'h-[12.7em] shrink-0',
+    taskRows: 4,
+    timeline: 'list',
+    timelinePanel: 'h-[12.7em]',
+    timelineReplacesTasks: true,
+    cursor: {
+        idle: null,
+        rangePicker: { x: 84.2, y: 10.9 },
+        rangeOption: { x: 84.2, y: 22.5 },
+        taskRow: { x: 50, y: 72.6 },
+    },
+    showPointer: false,
+}

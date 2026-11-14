@@ -1,3 +1,5 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
 export type Source = {
@@ -103,4 +105,30 @@ export type SceneFrame = {
     // null until the user selects a task
     timeline: TimelineState | null
     cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = {
+    aspect: string
+    fontSize: string
+    // The padding of the dashboard and the gaps between its parts
+    body: string
+    // The padding of a panel
+    panel: string
+    showSources: boolean
+    // The stat tiles that show, in the order of STAT_TILES, and their grid
+    statIds: StatId[]
+    statGrid: string
+    showStatDetail: boolean
+    // The chart and the task list side by side, or the chart above the list
+    middle: string
+    tasksPanel: string
+    taskRows: number
+    // The events in a row of steps, or in a list from top to bottom
+    timeline: 'steps' | 'list'
+    // A fixed height, so the panels around it do not move when the timeline shows
+    timelinePanel: string
+    // On a small screen, the timeline takes the place of the task list after the selection
+    timelineReplacesTasks: boolean
+    cursor: Record<CursorTarget, CursorPosition | null>
+    showPointer: boolean
 }

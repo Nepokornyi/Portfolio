@@ -34,7 +34,7 @@ const isPressed = (tick: number, clickTick: number) =>
     tick >= clickTick && tick < shownAfter(clickTick)
 
 const monthLoadStarted = shownAfter(STORY.rangeOptionClicked)
-const timelineStarted = shownAfter(STORY.taskClicked)
+const taskSelected = shownAfter(STORY.taskClicked)
 
 // The range that the dashboard shows, and the tick at which it started to load
 const getLoadedRange = (tick: number) =>
@@ -110,17 +110,17 @@ const getTasks = (tick: number, range: DashboardRange): TaskRow[] =>
             key: task.key,
             title: task.title,
             leadTime: formatDuration(task.leadTimeHours),
-            isSelected: isSelectedTask && tick >= timelineStarted,
+            isSelected: isSelectedTask && tick >= taskSelected,
             isPressed: isSelectedTask && isPressed(tick, STORY.taskClicked),
         }
     })
 
 const getTimeline = (tick: number): TimelineState | null => {
-    if (tick < timelineStarted) return null
+    if (tick < taskSelected) return null
 
     // The first event shows together with the selection. Then one more event shows after each step.
     const shownEvents =
-        Math.floor((tick - timelineStarted) / TIMELINE_STEP_TICKS) + 1
+        Math.floor((tick - taskSelected) / TIMELINE_STEP_TICKS) + 1
 
     return {
         taskKey: SELECTED_TASK.key,
@@ -147,7 +147,9 @@ const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
     if (tick < leaveFor(STORY.rangePickerClicked)) return 'idle'
     if (tick < leaveFor(STORY.rangeOptionClicked)) return 'rangePicker'
-    if (tick < leaveFor(STORY.taskClicked)) return 'rangeOption'
+    if (tick < monthLoadStarted) return 'rangeOption'
+    // When the menu closes, the pointer moves away, so it does not cover the values that refresh
+    if (tick < leaveFor(STORY.taskClicked)) return 'idle'
     // The cursor rests on the row for one travel time. Then it moves away from the timeline.
     if (tick < STORY.taskClicked + CURSOR_TRAVEL_TICKS) return 'taskRow'
     return 'idle'
