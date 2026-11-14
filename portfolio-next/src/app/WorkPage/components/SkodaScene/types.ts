@@ -1,3 +1,5 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
 export type ModelId = 'fabia' | 'octavia' | 'kodiaq'
@@ -50,4 +52,18 @@ export type SceneFrame = {
     // After "Continue", the summary replaces the options
     isSummaryShown: boolean
     cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = {
+    aspect: string
+    fontSize: string
+    // The car preview and the options panel side by side, or the car above the options
+    body: string
+    preview: string
+    panel: string
+    // The model options as a list of rows, or as cards in one row
+    modelList: string
+    modelOption: string
+    cursor: Record<CursorTarget, CursorPosition | null>
+    showPointer: boolean
 }
