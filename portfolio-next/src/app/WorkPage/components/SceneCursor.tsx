@@ -1,17 +1,18 @@
-import { CursorPositions, SceneFrame } from './types'
+export type CursorPosition = { x: number; y: number }
 
 type SceneCursorProps = {
-    cursor: SceneFrame['cursor']
-    positions: CursorPositions
+    // In percent of the stage. With null, the cursor is hidden.
+    position: CursorPosition | null
+    isClicking: boolean
     showPointer: boolean
 }
 
+// The pointer of a prototype scene. Without the pointer (touch layouts), a click shows as a tap ring.
 export const SceneCursor = ({
-    cursor,
-    positions,
+    position,
+    isClicking,
     showPointer,
 }: SceneCursorProps) => {
-    const position = positions[cursor.target]
     if (!position) return null
 
     return (
@@ -19,14 +20,14 @@ export const SceneCursor = ({
             className="pointer-events-none absolute z-20 motion-safe:transition-[left,top] motion-safe:duration-700 motion-safe:ease-in-out"
             style={{ left: `${position.x}%`, top: `${position.y}%` }}
         >
-            {!showPointer && cursor.isClicking && (
+            {!showPointer && isClicking && (
                 <span className="absolute -left-[0.8em] -top-[0.8em] size-[1.6em] rounded-full bg-white/30 motion-safe:animate-ping" />
             )}
             {showPointer && (
                 <svg
                     viewBox="0 0 24 24"
                     className={`size-[1.6em] transition-transform duration-100 ${
-                        cursor.isClicking ? 'scale-75' : ''
+                        isClicking ? 'scale-75' : ''
                     }`}
                 >
                     <path

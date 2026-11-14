@@ -1,3 +1,5 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
 export type FeedToken = {
     ticker: string
     name: string
@@ -21,16 +23,9 @@ export type Candle = {
 }
 
 export type CursorTarget =
-    | 'idle'
-    | 'frogCard'
-    | 'amountField'
-    | 'tradeButton'
-    | 'sellTab'
+    'idle' | 'frogCard' | 'amountField' | 'tradeButton' | 'sellTab'
 
-export type CursorPositions = Record<
-    CursorTarget,
-    { x: number; y: number } | null
->
+export type CursorPositions = Record<CursorTarget, CursorPosition | null>
 
 export type ChartState = {
     token: FeedToken

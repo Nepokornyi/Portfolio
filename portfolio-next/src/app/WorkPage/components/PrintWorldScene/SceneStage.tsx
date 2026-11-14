@@ -1,7 +1,7 @@
+import { SceneCursor } from '@/app/WorkPage/components/SceneCursor'
 import { ChartWindow } from './ChartWindow'
 import { FeedWindow } from './FeedWindow'
 import { PnlWindow } from './PnlWindow'
-import { SceneCursor } from './SceneCursor'
 import { SceneToast } from './SceneToast'
 import { TradeWindow } from './TradeWindow'
 import { SceneFrame, SceneLayout } from './types'
@@ -37,8 +37,8 @@ export const SceneStage = ({
             )}
             <SceneToast message={frame.toast} className={layout.toast} />
             <SceneCursor
-                cursor={frame.cursor}
-                positions={layout.cursor}
+                position={layout.cursor[frame.cursor.target]}
+                isClicking={frame.cursor.isClicking}
                 showPointer={layout.showPointer}
             />
         </div>
