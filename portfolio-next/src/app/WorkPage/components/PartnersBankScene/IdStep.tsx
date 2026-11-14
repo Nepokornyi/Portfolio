@@ -1,4 +1,4 @@
-import { CheckIcon } from './CheckIcon'
+import { SceneCheckIcon } from '@/app/WorkPage/components/SceneCheckIcon'
 import { APPLICANT_NAME } from './const'
 import { IdentityState } from './types'
 
@@ -90,7 +90,7 @@ export const IdStep = ({ identity }: IdStepProps) => {
                                     : 'border-primary-hairline'
                             }`}
                         >
-                            {isPassed && <CheckIcon className="size-[1em]" />}
+                            {isPassed && <SceneCheckIcon className="size-[1em]" />}
                         </span>
                         {label}
                     </div>

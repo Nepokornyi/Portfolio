@@ -1,4 +1,4 @@
-import { CheckIcon } from './CheckIcon'
+import { SceneCheckIcon } from '@/app/WorkPage/components/SceneCheckIcon'
 import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { formatSurcharge } from './lib/format'
 import { CarModel, Paint } from './types'
@@ -56,7 +56,7 @@ export const ConfigurationSummary = ({
         </div>
 
         <div className="mt-auto flex items-center gap-[0.6em] font-bold text-primary-light-green">
-            <CheckIcon className="size-[1.2em] shrink-0" />
+            <SceneCheckIcon className="size-[1.2em] shrink-0" />
             <span className="text-[0.9em]">Configuration saved</span>
         </div>
     </div>

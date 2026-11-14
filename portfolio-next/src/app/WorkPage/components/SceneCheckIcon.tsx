@@ -1,8 +1,9 @@
-type CheckIconProps = {
+type SceneCheckIconProps = {
     className?: string
 }
 
-export const CheckIcon = ({ className = '' }: CheckIconProps) => (
+// The check mark of a prototype scene. It takes the text color; className sets the size.
+export const SceneCheckIcon = ({ className = '' }: SceneCheckIconProps) => (
     <svg
         viewBox="0 0 24 24"
         aria-hidden
