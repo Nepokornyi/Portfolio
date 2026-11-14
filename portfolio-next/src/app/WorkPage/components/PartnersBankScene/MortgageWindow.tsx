@@ -1,3 +1,4 @@
+import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
 import { ApprovalStep } from './ApprovalStep'
@@ -7,12 +8,7 @@ import { IdStep } from './IdStep'
 import { LoanStep } from './LoanStep'
 import { Stepper } from './Stepper'
 import { SummaryPanel } from './SummaryPanel'
-import {
-    PrimaryButtonState,
-    SceneFrame,
-    SceneLayout,
-    StepContent,
-} from './types'
+import { SceneFrame, SceneLayout, StepContent } from './types'
 
 const StepBody = ({ content }: { content: StepContent }) => {
     switch (content.step) {
@@ -27,25 +23,6 @@ const StepBody = ({ content }: { content: StepContent }) => {
             return <ApprovalStep approval={content.approval} />
     }
 }
-
-const PrimaryButton = ({ button }: { button: PrimaryButtonState }) => (
-    <div
-        className={`relative mb-[0.3em] mr-[0.3em] transition-opacity duration-300 ${
-            button.isEnabled ? '' : 'opacity-40'
-        }`}
-    >
-        <span className="absolute inset-0 translate-x-[0.3em] translate-y-[0.3em] border border-primary-button" />
-        <div
-            className={`relative flex h-[2.2em] items-center justify-center border border-primary-button bg-primary-button px-[1.4em] font-bold italic text-black transition-transform duration-100 ${
-                button.isPressed
-                    ? 'translate-x-[0.2em] translate-y-[0.2em]'
-                    : ''
-            }`}
-        >
-            {button.label}
-        </div>
-    </div>
-)
 
 type MortgageWindowProps = {
     frame: SceneFrame
@@ -104,7 +81,16 @@ export const MortgageWindow = ({
 
                         <div className="flex h-[4.4em] shrink-0 items-center justify-end px-[2em]">
                             {primaryButton && (
-                                <PrimaryButton button={primaryButton} />
+                                <SceneButton
+                                    isPressed={primaryButton.isPressed}
+                                    className={`transition-opacity duration-300 ${
+                                        primaryButton.isEnabled
+                                            ? ''
+                                            : 'opacity-40'
+                                    }`}
+                                >
+                                    {primaryButton.label}
+                                </SceneButton>
                             )}
                         </div>
                     </div>

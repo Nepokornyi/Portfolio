@@ -1,3 +1,4 @@
+import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { SceneWindow } from './SceneWindow'
 import { TradeSide, TradeState } from './types'
 
@@ -49,18 +50,12 @@ export const TradeWindow = ({ trade, className = '' }: TradeWindowProps) => {
                     </span>
                 </div>
 
-                <div className="relative mb-[0.3em] mr-[0.3em]">
-                    <span className="absolute inset-0 translate-x-[0.3em] translate-y-[0.3em] border border-primary-button" />
-                    <div
-                        className={`relative flex h-[2.2em] items-center justify-center border border-primary-button font-bold italic transition-transform duration-100 ${
-                            isBuy
-                                ? 'bg-primary-button text-black'
-                                : 'bg-primary-background text-primary-button'
-                        } ${trade.isSubmitPressed ? 'translate-x-[0.2em] translate-y-[0.2em]' : ''}`}
-                    >
-                        {trade.side} {trade.ticker}
-                    </div>
-                </div>
+                <SceneButton
+                    isPressed={trade.isSubmitPressed}
+                    variant={isBuy ? 'filled' : 'outline'}
+                >
+                    {trade.side} {trade.ticker}
+                </SceneButton>
 
                 <div className="mt-auto flex flex-col gap-[0.3em] border-t border-primary-hairline pt-[0.7em] text-[0.8em] text-white/40">
                     {trade.position ? (
