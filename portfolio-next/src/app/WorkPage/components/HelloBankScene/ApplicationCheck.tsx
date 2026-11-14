@@ -6,7 +6,7 @@ type ApplicationCheckProps = {
 export const ApplicationCheck = ({ progress }: ApplicationCheckProps) => (
     <div className="mt-[0.8em] flex flex-1 flex-col justify-center gap-[0.8em] motion-safe:animate-fade-in-up">
         <span className="text-[0.9em] text-white">
-            We check your application…
+            Hello bank! checks your application…
         </span>
         <div className="h-[0.4em] bg-primary-input-background">
             <div

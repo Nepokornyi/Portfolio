@@ -1,4 +1,7 @@
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type FeedToken = {
     ticker: string
@@ -24,8 +27,6 @@ export type Candle = {
 
 export type CursorTarget =
     'idle' | 'frogCard' | 'amountField' | 'tradeButton' | 'sellTab'
-
-export type CursorPositions = Record<CursorTarget, CursorPosition | null>
 
 export type ChartState = {
     token: FeedToken
@@ -74,17 +75,13 @@ export type SceneFrame = {
     trade: TradeState | null
     closedTrade: ClosedTrade | null
     toast: string | null
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = {
-    aspect: string
-    fontSize: string
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     feed: string
     chart: string
     trade: string
     pnl: string
     toast: string
-    cursor: CursorPositions
-    showPointer: boolean
 }

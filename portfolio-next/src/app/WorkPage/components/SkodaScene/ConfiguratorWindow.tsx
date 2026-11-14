@@ -48,7 +48,7 @@ export const ConfiguratorWindow = ({
             <div
                 className={`flex min-h-0 min-w-0 flex-col border-primary-hairline ${layout.panel}`}
             >
-                {/* The two views have different keys, so the summary mounts as a new element and its fade plays */}
+                {/* The views have explicit keys, so a later change of a root element does not stop the fade */}
                 {frame.isSummaryShown ? (
                     <ConfigurationSummary
                         key="summary"

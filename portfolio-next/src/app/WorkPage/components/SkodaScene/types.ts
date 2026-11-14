@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -51,7 +54,7 @@ export type SceneFrame = {
     isContinuePressed: boolean
     // After "Continue", the summary replaces the options
     isSummaryShown: boolean
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {

@@ -9,13 +9,21 @@ import { OrderItem } from './OrderItem'
 import { PaymentMethods } from './PaymentMethods'
 import { InstalmentPanel, SceneFrame, SceneLayout } from './types'
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-    <span className="shrink-0 text-[0.7em] uppercase tracking-[0.15em] text-white/40">
+const SectionLabel = ({
+    children,
+    className = '',
+}: {
+    children: ReactNode
+    className?: string
+}) => (
+    <span
+        className={`shrink-0 text-[0.7em] uppercase tracking-[0.15em] text-white/40 ${className}`}
+    >
         {children}
     </span>
 )
 
-// The views have different keys, so each view mounts as a new element and its fade plays
+// The views have explicit keys, so a later change of a root element does not stop the fade
 const PanelView = ({ panel }: { panel: InstalmentPanel }) => {
     switch (panel.view) {
         case 'placeholder':
@@ -68,9 +76,10 @@ export const CheckoutWindow = ({
                     pictureClassName={layout.productPicture}
                 />
                 {layout.showPaymentLabel && (
-                    <div className="mt-[1.2em] flex">
-                        <SectionLabel>Payment method</SectionLabel>
-                    </div>
+                    // 1.2em of the column: the margin is in the em of the label text, which is 0.7em
+                    <SectionLabel className="mt-[calc(1.2em/0.7)]">
+                        Payment method
+                    </SectionLabel>
                 )}
                 <PaymentMethods
                     options={frame.paymentMethodOptions}

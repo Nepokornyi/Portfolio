@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
@@ -7,7 +10,7 @@ export type Source = {
     color: string
 }
 
-export type StageId = 'waiting' | 'inProgress' | 'codeReview' | 'testing'
+type StageId = 'waiting' | 'inProgress' | 'codeReview' | 'testing'
 
 export type Stage = {
     id: StageId
@@ -104,14 +107,14 @@ export type SceneFrame = {
     tasks: TaskRow[]
     // null until the user selects a task
     timeline: TimelineState | null
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     // The padding of the dashboard and the gaps between its parts
-    body: string
+    page: string
     // The padding of a panel
-    panel: string
+    panelPadding: string
     showSources: boolean
     // The stat tiles that show, in the order of STAT_TILES, and their grid
     statIds: StatId[]
@@ -120,7 +123,6 @@ export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     // The chart and the task list side by side, or the chart above the list
     middle: string
     tasksPanel: string
-    taskRows: number
     // The events in a row of steps, or in a list from top to bottom
     timeline: 'steps' | 'list'
     // A fixed height, so the panels around it do not move when the timeline shows

@@ -1,7 +1,7 @@
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { DashboardPanel } from './DashboardPanel'
 import { SOURCES } from './const'
-import { TimelineEventState, TimelineState } from './types'
+import { DashboardPanel } from './DashboardPanel'
+import { SceneLayout, TimelineEventState, TimelineState } from './types'
 
 // An event that is not shown yet keeps its space, so the timeline does not move when it shows
 const shownClass = (isShown: boolean) =>
@@ -12,6 +12,7 @@ const MARK_CLASS = 'relative z-10 shrink-0'
 
 // Desktop: the events in a row, with the time between two events on the line that joins them
 const TimelineSteps = ({ events }: { events: TimelineEventState[] }) => (
+    // One column for each of the 6 events of SELECTED_TASK_TIMELINE
     <ol className="grid min-w-0 flex-1 grid-cols-6">
         {events.map(({ label, source, duration, isShown }) => (
             <li
@@ -94,7 +95,7 @@ const TotalLeadTime = ({
 
 type TaskTimelineProps = {
     timeline: TimelineState | null
-    variant: 'steps' | 'list'
+    variant: SceneLayout['timeline']
     // The padding of the panel, from the layout
     className?: string
 }
@@ -118,7 +119,7 @@ export const TaskTimeline = ({
         }
         className={`shrink-0 ${className}`}
     >
-        {/* The two views have different keys, so the events mount as a new element and the fade plays */}
+        {/* The views have explicit keys, so a later change of a root element does not stop the fade */}
         {timeline ? (
             <div
                 key="events"

@@ -1,3 +1,4 @@
+import { clamp01 } from '@/app/WorkPage/lib/clamp01'
 import {
     BAR_GROW_TICKS,
     BAR_STAGGER_TICKS,
@@ -24,8 +25,6 @@ import {
     TimelineState,
 } from '../types'
 import { formatDuration, formatPercent } from './format'
-
-const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
 // The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS

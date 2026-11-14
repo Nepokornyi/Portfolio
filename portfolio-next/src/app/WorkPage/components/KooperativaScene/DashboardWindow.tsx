@@ -21,7 +21,7 @@ export const DashboardWindow = ({
         <TaskTimeline
             timeline={frame.timeline}
             variant={layout.timeline}
-            className={`${layout.timelinePanel} ${layout.panel}`}
+            className={`${layout.timelinePanel} ${layout.panelPadding}`}
         />
     )
     const isTimelineInTaskPlace =
@@ -34,7 +34,7 @@ export const DashboardWindow = ({
             cursor={frame.cursor}
             className={className}
         >
-            <div className={`flex h-full flex-col ${layout.body}`}>
+            <div className={`flex h-full flex-col ${layout.page}`}>
                 <DashboardHeader
                     picker={frame.rangePicker}
                     showSources={layout.showSources}
@@ -49,15 +49,15 @@ export const DashboardWindow = ({
                 <div className={`flex min-h-0 flex-1 ${layout.middle}`}>
                     <StageChart
                         bars={frame.bars}
-                        className={`flex-1 ${layout.panel}`}
+                        className={`flex-1 ${layout.panelPadding}`}
                     />
                     {isTimelineInTaskPlace ? (
                         timelinePanel
                     ) : (
                         <SlowestTasks
-                            tasks={frame.tasks.slice(0, layout.taskRows)}
+                            tasks={frame.tasks}
                             range={frame.rangePicker.range}
-                            className={`${layout.tasksPanel} ${layout.panel}`}
+                            className={`${layout.tasksPanel} ${layout.panelPadding}`}
                         />
                     )}
                 </div>

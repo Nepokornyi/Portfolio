@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
 
@@ -59,7 +62,7 @@ export type SceneFrame = {
     primaryButton: PrimaryButtonState | null
     summary: SummaryRow[]
     isApproved: boolean
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {

@@ -1,3 +1,4 @@
+import { clamp01 } from '@/app/WorkPage/lib/clamp01'
 import {
     CURSOR_TRAVEL_TICKS,
     MODELS,
@@ -7,8 +8,6 @@ import {
     TOTAL_COUNT_TICKS,
 } from '../const'
 import { CarModel, CursorTarget, Paint, SceneFrame } from '../types'
-
-const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
 // The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS

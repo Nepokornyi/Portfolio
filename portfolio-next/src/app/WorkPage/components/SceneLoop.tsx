@@ -37,6 +37,8 @@ export const SceneLoop = <Frame, Layout>({
             aria-label={label}
             className="w-full"
         >
+            {/* The desktop limit keeps a 3:2 stage inside the height of the size container (the scene cell in WorkDetails).
+                It assumes the 3:2 aspect that each desktop layout sets. */}
             <Stage
                 key={`desktop-${loop}`}
                 frame={frame}
