@@ -1,4 +1,4 @@
-import { SceneCursor } from '@/app/WorkPage/components/SceneCursor'
+import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
 import { ApprovalStep } from './ApprovalStep'
 import { STEPS } from './const'
@@ -62,66 +62,62 @@ export const MortgageWindow = ({
     const title = STEPS.find((step) => step.id === content.step)?.title
 
     return (
-        <div className={className} style={{ containerType: 'inline-size' }}>
-            <div
-                className={`relative ${layout.aspect}`}
-                style={{ fontSize: layout.fontSize }}
-            >
-                <AppWindow
-                    className="absolute inset-0 motion-safe:animate-fade-in-up"
-                    title={
-                        <span className="mx-auto w-[45%] bg-primary-input-background py-[0.2em] text-center text-[0.8em]">
-                            <span className="opacity-60">
-                                partnersbanka.cz/hypoteka
-                            </span>
+        <SceneCanvas
+            aspect={layout.aspect}
+            fontSize={layout.fontSize}
+            cursorPosition={layout.cursor[frame.cursor.target]}
+            isClicking={frame.cursor.isClicking}
+            showPointer={layout.showPointer}
+            className={className}
+        >
+            <AppWindow
+                className="absolute inset-0 motion-safe:animate-fade-in-up"
+                title={
+                    <span className="mx-auto w-[45%] bg-primary-input-background py-[0.2em] text-center text-[0.8em]">
+                        <span className="opacity-60">
+                            partnersbanka.cz/hypoteka
                         </span>
-                    }
-                >
-                    <div className="flex h-full">
-                        <div className="flex flex-1 flex-col">
-                            <Stepper
-                                completedSteps={frame.completedSteps}
-                                className="px-[1em] pt-[1.4em]"
-                            />
+                    </span>
+                }
+            >
+                <div className="flex h-full">
+                    <div className="flex flex-1 flex-col">
+                        <Stepper
+                            completedSteps={frame.completedSteps}
+                            className="px-[1em] pt-[1.4em]"
+                        />
 
-                            {/* A step mounts when it becomes active, so the fade plays on each step */}
-                            <div
-                                key={content.step}
-                                className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
-                            >
-                                {!frame.isApproved && (
-                                    <span className="text-[1.15em] font-bold leading-tight text-white">
-                                        {title}
-                                    </span>
-                                )}
-                                <div className="flex-1">
-                                    <StepBody content={content} />
-                                </div>
-                            </div>
-
-                            <div className="flex h-[4.4em] shrink-0 items-center justify-end px-[2em]">
-                                {primaryButton && (
-                                    <PrimaryButton button={primaryButton} />
-                                )}
+                        {/* A step mounts when it becomes active, so the fade plays on each step */}
+                        <div
+                            key={content.step}
+                            className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
+                        >
+                            {!frame.isApproved && (
+                                <span className="text-[1.15em] font-bold leading-tight text-white">
+                                    {title}
+                                </span>
+                            )}
+                            <div className="flex-1">
+                                <StepBody content={content} />
                             </div>
                         </div>
 
-                        {layout.showSummary && (
-                            <SummaryPanel
-                                rows={frame.summary}
-                                isApproved={frame.isApproved}
-                                className="w-[36%]"
-                            />
-                        )}
+                        <div className="flex h-[4.4em] shrink-0 items-center justify-end px-[2em]">
+                            {primaryButton && (
+                                <PrimaryButton button={primaryButton} />
+                            )}
+                        </div>
                     </div>
-                </AppWindow>
 
-                <SceneCursor
-                    position={layout.cursor[frame.cursor.target]}
-                    isClicking={frame.cursor.isClicking}
-                    showPointer={layout.showPointer}
-                />
-            </div>
-        </div>
+                    {layout.showSummary && (
+                        <SummaryPanel
+                            rows={frame.summary}
+                            isApproved={frame.isApproved}
+                            className="w-[36%]"
+                        />
+                    )}
+                </div>
+            </AppWindow>
+        </SceneCanvas>
     )
 }
