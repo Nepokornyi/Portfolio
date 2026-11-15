@@ -4,7 +4,6 @@ export const TICK_MS = 100
 export const LOOP_TICKS = 86
 export const HOLD_MS = 3000
 
-// The tick of each event in the story
 export const STORY = {
     octaviaClicked: 12,
     raceBlueClicked: 32,
@@ -13,12 +12,9 @@ export const STORY = {
 }
 
 export const CURSOR_TRAVEL_TICKS = 8
-// A click shows as pressed for this many ticks. Then its result shows.
 export const PRESS_TICKS = 2
-// After a choice, the total counts to the new price over this many ticks
 export const TOTAL_COUNT_TICKS = 6
 
-// In MODELS and PAINTS, the order of the keys is the order of the options in the panel
 export const MODELS: Record<ModelId, CarModel> = {
     fabia: { name: 'Fabia', bodyStyle: 'hatchback', price: 399_900 },
     octavia: { name: 'Octavia', bodyStyle: 'liftback', price: 639_900 },

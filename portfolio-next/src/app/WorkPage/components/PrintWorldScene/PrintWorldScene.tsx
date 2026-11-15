@@ -1,4 +1,3 @@
-// A client file, because it passes a function and a component to SceneLoop
 'use client'
 
 import { SceneLoop } from '@/app/WorkPage/components/SceneLoop'
