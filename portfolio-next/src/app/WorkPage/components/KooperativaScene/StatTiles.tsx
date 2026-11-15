@@ -5,7 +5,6 @@ import { StatTileState } from './types'
 type StatTilesProps = {
     stats: StatTileState[]
     showDetail: boolean
-    // The grid columns and the gap, from the layout
     className?: string
 }
 
@@ -29,8 +28,6 @@ export const StatTiles = ({
                         className="text-[0.7em] text-white/40"
                     />
                 </div>
-                {/* The value changes its format while it counts ("9 h 45 min", "1 d 5 h").
-                    A fixed box, tabular digits, and no wrap keep the tile still. */}
                 <span className="mt-[0.15em] h-[1.3em] whitespace-nowrap text-[1.4em] font-bold leading-[1.3] tabular-nums text-white">
                     {value}
                 </span>
