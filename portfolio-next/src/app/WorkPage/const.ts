@@ -3,6 +3,7 @@ import partnersBankImage from '@/assets/static/work/partnersbank-logo.svg'
 import skodaImage from '@/assets/static/work/skoda-logo.svg'
 import kooperativaImage from '@/assets/static/work/kooperativa-logo.svg'
 import helloBankImage from '@/assets/static/work/hellobank-logo.svg'
+import { PartnersBankScene } from './components/PartnersBankScene/PartnersBankScene'
 import { PrintWorldScene } from './components/PrintWorldScene/PrintWorldScene'
 import { WorkProject } from './types'
 
@@ -36,6 +37,7 @@ export const workProjects: WorkProject[] = [
         role: 'Mobile developer',
         about: 'A banking app that shows accounts, savings, investments and insurance in one place.',
         responsibilities: ['Built app features as part of the Meonzi team.'],
+        Scene: PartnersBankScene,
     },
     {
         title: 'Škoda Auto',
