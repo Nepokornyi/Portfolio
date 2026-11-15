@@ -4,7 +4,6 @@ import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
 
-// The fields that each layout of a scene has, for the canvas and the cursor
 export type SceneBaseLayout<Target extends string> = {
     aspect: string
     fontSize: string
@@ -20,7 +19,6 @@ type SceneBrowserWindowProps<Target extends string> = {
     children: ReactNode
 }
 
-// The stage of a prototype scene that plays in one browser window: the canvas, then a window with the address bar.
 export const SceneBrowserWindow = <Target extends string>({
     address,
     layout,

@@ -6,7 +6,6 @@ type RangePickerProps = {
     className?: string
 }
 
-// The time range control of the dashboard. Its menu opens below it, above the content.
 export const RangePicker = ({ picker, className = '' }: RangePickerProps) => (
     <div className={`relative w-[7.4em] shrink-0 ${className}`}>
         <div

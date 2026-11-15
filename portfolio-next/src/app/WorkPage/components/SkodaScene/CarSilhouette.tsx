@@ -1,7 +1,6 @@
 import { BodyStyle } from './types'
 
 type Silhouette = {
-    // The outline of the body and the cabin. The front of the car is on the left.
     body: string
     windows: string[]
     wheelRadius: number
@@ -11,21 +10,18 @@ type Silhouette = {
 const GROUND_Y = 90
 
 const SILHOUETTES: Record<BodyStyle, Silhouette> = {
-    // Short, with a steep rear
     hatchback: {
         body: '48,82 44,70 50,62 90,57 112,40 168,39 186,46 194,60 196,74 192,82',
         windows: ['96,56 114,43 138,43 138,56', '143,56 143,43 166,43 180,56'],
         wheelRadius: 13,
         wheelX: [76, 164],
     },
-    // Longer, with a long sloped rear and a small lip
     liftback: {
         body: '32,82 28,70 36,62 84,57 110,40 146,38 198,52 210,56 214,70 210,82',
         windows: ['90,56 112,43 134,43 134,56', '139,56 139,42 148,42 190,56'],
         wheelRadius: 13.5,
         wheelX: [64, 182],
     },
-    // Taller and boxier, with a flat roof and larger wheels
     suv: {
         body: '34,80 30,62 38,52 84,48 104,28 194,27 206,38 210,62 208,80',
         windows: [
@@ -43,7 +39,6 @@ type CarSilhouetteProps = {
     className?: string
 }
 
-// A side view in line art. It draws with currentColor, so a text colour class paints the car.
 export const CarSilhouette = ({
     bodyStyle,
     className = '',
@@ -86,7 +81,6 @@ export const CarSilhouette = ({
                     fillOpacity={0.2}
                 />
             ))}
-            {/* The wheels paint over the bottom line of the body */}
             {wheelX.map((x) => (
                 <g key={x}>
                     <circle

@@ -5,7 +5,6 @@ export const TICK_MS = 100
 export const LOOP_TICKS = 116
 export const HOLD_MS = 3000
 
-// The tick of each event in the story
 export const STORY = {
     sliderGrabbed: 9,
     sliderReleased: 17,
@@ -22,7 +21,6 @@ export const STORY = {
 }
 
 export const CURSOR_TRAVEL_TICKS = 8
-// A click shows as pressed for this many ticks. Then its result shows.
 export const PRESS_TICKS = 2
 export const CHARS_PER_TICK = 4
 export const SCAN_TICKS = 12

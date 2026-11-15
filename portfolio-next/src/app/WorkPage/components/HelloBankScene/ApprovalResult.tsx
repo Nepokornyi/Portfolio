@@ -6,7 +6,6 @@ type ApprovalResultProps = {
     plan: InstalmentPlan
 }
 
-// The last view of the story. The rows do not shrink, so a panel that is too short shows as an overflow.
 export const ApprovalResult = ({ plan }: ApprovalResultProps) => (
     <div className="mt-[0.8em] flex flex-1 flex-col motion-safe:animate-fade-in-up">
         <div className="flex shrink-0 items-center gap-[0.8em]">
@@ -18,8 +17,6 @@ export const ApprovalResult = ({ plan }: ApprovalResultProps) => (
             </span>
         </div>
 
-        {/* The two auto margins put the plan in the middle and the confirmed order at the bottom.
-            The paddings are the smallest gaps. */}
         <div className="mt-auto flex shrink-0 flex-col pb-[0.8em] pt-[1.1em]">
             <span className="text-[0.8em] text-white/60">Your plan</span>
             <span className="text-[2.2em] font-bold leading-tight tabular-nums text-primary-light-green">
