@@ -15,7 +15,6 @@ export const TotalBar = ({
     <div className={`flex shrink-0 flex-col ${className}`}>
         <div className="flex h-[2.6em] items-center justify-between gap-[0.6em] border-t border-primary-hairline">
             <span className="text-[0.8em] text-white/60">Total price</span>
-            {/* Tabular digits, so the amount does not jump while it counts */}
             <span className="text-[1.4em] font-bold tabular-nums text-primary-light-green">
                 {formatCrowns(total)}
             </span>

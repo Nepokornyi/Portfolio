@@ -24,7 +24,6 @@ export const SummaryPanel = ({
                     className="flex items-baseline justify-between gap-[0.6em] border-b border-primary-hairline py-[0.6em]"
                 >
                     <span className="text-white/40">{label}</span>
-                    {/* A value mounts when its step is complete, so the flash plays one time */}
                     {value ? (
                         <span className="text-white motion-safe:animate-slide-in-flash">
                             {value}
