@@ -1,13 +1,11 @@
 export type CursorPosition = { x: number; y: number }
 
 type SceneCursorProps = {
-    // In percent of the stage. With null, the cursor is hidden.
     position: CursorPosition | null
     isClicking: boolean
     showPointer: boolean
 }
 
-// The pointer of a prototype scene. Without the pointer (touch layouts), a click shows as a tap ring.
 export const SceneCursor = ({
     position,
     isClicking,
