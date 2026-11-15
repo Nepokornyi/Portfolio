@@ -1,0 +1,66 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
+export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
+
+export type LoanState = {
+    amount: number
+    sliderPosition: number
+    isDragging: boolean
+    monthlyPayment: number
+}
+
+export type FormField = {
+    label: string
+    value: string
+    isFocused: boolean
+}
+
+export type IdentityState = {
+    isUploaded: boolean
+    isUploadPressed: boolean
+    scanProgress: number
+    checks: { label: string; isPassed: boolean }[]
+}
+
+export type ApprovalState = {
+    phase: 'review' | 'checking' | 'approved'
+    checkProgress: number
+    offer: string
+}
+
+export type StepContent =
+    | { step: 'loan'; loan: LoanState }
+    | { step: 'personal' | 'income'; fields: FormField[] }
+    | { step: 'identity'; identity: IdentityState }
+    | { step: 'approval'; approval: ApprovalState }
+
+export type PrimaryButtonState = {
+    label: string
+    isEnabled: boolean
+    isPressed: boolean
+}
+
+export type SummaryRow = {
+    label: string
+    value: string | null
+}
+
+export type CursorTarget =
+    'idle' | 'sliderStart' | 'sliderEnd' | 'uploadButton' | 'primaryButton'
+
+export type SceneFrame = {
+    completedSteps: number
+    content: StepContent
+    primaryButton: PrimaryButtonState | null
+    summary: SummaryRow[]
+    isApproved: boolean
+    cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = {
+    aspect: string
+    fontSize: string
+    showSummary: boolean
+    cursor: Record<CursorTarget, CursorPosition | null>
+    showPointer: boolean
+}
