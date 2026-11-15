@@ -5,11 +5,8 @@ import {
 } from '@/app/WorkPage/components/SceneCursor'
 
 type SceneCanvasProps = {
-    // An aspect ratio class, for example 'aspect-[3/2]'
     aspect: string
-    // In container units, so all `em` sizes of the scene scale with the width of the canvas
     fontSize: string
-    // In percent of the canvas. With null, the cursor is hidden.
     cursorPosition: CursorPosition | null
     isClicking: boolean
     showPointer: boolean
@@ -17,8 +14,6 @@ type SceneCanvasProps = {
     children: ReactNode
 }
 
-// The outer box of a prototype scene layout: the size container, the aspect ratio, and the cursor.
-// The cursor renders last, so it stays above the content.
 export const SceneCanvas = ({
     aspect,
     fontSize,

@@ -3,14 +3,11 @@ import { DashboardPanel } from './DashboardPanel'
 import { SOURCES } from './const'
 import { TimelineEventState, TimelineState } from './types'
 
-// An event that is not shown yet keeps its space, so the timeline does not move when it shows
 const shownClass = (isShown: boolean) =>
     isShown ? 'motion-safe:animate-fade-in-up' : 'invisible'
 
-// The line to an event paints after the mark of the event before, so the marks have a z-index
 const MARK_CLASS = 'relative z-10 shrink-0'
 
-// Desktop: the events in a row, with the time between two events on the line that joins them
 const TimelineSteps = ({ events }: { events: TimelineEventState[] }) => (
     <ol className="grid min-w-0 flex-1 grid-cols-6">
         {events.map(({ label, source, duration, isShown }) => (
@@ -41,7 +38,6 @@ const TimelineSteps = ({ events }: { events: TimelineEventState[] }) => (
     </ol>
 )
 
-// Mobile: the events from top to bottom, each with the time since the event before it
 const TimelineList = ({ events }: { events: TimelineEventState[] }) => (
     <ol className="flex shrink-0 flex-col">
         {events.map(({ label, source, duration, isShown }) => (
@@ -77,7 +73,6 @@ const TotalLeadTime = ({
     total: string | null
     className?: string
 }) => (
-    // The box keeps its space before the total shows
     <div className={`flex shrink-0 ${className}`}>
         {total && (
             <div className="flex flex-1 flex-wrap content-center items-center justify-between gap-x-[0.6em] motion-safe:animate-fade-in-up">
@@ -95,7 +90,6 @@ const TotalLeadTime = ({
 type TaskTimelineProps = {
     timeline: TimelineState | null
     variant: 'steps' | 'list'
-    // The padding of the panel, from the layout
     className?: string
 }
 
@@ -118,7 +112,6 @@ export const TaskTimeline = ({
         }
         className={`shrink-0 ${className}`}
     >
-        {/* The two views have different keys, so the events mount as a new element and the fade plays */}
         {timeline ? (
             <div
                 key="events"

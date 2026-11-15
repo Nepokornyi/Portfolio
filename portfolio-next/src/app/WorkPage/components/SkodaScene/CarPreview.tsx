@@ -22,7 +22,6 @@ export const CarPreview = ({
             </span>
         </div>
 
-        {/* The car mounts again for each model, so the fade plays on each model change */}
         <div
             key={model.name}
             className="relative min-h-0 flex-1 motion-safe:animate-fade-in-up"

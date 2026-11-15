@@ -4,7 +4,6 @@ import { ModelOption } from './types'
 type ModelOptionsProps = {
     options: ModelOption[]
     className?: string
-    // The size and the inner direction of one option, from the layout
     optionClassName: string
 }
 
