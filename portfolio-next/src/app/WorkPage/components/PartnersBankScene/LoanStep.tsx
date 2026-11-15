@@ -26,7 +26,6 @@ export const LoanStep = ({ loan }: LoanStepProps) => {
             </div>
 
             <div className="flex flex-col gap-[0.3em]">
-                {/* The fill and the thumb use the timing of the scene cursor, so the cursor and the thumb move together */}
                 <div className="relative h-[1.4em]">
                     <span className="absolute inset-x-0 top-1/2 h-px bg-primary-hairline" />
                     <span
