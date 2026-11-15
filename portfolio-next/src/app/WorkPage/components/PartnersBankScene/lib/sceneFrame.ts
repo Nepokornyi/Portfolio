@@ -28,13 +28,11 @@ import { formatCrowns } from './format'
 
 const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
-// The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS
 
 const isPressed = (tick: number, clickTick: number) =>
     tick >= clickTick && tick < shownAfter(clickTick)
 
-// The annuity formula: the same payment each month for the full term
 const getMonthlyPayment = (amount: number) => {
     const monthlyRate = LOAN.yearlyRate / 12
     const months = LOAN.years * 12
@@ -56,7 +54,6 @@ const getLoan = (tick: number): LoanState => {
 
     return {
         amount,
-        // The thumb goes to the end position in one move. CSS makes the move smooth, as for the cursor.
         sliderPosition: getSliderPosition(
             hasGrabbed ? LOAN.amount : LOAN.startAmount,
         ),
@@ -68,7 +65,6 @@ const getLoan = (tick: number): LoanState => {
 const getTypedChars = (tick: number, typingStartedTick: number) =>
     Math.max(0, tick - typingStartedTick + 1) * CHARS_PER_TICK
 
-// The fields fill one after the other, as one long text
 const typeFields = (
     fields: { label: string; value: string }[],
     typedChars: number,
@@ -217,7 +213,6 @@ const getCursorTarget = (tick: number): CursorTarget => {
     if (tick <= STORY.sliderGrabbed) return 'sliderStart'
     if (tick < leaveFor(STORY.loanSubmitted)) return 'sliderEnd'
     if (tick < leaveFor(STORY.idUploadClicked)) return 'primaryButton'
-    // After the upload, the cursor moves away, so it does not hide the checks
     if (tick < shownAfter(STORY.idUploadClicked)) return 'uploadButton'
     if (tick < STORY.applicationSent + CURSOR_TRAVEL_TICKS)
         return 'primaryButton'
