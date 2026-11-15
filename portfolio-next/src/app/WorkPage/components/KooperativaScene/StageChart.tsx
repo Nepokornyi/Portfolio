@@ -3,7 +3,6 @@ import { CHART_MAX_HOURS, STAGES } from './const'
 import { formatDuration } from './lib/format'
 import { TimeBucket } from './types'
 
-// Three hairlines of the scale: 2 d, 4 d, and 6 d
 const SCALE_HOURS = [1, 2, 3].map((step) => (CHART_MAX_HOURS / 3) * step)
 
 const toPercent = (hours: number) => `${(hours / CHART_MAX_HOURS) * 100}%`
@@ -16,7 +15,6 @@ const StackedBar = ({ bar }: { bar: TimeBucket }) => (
                 className="relative shrink-0 motion-safe:transition-[height] motion-safe:duration-100 motion-safe:ease-linear"
                 style={{ height: toPercent(bar.hoursByStage[stage.id]) }}
             >
-                {/* A gap in the color of the surface separates a segment from the segment below it */}
                 <span
                     className={`absolute inset-x-0 top-0 ${
                         index === 0 ? 'bottom-0' : 'bottom-[0.14em]'
@@ -29,7 +27,6 @@ const StackedBar = ({ bar }: { bar: TimeBucket }) => (
 
 type StageChartProps = {
     bars: TimeBucket[]
-    // The size and the padding of the panel, from the layout
     className?: string
 }
 
@@ -55,7 +52,6 @@ export const StageChart = ({ bars, className = '' }: StageChartProps) => (
                         style={{ bottom: toPercent(hours) }}
                     />
                 ))}
-                {/* A bar mounts for each bucket of a range, so the bars of a new range grow from zero */}
                 <div className="absolute inset-0 flex">
                     {bars.map((bar) => (
                         <div
