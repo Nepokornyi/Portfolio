@@ -21,7 +21,6 @@ export const PaymentMethods = ({
                         : 'border-primary-hairline'
                 } ${isPressed ? 'translate-y-[0.15em] opacity-60' : ''}`}
             >
-                {/* The radio mark */}
                 <span
                     className={`flex size-[1em] shrink-0 items-center justify-center rounded-full border transition-colors duration-150 ${
                         isSelected ? 'border-primary-stroke' : 'border-white/40'

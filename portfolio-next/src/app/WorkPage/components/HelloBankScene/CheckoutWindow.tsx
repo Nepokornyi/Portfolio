@@ -15,7 +15,6 @@ const SectionLabel = ({ children }: { children: ReactNode }) => (
     </span>
 )
 
-// The views have different keys, so each view mounts as a new element and its fade plays
 const PanelView = ({ panel }: { panel: InstalmentPanel }) => {
     switch (panel.view) {
         case 'placeholder':
@@ -54,7 +53,6 @@ export const CheckoutWindow = ({
         className={className}
     >
         <div className={`flex h-full ${layout.body}`}>
-            {/* The product stays in view in each phase */}
             <div className={`flex min-h-0 min-w-0 flex-col ${layout.order}`}>
                 <div className="flex shrink-0 items-baseline justify-between gap-[0.6em]">
                     <span className="text-[1.15em] font-bold leading-tight text-white">

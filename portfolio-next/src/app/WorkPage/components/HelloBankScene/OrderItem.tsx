@@ -4,9 +4,7 @@ import { Product } from './types'
 
 type OrderItemProps = {
     product: Product
-    // The direction, the gap, and the padding of the card, from the layout
     className: string
-    // The size and the padding of the picture box, from the layout
     pictureClassName: string
 }
 
