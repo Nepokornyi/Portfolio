@@ -9,12 +9,9 @@ type SceneButtonProps = {
     children: ReactNode
     isPressed: boolean
     variant?: keyof typeof VARIANT_CLASSES
-    // For the wrapper, for example a top margin or a dim state. The wrapper sets mb and mr itself.
     className?: string
 }
 
-// The primary button of a prototype scene: a face over an offset outline.
-// When pressed, the face moves toward the outline.
 export const SceneButton = ({
     children,
     isPressed,

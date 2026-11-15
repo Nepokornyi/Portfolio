@@ -12,7 +12,6 @@ export const DashboardHeader = ({
     picker,
     showSources,
 }: DashboardHeaderProps) => (
-    // A z-index, so the menu of the range picker stays above the content below the header
     <div className="relative z-10 flex shrink-0 items-center gap-[1.2em]">
         <span className="whitespace-nowrap text-[1.05em] font-bold text-white">
             Developer metrics

@@ -10,9 +10,7 @@ const rowStateClass = ({ isSelected, isPressed }: TaskRow) => {
 
 type SlowestTasksProps = {
     tasks: TaskRow[]
-    // The label of the range. The rows mount again for each range, so the fade plays on the refresh.
     range: string
-    // The size and the padding of the panel, from the layout
     className?: string
 }
 
