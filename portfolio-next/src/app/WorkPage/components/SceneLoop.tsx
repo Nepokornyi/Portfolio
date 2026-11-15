@@ -4,7 +4,6 @@ import { ComponentType, useRef } from 'react'
 import { useStepLoop } from '@/app/hooks/useStepLoop'
 
 type SceneLoopProps<Frame, Layout> = {
-    // Describes the story of the scene for screen readers
     label: string
     loopTicks: number
     tickMs: number
@@ -15,7 +14,6 @@ type SceneLoopProps<Frame, Layout> = {
     mobileLayout: Layout
 }
 
-// Plays a prototype scene in a loop. The loop key remounts the stages, so each loop starts clean.
 export const SceneLoop = <Frame, Layout>({
     label,
     loopTicks,
