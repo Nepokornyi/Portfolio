@@ -14,7 +14,6 @@ type InstalmentCalculatorProps = {
     calculator: CalculatorState
 }
 
-// The rows do not shrink, so a panel that is too short shows as an overflow, not as cut rows
 export const InstalmentCalculator = ({
     calculator,
 }: InstalmentCalculatorProps) => (
@@ -34,11 +33,8 @@ export const InstalmentCalculator = ({
             ))}
         </div>
 
-        {/* The two auto margins put the payment in the middle and the facts and the button at the bottom.
-            The top paddings are the smallest gaps. */}
         <div className="mt-auto flex shrink-0 flex-col pt-[1em]">
             <span className="text-[0.8em] text-white/60">Monthly payment</span>
-            {/* Tabular digits, so the amount does not jump while it counts */}
             <span className="text-[2.2em] font-bold leading-tight tabular-nums text-primary-light-green">
                 {formatCrowns(calculator.monthlyPayment)}
             </span>

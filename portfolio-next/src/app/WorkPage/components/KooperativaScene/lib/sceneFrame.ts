@@ -27,7 +27,6 @@ import { formatDuration, formatPercent } from './format'
 
 const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
-// The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS
 
 const isPressed = (tick: number, clickTick: number) =>
@@ -36,7 +35,6 @@ const isPressed = (tick: number, clickTick: number) =>
 const monthLoadStarted = shownAfter(STORY.rangeOptionClicked)
 const taskSelected = shownAfter(STORY.taskClicked)
 
-// The range that the dashboard shows, and the tick at which it started to load
 const getLoadedRange = (tick: number) =>
     tick < monthLoadStarted
         ? { range: WEEK_RANGE, loadStarted: STORY.loadStarted }
@@ -68,7 +66,6 @@ const formatStatValue = (id: StatId, value: number) => {
     }
 }
 
-// The values count from zero to the 7-day values, then from the 7-day values to the 30-day values
 const getStats = (tick: number): StatTileState[] => {
     const weekProgress = clamp01((tick - STORY.loadStarted) / COUNT_TICKS)
     const monthProgress = clamp01((tick - monthLoadStarted) / COUNT_TICKS)
@@ -82,7 +79,6 @@ const getStats = (tick: number): StatTileState[] => {
     })
 }
 
-// The bars grow from zero, one after the other
 const getBars = (
     tick: number,
     range: DashboardRange,
@@ -118,7 +114,6 @@ const getTasks = (tick: number, range: DashboardRange): TaskRow[] =>
 const getTimeline = (tick: number): TimelineState | null => {
     if (tick < taskSelected) return null
 
-    // The first event shows together with the selection. Then one more event shows after each step.
     const shownEvents =
         Math.floor((tick - taskSelected) / TIMELINE_STEP_TICKS) + 1
 
@@ -148,9 +143,7 @@ const getCursorTarget = (tick: number): CursorTarget => {
     if (tick < leaveFor(STORY.rangePickerClicked)) return 'idle'
     if (tick < leaveFor(STORY.rangeOptionClicked)) return 'rangePicker'
     if (tick < monthLoadStarted) return 'rangeOption'
-    // When the menu closes, the pointer moves away, so it does not cover the values that refresh
     if (tick < leaveFor(STORY.taskClicked)) return 'idle'
-    // The cursor rests on the row for one travel time. Then it moves away from the timeline.
     if (tick < STORY.taskClicked + CURSOR_TRAVEL_TICKS) return 'taskRow'
     return 'idle'
 }
