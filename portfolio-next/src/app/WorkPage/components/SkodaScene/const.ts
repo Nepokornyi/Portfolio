@@ -4,7 +4,6 @@ export const TICK_MS = 100
 export const LOOP_TICKS = 86
 export const HOLD_MS = 3000
 
-// The tick of each event in the story
 export const STORY = {
     octaviaClicked: 12,
     raceBlueClicked: 32,
@@ -13,12 +12,9 @@ export const STORY = {
 }
 
 export const CURSOR_TRAVEL_TICKS = 8
-// A click shows as pressed for this many ticks. Then its result shows.
 export const PRESS_TICKS = 2
-// After a choice, the total counts to the new price over this many ticks
 export const TOTAL_COUNT_TICKS = 6
 
-// In MODELS and PAINTS, the order of the keys is the order of the options in the panel
 export const MODELS: Record<ModelId, CarModel> = {
     fabia: { name: 'Fabia', bodyStyle: 'hatchback', price: 399_900 },
     octavia: { name: 'Octavia', bodyStyle: 'liftback', price: 639_900 },
@@ -52,10 +48,6 @@ export const PAINTS: Record<PaintId, Paint> = {
     },
 }
 
-// The cursor positions follow the em sizes of the panel (ConfiguratorWindow, ModelOptions,
-// PaintSwatches, TotalBar) and are measured in a browser render. On desktop, the pointer tip
-// (0.27em right of and 0.13em below the position) is on the centre of the target.
-// On mobile, the tap ring is. If one of these sizes changes, measure the positions again.
 export const DESKTOP_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
@@ -69,7 +61,6 @@ export const DESKTOP_LAYOUT: SceneLayout = {
         octaviaOption: { x: 79.5, y: 26.3 },
         raceBlueSwatch: { x: 70.1, y: 48.4 },
         mambaGreenSwatch: { x: 75.8, y: 48.4 },
-        // To the right of the label, so the pointer does not cover it
         continueButton: { x: 89.9, y: 91.9 },
     },
     showPointer: true,

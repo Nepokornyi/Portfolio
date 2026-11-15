@@ -13,7 +13,6 @@ export const TICK_MS = 100
 export const LOOP_TICKS = 100
 export const HOLD_MS = 3000
 
-// The tick of each event in the story
 export const STORY = {
     loadStarted: 2,
     rangePickerClicked: 26,
@@ -22,15 +21,10 @@ export const STORY = {
 }
 
 export const CURSOR_TRAVEL_TICKS = 8
-// A click shows as pressed for this many ticks. Then its result shows.
 export const PRESS_TICKS = 2
-// The stat values count to the values of a new range in this many ticks
 export const COUNT_TICKS = 8
-// Each bar grows in this many ticks. A bar starts one stagger after the bar before it.
 export const BAR_GROW_TICKS = 6
 export const BAR_STAGGER_TICKS = 1
-// The first event of the timeline shows together with the selection of the row. Then the next event
-// shows after each step, and the total one step after the last event: at tick 92, 8 ticks before LOOP_TICKS.
 export const TIMELINE_STEP_TICKS = 5
 
 export const SOURCES: Record<SourceId, Source> = {
@@ -39,8 +33,6 @@ export const SOURCES: Record<SourceId, Source> = {
     sonarqube: { name: 'SonarQube', color: 'bg-primary-dark-blue' },
 }
 
-// The order of the segments in a bar, from the baseline up, and of the legend.
-// Neighbours in a bar differ clearly, also in a color-blind simulation.
 export const STAGES: Stage[] = [
     { id: 'waiting', label: 'Waiting', color: 'bg-primary-blue' },
     { id: 'inProgress', label: 'In progress', color: 'bg-primary-highlight' },
@@ -75,7 +67,6 @@ export const STAT_TILES: StatTile[] = [
     },
 ]
 
-// The top of the chart axis: 6 days. It is above the tallest bar of each range.
 export const CHART_MAX_HOURS = 144
 
 export const SELECTED_TASK_TIMELINE: TimelineEvent[] = [
@@ -111,8 +102,6 @@ export const SELECTED_TASK_TIMELINE: TimelineEvent[] = [
     },
 ]
 
-// The user selects this task, the first of the slowest tasks of 30 days.
-// Its lead time is the sum of its timeline, so the list and the timeline always agree.
 export const SELECTED_TASK: Task = {
     key: 'DEV-1482',
     title: 'Paginate the audit log API',
@@ -122,7 +111,6 @@ export const SELECTED_TASK: Task = {
     ),
 }
 
-// The hours of the stages are in the order of STAGES
 const bucket = (
     label: string,
     waiting: number,
@@ -142,7 +130,6 @@ export const WEEK_RANGE: DashboardRange = {
         mergeRequests: 38,
         coverage: 81.4,
     },
-    // One bar for each day
     buckets: [
         bucket('Mon', 38, 27, 12, 9),
         bucket('Tue', 44, 25, 14, 10),
@@ -184,7 +171,6 @@ export const MONTH_RANGE: DashboardRange = {
         mergeRequests: 164,
         coverage: 80.6,
     },
-    // One bar for each week
     buckets: [
         bucket('W42', 47, 30, 16, 11),
         bucket('W43', 52, 33, 18, 12),
@@ -212,7 +198,6 @@ export const MONTH_RANGE: DashboardRange = {
     ],
 }
 
-// The menu also offers 90 days. The story does not pick it, so it has no data.
 export const RANGE_OPTIONS = [
     WEEK_RANGE.label,
     MONTH_RANGE.label,
