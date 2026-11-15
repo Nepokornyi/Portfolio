@@ -23,7 +23,6 @@ const SectionLabel = ({
     </span>
 )
 
-// The views have explicit keys, so a later change of a root element does not stop the fade
 const PanelView = ({ panel }: { panel: InstalmentPanel }) => {
     switch (panel.view) {
         case 'placeholder':
@@ -62,7 +61,6 @@ export const CheckoutWindow = ({
         className={className}
     >
         <div className={`flex h-full ${layout.body}`}>
-            {/* The product stays in view in each phase */}
             <div className={`flex min-h-0 min-w-0 flex-col ${layout.order}`}>
                 <div className="flex shrink-0 items-baseline justify-between gap-[0.6em]">
                     <span className="text-[1.15em] font-bold leading-tight text-white">
@@ -76,7 +74,6 @@ export const CheckoutWindow = ({
                     pictureClassName={layout.productPicture}
                 />
                 {layout.showPaymentLabel && (
-                    // 1.2em of the column: the margin is in the em of the label text, which is 0.7em
                     <SectionLabel className="mt-[calc(1.2em/0.7)]">
                         Payment method
                     </SectionLabel>

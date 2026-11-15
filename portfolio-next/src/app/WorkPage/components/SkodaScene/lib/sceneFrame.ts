@@ -9,13 +9,11 @@ import {
 } from '../const'
 import { CarModel, CursorTarget, Paint, SceneFrame } from '../types'
 
-// The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS
 
 const isPressed = (tick: number, clickTick: number) =>
     tick >= clickTick && tick < shownAfter(clickTick)
 
-// The clicks that change the price
 const CHOICE_CLICK_TICKS = [
     STORY.octaviaClicked,
     STORY.raceBlueClicked,
@@ -42,9 +40,6 @@ const getPressedPaint = (tick: number): Paint | null => {
 const getPrice = (tick: number) =>
     getModel(tick).price + getPaint(tick).surcharge
 
-// The total counts in a straight line from the old price to the new price.
-// The count starts when the result shows, so the total moves together with the car.
-// A count must finish before the next choice click, or the total jumps.
 const getTotal = (tick: number) => {
     const startedCounts = CHOICE_CLICK_TICKS.map(shownAfter).filter(
         (countStart) => countStart <= tick,
@@ -64,7 +59,6 @@ const getCursorTarget = (tick: number): CursorTarget => {
     if (tick < leaveFor(STORY.raceBlueClicked)) return 'octaviaOption'
     if (tick < leaveFor(STORY.mambaGreenClicked)) return 'raceBlueSwatch'
     if (tick < leaveFor(STORY.continueClicked)) return 'mambaGreenSwatch'
-    // When the summary shows, the cursor moves away, so it does not cover the summary
     if (tick < shownAfter(STORY.continueClicked)) return 'continueButton'
     return 'idle'
 }

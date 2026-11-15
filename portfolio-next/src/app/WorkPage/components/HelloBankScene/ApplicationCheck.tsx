@@ -1,5 +1,4 @@
 type ApplicationCheckProps = {
-    // From 0 to 1
     progress: number
 }
 

@@ -48,7 +48,6 @@ export const ConfiguratorWindow = ({
             <div
                 className={`flex min-h-0 min-w-0 flex-col border-primary-hairline ${layout.panel}`}
             >
-                {/* The views have explicit keys, so a later change of a root element does not stop the fade */}
                 {frame.isSummaryShown ? (
                     <ConfigurationSummary
                         key="summary"

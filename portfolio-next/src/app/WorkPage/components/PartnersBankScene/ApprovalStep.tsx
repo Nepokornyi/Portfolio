@@ -14,7 +14,6 @@ export const ApprovalStep = ({ approval }: ApprovalStepProps) => {
             </span>
         )
 
-    // The checking view and the approved view have different keys, so each mounts when its phase starts and the fade plays
     if (approval.phase === 'checking')
         return (
             <div

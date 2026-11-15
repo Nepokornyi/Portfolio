@@ -18,8 +18,6 @@ export const Stepper = ({ completedSteps, className = '' }: StepperProps) => (
                     key={id}
                     className="relative flex flex-1 flex-col items-center gap-[0.55em]"
                 >
-                    {/* The line from the mark of the step before to this mark.
-                        The marks have a z-index, because this line paints after the mark of the step before. */}
                     {index > 0 && (
                         <span
                             className={`absolute right-1/2 top-[0.65em] h-px w-full transition-colors duration-300 ${

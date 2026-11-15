@@ -7,7 +7,6 @@ export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
 
 export type LoanState = {
     amount: number
-    // The position of the slider thumb on the track, from 0 to 1
     sliderPosition: number
     isDragging: boolean
     monthlyPayment: number
@@ -22,16 +21,13 @@ export type FormField = {
 export type IdentityState = {
     isUploaded: boolean
     isUploadPressed: boolean
-    // From 0 to 1
     scanProgress: number
     checks: { label: string; isPassed: boolean }[]
 }
 
 export type ApprovalState = {
     phase: 'review' | 'checking' | 'approved'
-    // From 0 to 1
     checkProgress: number
-    // The approved loan, for example "4 500 000 Kč · 23 583 Kč / month"
     offer: string
 }
 
@@ -47,7 +43,6 @@ export type PrimaryButtonState = {
     isPressed: boolean
 }
 
-// A row has no value until its step is complete
 export type SummaryRow = {
     label: string
     value: string | null

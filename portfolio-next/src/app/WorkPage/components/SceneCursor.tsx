@@ -1,13 +1,11 @@
 export type CursorPosition = { x: number; y: number }
 
 type SceneCursorProps = {
-    // In percent of the canvas. With null, the cursor is hidden.
     position: CursorPosition | null
     isClicking: boolean
     showPointer: boolean
 }
 
-// The pointer of a prototype scene. Without the pointer (touch layouts), a click shows as a tap ring.
 export const SceneCursor = ({
     position,
     isClicking,
@@ -16,8 +14,6 @@ export const SceneCursor = ({
     if (!position) return null
 
     return (
-        // The frame logic of each scene sends the cursor to its target CURSOR_TRAVEL_TICKS × TICK_MS
-        // before a click (800 ms in all scenes). That time must be longer than this 700 ms move.
         <div
             className="pointer-events-none absolute z-20 motion-safe:transition-[left,top] motion-safe:duration-700 motion-safe:ease-in-out"
             style={{ left: `${position.x}%`, top: `${position.y}%` }}

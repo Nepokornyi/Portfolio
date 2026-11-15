@@ -4,7 +4,6 @@ import { ComponentType, useRef } from 'react'
 import { useStepLoop } from '@/app/hooks/useStepLoop'
 
 type SceneLoopProps<Frame, Layout> = {
-    // Describes the story of the scene for screen readers
     label: string
     loopTicks: number
     tickMs: number
@@ -15,7 +14,6 @@ type SceneLoopProps<Frame, Layout> = {
     mobileLayout: Layout
 }
 
-// Plays a prototype scene in a loop. The loop key remounts the stages, so each loop starts clean.
 export const SceneLoop = <Frame, Layout>({
     label,
     loopTicks,
@@ -37,8 +35,6 @@ export const SceneLoop = <Frame, Layout>({
             aria-label={label}
             className="w-full"
         >
-            {/* The desktop limit keeps a 3:2 stage inside the height of the size container (the scene cell in WorkDetails).
-                It assumes the 3:2 aspect that each desktop layout sets. */}
             <Stage
                 key={`desktop-${loop}`}
                 frame={frame}

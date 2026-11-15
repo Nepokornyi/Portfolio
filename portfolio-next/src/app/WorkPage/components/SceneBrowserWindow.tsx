@@ -15,7 +15,6 @@ type SceneBrowserWindowProps<Target extends string> = {
     children: ReactNode
 }
 
-// The stage of a prototype scene that plays in one browser window: the canvas, then a window with the address bar.
 export const SceneBrowserWindow = <Target extends string>({
     address,
     layout,

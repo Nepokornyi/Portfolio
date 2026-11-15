@@ -18,13 +18,11 @@ import {
     TermMonths,
 } from '../types'
 
-// The result of a click shows after the press
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS
 
 const isPressed = (tick: number, clickTick: number) =>
     tick >= clickTick && tick < shownAfter(clickTick)
 
-// The clicks that change the term
 const TERM_CLICK_TICKS = [
     STORY.twelveMonthsClicked,
     STORY.twentyFourMonthsClicked,
@@ -36,8 +34,6 @@ const CLICK_TICKS = [
     STORY.applyClicked,
 ]
 
-// The annuity formula: the same payment each month for the full term.
-// The payment is rounded to whole crowns, so the total is the payment × the months.
 const getPlan = (months: TermMonths): InstalmentPlan => {
     const monthlyRate = YEARLY_RATE / 12
     const monthlyPayment = Math.round(
@@ -58,9 +54,6 @@ const getPressedTerm = (tick: number): TermMonths | null => {
     return null
 }
 
-// The payment and the total count in a straight line from the old plan to the new plan.
-// The count starts when the new term shows, so the first step shows together with the selection.
-// A count must finish before the next term click, or the values jump.
 const getCountedAmounts = (tick: number) => {
     const plan = getPlan(getTerm(tick))
     const startedCounts = TERM_CLICK_TICKS.map(shownAfter).filter(
@@ -72,7 +65,6 @@ const getCountedAmounts = (tick: number) => {
     const countStart = startedCounts[startedCounts.length - 1]
     const oldPlan = getPlan(getTerm(countStart - 1))
     const progress = clamp01((tick - countStart + 1) / PAYMENT_COUNT_TICKS)
-    // Rounded, so each step of the count is in whole crowns
     const count = (from: number, to: number) =>
         Math.round(from + (to - from) * progress)
 
@@ -97,14 +89,11 @@ const getCalculator = (tick: number): CalculatorState => {
     }
 }
 
-// The panel after the customer chooses instalments
 const getInstalmentPanel = (tick: number): InstalmentPanel => {
     const checkStartedTick = shownAfter(STORY.applyClicked)
     if (tick < checkStartedTick)
         return { view: 'calculator', calculator: getCalculator(tick) }
 
-    // The bar is empty when the check starts and full on the last tick before the approval.
-    // The check must last two ticks or more, or the division is 0 / 0.
     const lastCheckTick = STORY.approved - 1
     if (tick <= lastCheckTick)
         return {
@@ -123,13 +112,11 @@ const getCursorTarget = (tick: number): CursorTarget => {
     if (tick < leaveFor(STORY.twentyFourMonthsClicked))
         return 'twelveMonthsButton'
     if (tick < leaveFor(STORY.applyClicked)) return 'twentyFourMonthsButton'
-    // When the check starts, the cursor moves away, so it does not cover the check
     if (tick < shownAfter(STORY.applyClicked)) return 'applyButton'
     return 'idle'
 }
 
 export const getSceneFrame = (tick: number): SceneFrame => {
-    // One comparison gives the selected option and the panel that it opens
     const hasChosenInstalments = tick >= shownAfter(STORY.instalmentsClicked)
     const paymentMethod = hasChosenInstalments
         ? PAYMENT_METHODS.instalments

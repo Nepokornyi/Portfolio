@@ -2,7 +2,6 @@ type LaptopPictureProps = {
     className?: string
 }
 
-// A front view of a laptop in line art. It draws with currentColor, so a text colour class paints it.
 export const LaptopPicture = ({ className = '' }: LaptopPictureProps) => (
     <svg
         viewBox="0 0 120 74"
@@ -23,7 +22,6 @@ export const LaptopPicture = ({ className = '' }: LaptopPictureProps) => (
             fillOpacity={0.12}
             stroke="none"
         />
-        {/* The lid and the screen */}
         <rect
             x="22"
             y="6"
@@ -44,7 +42,6 @@ export const LaptopPicture = ({ className = '' }: LaptopPictureProps) => (
         />
         <line x1="34" y1="22" x2="72" y2="22" />
         <line x1="34" y1="30" x2="60" y2="30" />
-        {/* The base, with the notch for the thumb */}
         <path d="M10 58 H110 L104 66 H16 Z" fill="currentColor" fillOpacity={0.08} />
         <path d="M52 58 v2.5 h16 v-2.5" />
     </svg>
