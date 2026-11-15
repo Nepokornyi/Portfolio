@@ -87,7 +87,6 @@ export const MortgageWindow = ({
                             className="px-[1em] pt-[1.4em]"
                         />
 
-                        {/* A step mounts when it becomes active, so the fade plays on each step */}
                         <div
                             key={content.step}
                             className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
