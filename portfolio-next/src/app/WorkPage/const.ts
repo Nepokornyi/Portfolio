@@ -3,6 +3,7 @@ import partnersBankImage from '@/assets/static/work/partnersbank-logo.svg'
 import skodaImage from '@/assets/static/work/skoda-logo.svg'
 import kooperativaImage from '@/assets/static/work/kooperativa-logo.svg'
 import helloBankImage from '@/assets/static/work/hellobank-logo.svg'
+import { HelloBankScene } from './components/HelloBankScene/HelloBankScene'
 import { KooperativaScene } from './components/KooperativaScene/KooperativaScene'
 import { PartnersBankScene } from './components/PartnersBankScene/PartnersBankScene'
 import { PrintWorldScene } from './components/PrintWorldScene/PrintWorldScene'
@@ -82,5 +83,6 @@ export const workProjects: WorkProject[] = [
         role: 'Front-end developer',
         about: 'A transformable e-commerce solution for HelloBank.',
         responsibilities: ['Worked on the front end as part of the team.'],
+        Scene: HelloBankScene,
     },
 ]
