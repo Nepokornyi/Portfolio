@@ -1,4 +1,4 @@
-import { SceneCursor } from '@/app/WorkPage/components/SceneCursor'
+import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { ChartWindow } from './ChartWindow'
 import { FeedWindow } from './FeedWindow'
 import { PnlWindow } from './PnlWindow'
@@ -17,30 +17,24 @@ export const SceneStage = ({
     layout,
     className = '',
 }: SceneStageProps) => (
-    <div className={className} style={{ containerType: 'inline-size' }}>
-        <div
-            className={`relative ${layout.aspect}`}
-            style={{ fontSize: layout.fontSize }}
-        >
-            <FeedWindow feed={frame.feed} className={layout.feed} />
-            {frame.chart && (
-                <ChartWindow chart={frame.chart} className={layout.chart} />
-            )}
-            {frame.trade && (
-                <TradeWindow trade={frame.trade} className={layout.trade} />
-            )}
-            {frame.closedTrade && (
-                <PnlWindow
-                    closedTrade={frame.closedTrade}
-                    className={layout.pnl}
-                />
-            )}
-            <SceneToast message={frame.toast} className={layout.toast} />
-            <SceneCursor
-                position={layout.cursor[frame.cursor.target]}
-                isClicking={frame.cursor.isClicking}
-                showPointer={layout.showPointer}
-            />
-        </div>
-    </div>
+    <SceneCanvas
+        aspect={layout.aspect}
+        fontSize={layout.fontSize}
+        cursorPosition={layout.cursor[frame.cursor.target]}
+        isClicking={frame.cursor.isClicking}
+        showPointer={layout.showPointer}
+        className={className}
+    >
+        <FeedWindow feed={frame.feed} className={layout.feed} />
+        {frame.chart && (
+            <ChartWindow chart={frame.chart} className={layout.chart} />
+        )}
+        {frame.trade && (
+            <TradeWindow trade={frame.trade} className={layout.trade} />
+        )}
+        {frame.closedTrade && (
+            <PnlWindow closedTrade={frame.closedTrade} className={layout.pnl} />
+        )}
+        <SceneToast message={frame.toast} className={layout.toast} />
+    </SceneCanvas>
 )

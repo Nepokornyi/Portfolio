@@ -3,7 +3,11 @@ import partnersBankImage from '@/assets/static/work/partnersbank-logo.svg'
 import skodaImage from '@/assets/static/work/skoda-logo.svg'
 import kooperativaImage from '@/assets/static/work/kooperativa-logo.svg'
 import helloBankImage from '@/assets/static/work/hellobank-logo.svg'
+import { HelloBankScene } from './components/HelloBankScene/HelloBankScene'
+import { KooperativaScene } from './components/KooperativaScene/KooperativaScene'
+import { PartnersBankScene } from './components/PartnersBankScene/PartnersBankScene'
 import { PrintWorldScene } from './components/PrintWorldScene/PrintWorldScene'
+import { SkodaScene } from './components/SkodaScene/SkodaScene'
 import { WorkProject } from './types'
 
 // TODO: role, about and responsibilities are drafts from the card text. Replace them with the real details.
@@ -36,6 +40,7 @@ export const workProjects: WorkProject[] = [
         role: 'Mobile developer',
         about: 'A banking app that shows accounts, savings, investments and insurance in one place.',
         responsibilities: ['Built app features as part of the Meonzi team.'],
+        Scene: PartnersBankScene,
     },
     {
         title: 'Škoda Auto',
@@ -50,6 +55,7 @@ export const workProjects: WorkProject[] = [
         responsibilities: [
             'Built front-end components and pages for the model and service sections.',
         ],
+        Scene: SkodaScene,
     },
     {
         title: 'Kooperativa',
@@ -64,6 +70,7 @@ export const workProjects: WorkProject[] = [
         responsibilities: [
             'Built pages and components for insurance products and online forms.',
         ],
+        Scene: KooperativaScene,
     },
     {
         title: 'Hello Bank',
@@ -76,5 +83,6 @@ export const workProjects: WorkProject[] = [
         role: 'Front-end developer',
         about: 'A transformable e-commerce solution for HelloBank.',
         responsibilities: ['Worked on the front end as part of the team.'],
+        Scene: HelloBankScene,
     },
 ]

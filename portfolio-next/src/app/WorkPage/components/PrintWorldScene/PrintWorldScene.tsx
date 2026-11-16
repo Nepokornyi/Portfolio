@@ -1,7 +1,6 @@
 'use client'
 
-import { useRef } from 'react'
-import { useStepLoop } from '@/app/hooks/useStepLoop'
+import { SceneLoop } from '@/app/WorkPage/components/SceneLoop'
 import {
     DESKTOP_LAYOUT,
     HOLD_MS,
@@ -12,35 +11,15 @@ import {
 import { getSceneFrame } from './lib/sceneFrame'
 import { SceneStage } from './SceneStage'
 
-export const PrintWorldScene = () => {
-    const containerRef = useRef<HTMLDivElement>(null)
-    const { step, loop } = useStepLoop(
-        containerRef,
-        LOOP_TICKS,
-        TICK_MS,
-        HOLD_MS,
-    )
-    const frame = getSceneFrame(step)
-
-    return (
-        <div
-            ref={containerRef}
-            role="img"
-            aria-label="An animated prototype of print.world: a new token appears in the feed, the user opens its chart, buys it, and sells it at a profit"
-            className="w-full"
-        >
-            <SceneStage
-                key={`desktop-${loop}`}
-                frame={frame}
-                layout={DESKTOP_LAYOUT}
-                className="mx-auto hidden w-full max-w-[calc(100cqh*3/2)] lg:block"
-            />
-            <SceneStage
-                key={`mobile-${loop}`}
-                frame={frame}
-                layout={MOBILE_LAYOUT}
-                className="mx-auto w-full max-w-[360px] lg:hidden"
-            />
-        </div>
-    )
-}
+export const PrintWorldScene = () => (
+    <SceneLoop
+        label="An animated prototype of print.world: a new token appears in the feed, the user opens its chart, buys it, and sells it at a profit"
+        loopTicks={LOOP_TICKS}
+        tickMs={TICK_MS}
+        holdMs={HOLD_MS}
+        getFrame={getSceneFrame}
+        Stage={SceneStage}
+        desktopLayout={DESKTOP_LAYOUT}
+        mobileLayout={MOBILE_LAYOUT}
+    />
+)
