@@ -1,4 +1,4 @@
-import { formatCrowns } from './lib/format'
+import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { SceneLayout, StepId } from './types'
 
 export const TICK_MS = 100

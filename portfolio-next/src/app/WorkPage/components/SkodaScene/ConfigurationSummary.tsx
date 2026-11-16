@@ -1,5 +1,6 @@
 import { CheckIcon } from './CheckIcon'
-import { formatCrowns, formatSurcharge } from './lib/format'
+import { formatCrowns } from '@/app/WorkPage/lib/format'
+import { formatSurcharge } from './lib/format'
 import { CarModel, Paint } from './types'
 
 const SummaryRow = ({

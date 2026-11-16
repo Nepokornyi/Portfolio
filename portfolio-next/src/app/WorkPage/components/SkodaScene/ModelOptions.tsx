@@ -1,4 +1,4 @@
-import { formatCrowns } from './lib/format'
+import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { ModelOption } from './types'
 
 type ModelOptionsProps = {

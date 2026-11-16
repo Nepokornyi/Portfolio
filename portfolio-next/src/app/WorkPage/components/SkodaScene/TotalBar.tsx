@@ -1,5 +1,5 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
-import { formatCrowns } from './lib/format'
+import { formatCrowns } from '@/app/WorkPage/lib/format'
 
 type TotalBarProps = {
     total: number
