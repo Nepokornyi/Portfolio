@@ -99,9 +99,8 @@ const getInstalmentPanel = (tick: number): InstalmentPanel => {
     if (tick <= lastCheckTick)
         return {
             view: 'checking',
-            checkProgress: clamp01(
+            checkProgress:
                 (tick - checkStartedTick) / (lastCheckTick - checkStartedTick),
-            ),
         }
 
     return { view: 'approved', plan: getPlan(getTerm(tick)) }
