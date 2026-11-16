@@ -5,6 +5,7 @@ import kooperativaImage from '@/assets/static/work/kooperativa-logo.svg'
 import helloBankImage from '@/assets/static/work/hellobank-logo.svg'
 import { PartnersBankScene } from './components/PartnersBankScene/PartnersBankScene'
 import { PrintWorldScene } from './components/PrintWorldScene/PrintWorldScene'
+import { SkodaScene } from './components/SkodaScene/SkodaScene'
 import { WorkProject } from './types'
 
 // TODO: role, about and responsibilities are drafts from the card text. Replace them with the real details.
@@ -52,6 +53,7 @@ export const workProjects: WorkProject[] = [
         responsibilities: [
             'Built front-end components and pages for the model and service sections.',
         ],
+        Scene: SkodaScene,
     },
     {
         title: 'Kooperativa',
