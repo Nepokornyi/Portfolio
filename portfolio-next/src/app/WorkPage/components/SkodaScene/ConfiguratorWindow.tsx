@@ -1,7 +1,5 @@
 import { ReactNode } from 'react'
-import { SceneAddressBar } from '@/app/WorkPage/components/SceneAddressBar'
-import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
-import { AppWindow } from '@/components/AppWindow/AppWindow'
+import { SceneBrowserWindow } from '@/app/WorkPage/components/SceneBrowserWindow'
 import { CarPreview } from './CarPreview'
 import { ConfigurationSummary } from './ConfigurationSummary'
 import { ModelOptions } from './ModelOptions'
@@ -34,60 +32,51 @@ export const ConfiguratorWindow = ({
     layout,
     className = '',
 }: ConfiguratorWindowProps) => (
-    <SceneCanvas
-        aspect={layout.aspect}
-        fontSize={layout.fontSize}
-        cursorPosition={layout.cursor[frame.cursor.target]}
-        isClicking={frame.cursor.isClicking}
-        showPointer={layout.showPointer}
+    <SceneBrowserWindow
+        address="cc.skoda-auto.com"
+        layout={layout}
+        cursor={frame.cursor}
         className={className}
     >
-        <AppWindow
-            className="absolute inset-0 motion-safe:animate-fade-in-up"
-            title={<SceneAddressBar address="cc.skoda-auto.com" />}
-        >
-            <div className={`flex h-full ${layout.body}`}>
-                <CarPreview
-                    model={frame.model}
-                    paint={frame.paint}
-                    className={layout.preview}
-                />
+        <div className={`flex h-full ${layout.body}`}>
+            <CarPreview
+                model={frame.model}
+                paint={frame.paint}
+                className={layout.preview}
+            />
 
-                <div
-                    className={`flex min-h-0 min-w-0 flex-col border-primary-hairline ${layout.panel}`}
-                >
-                    {frame.isSummaryShown ? (
-                        <ConfigurationSummary
-                            key="summary"
-                            model={frame.model}
-                            paint={frame.paint}
-                            total={frame.total}
+            <div
+                className={`flex min-h-0 min-w-0 flex-col border-primary-hairline ${layout.panel}`}
+            >
+                {frame.isSummaryShown ? (
+                    <ConfigurationSummary
+                        key="summary"
+                        model={frame.model}
+                        paint={frame.paint}
+                        total={frame.total}
+                    />
+                ) : (
+                    <div key="options" className="flex flex-1 flex-col">
+                        <SectionLabel>Model</SectionLabel>
+                        <ModelOptions
+                            options={frame.modelOptions}
+                            className={`mt-[0.5em] ${layout.modelList}`}
+                            optionClassName={layout.modelOption}
                         />
-                    ) : (
-                        <div key="options" className="flex flex-1 flex-col">
-                            <SectionLabel>Model</SectionLabel>
-                            <ModelOptions
-                                options={frame.modelOptions}
-                                className={`mt-[0.5em] ${layout.modelList}`}
-                                optionClassName={layout.modelOption}
-                            />
-                            <SectionLabel className="mt-[1em]">
-                                Colour
-                            </SectionLabel>
-                            <PaintSwatches
-                                options={frame.paintOptions}
-                                selectedPaint={frame.paint}
-                                className="mt-[0.5em]"
-                            />
-                            <TotalBar
-                                total={frame.total}
-                                isContinuePressed={frame.isContinuePressed}
-                                className="mt-auto"
-                            />
-                        </div>
-                    )}
-                </div>
+                        <SectionLabel className="mt-[1em]">Colour</SectionLabel>
+                        <PaintSwatches
+                            options={frame.paintOptions}
+                            selectedPaint={frame.paint}
+                            className="mt-[0.5em]"
+                        />
+                        <TotalBar
+                            total={frame.total}
+                            isContinuePressed={frame.isContinuePressed}
+                            className="mt-auto"
+                        />
+                    </div>
+                )}
             </div>
-        </AppWindow>
-    </SceneCanvas>
+        </div>
+    </SceneBrowserWindow>
 )

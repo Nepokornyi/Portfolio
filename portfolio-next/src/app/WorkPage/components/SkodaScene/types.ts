@@ -1,4 +1,4 @@
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -47,14 +47,10 @@ export type SceneFrame = {
     cursor: { target: CursorTarget; isClicking: boolean }
 }
 
-export type SceneLayout = {
-    aspect: string
-    fontSize: string
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     body: string
     preview: string
     panel: string
     modelList: string
     modelOption: string
-    cursor: Record<CursorTarget, CursorPosition | null>
-    showPointer: boolean
 }

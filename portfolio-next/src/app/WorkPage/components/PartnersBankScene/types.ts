@@ -1,4 +1,4 @@
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
 
 export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
 
@@ -57,10 +57,6 @@ export type SceneFrame = {
     cursor: { target: CursorTarget; isClicking: boolean }
 }
 
-export type SceneLayout = {
-    aspect: string
-    fontSize: string
+export type SceneLayout = SceneBaseLayout<CursorTarget> & {
     showSummary: boolean
-    cursor: Record<CursorTarget, CursorPosition | null>
-    showPointer: boolean
 }

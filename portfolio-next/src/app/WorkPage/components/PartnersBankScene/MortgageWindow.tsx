@@ -1,7 +1,5 @@
-import { SceneAddressBar } from '@/app/WorkPage/components/SceneAddressBar'
+import { SceneBrowserWindow } from '@/app/WorkPage/components/SceneBrowserWindow'
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
-import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
-import { AppWindow } from '@/components/AppWindow/AppWindow'
 import { ApprovalStep } from './ApprovalStep'
 import { STEPS } from './const'
 import { FieldsStep } from './FieldsStep'
@@ -40,64 +38,55 @@ export const MortgageWindow = ({
     const title = STEPS.find((step) => step.id === content.step)?.title
 
     return (
-        <SceneCanvas
-            aspect={layout.aspect}
-            fontSize={layout.fontSize}
-            cursorPosition={layout.cursor[frame.cursor.target]}
-            isClicking={frame.cursor.isClicking}
-            showPointer={layout.showPointer}
+        <SceneBrowserWindow
+            address="partnersbanka.cz/hypoteka"
+            layout={layout}
+            cursor={frame.cursor}
             className={className}
         >
-            <AppWindow
-                className="absolute inset-0 motion-safe:animate-fade-in-up"
-                title={<SceneAddressBar address="partnersbanka.cz/hypoteka" />}
-            >
-                <div className="flex h-full">
-                    <div className="flex flex-1 flex-col">
-                        <Stepper
-                            completedSteps={frame.completedSteps}
-                            className="px-[1em] pt-[1.4em]"
-                        />
+            <div className="flex h-full">
+                <div className="flex flex-1 flex-col">
+                    <Stepper
+                        completedSteps={frame.completedSteps}
+                        className="px-[1em] pt-[1.4em]"
+                    />
 
-                        <div
-                            key={content.step}
-                            className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
-                        >
-                            {!frame.isApproved && (
-                                <span className="text-[1.15em] font-bold leading-tight text-white">
-                                    {title}
-                                </span>
-                            )}
-                            <div className="flex-1">
-                                <StepBody content={content} />
-                            </div>
-                        </div>
-
-                        <div className="flex h-[4.4em] shrink-0 items-center justify-end px-[2em]">
-                            {primaryButton && (
-                                <SceneButton
-                                    isPressed={primaryButton.isPressed}
-                                    className={`transition-opacity duration-300 ${
-                                        primaryButton.isEnabled
-                                            ? ''
-                                            : 'opacity-40'
-                                    }`}
-                                >
-                                    {primaryButton.label}
-                                </SceneButton>
-                            )}
+                    <div
+                        key={content.step}
+                        className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
+                    >
+                        {!frame.isApproved && (
+                            <span className="text-[1.15em] font-bold leading-tight text-white">
+                                {title}
+                            </span>
+                        )}
+                        <div className="flex-1">
+                            <StepBody content={content} />
                         </div>
                     </div>
 
-                    {layout.showSummary && (
-                        <SummaryPanel
-                            rows={frame.summary}
-                            isApproved={frame.isApproved}
-                            className="w-[36%]"
-                        />
-                    )}
+                    <div className="flex h-[4.4em] shrink-0 items-center justify-end px-[2em]">
+                        {primaryButton && (
+                            <SceneButton
+                                isPressed={primaryButton.isPressed}
+                                className={`transition-opacity duration-300 ${
+                                    primaryButton.isEnabled ? '' : 'opacity-40'
+                                }`}
+                            >
+                                {primaryButton.label}
+                            </SceneButton>
+                        )}
+                    </div>
                 </div>
-            </AppWindow>
-        </SceneCanvas>
+
+                {layout.showSummary && (
+                    <SummaryPanel
+                        rows={frame.summary}
+                        isApproved={frame.isApproved}
+                        className="w-[36%]"
+                    />
+                )}
+            </div>
+        </SceneBrowserWindow>
     )
 }
