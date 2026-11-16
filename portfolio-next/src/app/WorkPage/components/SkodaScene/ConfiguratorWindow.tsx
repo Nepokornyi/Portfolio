@@ -1,4 +1,5 @@
 import { ReactNode } from 'react'
+import { SceneAddressBar } from '@/app/WorkPage/components/SceneAddressBar'
 import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
 import { CarPreview } from './CarPreview'
@@ -43,11 +44,7 @@ export const ConfiguratorWindow = ({
     >
         <AppWindow
             className="absolute inset-0 motion-safe:animate-fade-in-up"
-            title={
-                <span className="mx-auto w-[45%] bg-primary-input-background py-[0.2em] text-center text-[0.8em]">
-                    <span className="opacity-60">cc.skoda-auto.com</span>
-                </span>
-            }
+            title={<SceneAddressBar address="cc.skoda-auto.com" />}
         >
             <div className={`flex h-full ${layout.body}`}>
                 <CarPreview

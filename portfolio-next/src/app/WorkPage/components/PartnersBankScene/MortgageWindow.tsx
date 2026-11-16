@@ -1,3 +1,4 @@
+import { SceneAddressBar } from '@/app/WorkPage/components/SceneAddressBar'
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
@@ -49,13 +50,7 @@ export const MortgageWindow = ({
         >
             <AppWindow
                 className="absolute inset-0 motion-safe:animate-fade-in-up"
-                title={
-                    <span className="mx-auto w-[45%] bg-primary-input-background py-[0.2em] text-center text-[0.8em]">
-                        <span className="opacity-60">
-                            partnersbanka.cz/hypoteka
-                        </span>
-                    </span>
-                }
+                title={<SceneAddressBar address="partnersbanka.cz/hypoteka" />}
             >
                 <div className="flex h-full">
                     <div className="flex flex-1 flex-col">
