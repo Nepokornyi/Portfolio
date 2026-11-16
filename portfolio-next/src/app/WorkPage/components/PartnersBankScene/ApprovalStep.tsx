@@ -1,4 +1,4 @@
-import { CheckIcon } from './CheckIcon'
+import { SceneCheckIcon } from '@/app/WorkPage/components/SceneCheckIcon'
 import { ApprovalState } from './types'
 
 type ApprovalStepProps = {
@@ -30,7 +30,7 @@ export const ApprovalStep = ({ approval }: ApprovalStepProps) => {
     return (
         <div className="flex h-full flex-col items-center justify-center gap-[1.4em] text-center motion-safe:animate-fade-in-up">
             <span className="flex size-[3.4em] rotate-45 items-center justify-center border border-primary-light-green text-primary-light-green shadow-[0_0_1.6em_var(--color-primary-light-green)]">
-                <CheckIcon className="size-[2em] -rotate-45" />
+                <SceneCheckIcon className="size-[2em] -rotate-45" />
             </span>
             <div className="flex flex-col gap-[0.3em]">
                 <span className="text-[1.4em] font-bold leading-tight text-white">

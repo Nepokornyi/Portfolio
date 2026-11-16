@@ -1,4 +1,4 @@
-import { CheckIcon } from './CheckIcon'
+import { SceneCheckIcon } from '@/app/WorkPage/components/SceneCheckIcon'
 import { STEPS } from './const'
 
 type StepperProps = {
@@ -38,7 +38,7 @@ export const Stepper = ({ completedSteps, className = '' }: StepperProps) => (
                     >
                         <span className="-rotate-45 text-[0.7em] leading-none">
                             {isDone ? (
-                                <CheckIcon className="size-[1.6em]" />
+                                <SceneCheckIcon className="size-[1.6em]" />
                             ) : (
                                 index + 1
                             )}

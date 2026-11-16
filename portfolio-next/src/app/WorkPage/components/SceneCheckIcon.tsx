@@ -1,8 +1,8 @@
-type CheckIconProps = {
+type SceneCheckIconProps = {
     className?: string
 }
 
-export const CheckIcon = ({ className = '' }: CheckIconProps) => (
+export const SceneCheckIcon = ({ className = '' }: SceneCheckIconProps) => (
     <svg
         viewBox="0 0 24 24"
         aria-hidden
