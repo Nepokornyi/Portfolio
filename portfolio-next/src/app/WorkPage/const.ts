@@ -3,6 +3,7 @@ import partnersBankImage from '@/assets/static/work/partnersbank-logo.svg'
 import skodaImage from '@/assets/static/work/skoda-logo.svg'
 import kooperativaImage from '@/assets/static/work/kooperativa-logo.svg'
 import helloBankImage from '@/assets/static/work/hellobank-logo.svg'
+import { KooperativaScene } from './components/KooperativaScene/KooperativaScene'
 import { PartnersBankScene } from './components/PartnersBankScene/PartnersBankScene'
 import { PrintWorldScene } from './components/PrintWorldScene/PrintWorldScene'
 import { SkodaScene } from './components/SkodaScene/SkodaScene'
@@ -68,6 +69,7 @@ export const workProjects: WorkProject[] = [
         responsibilities: [
             'Built pages and components for insurance products and online forms.',
         ],
+        Scene: KooperativaScene,
     },
     {
         title: 'Hello Bank',
