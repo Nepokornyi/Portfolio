@@ -1,5 +1,5 @@
-import { DashboardPanel } from './DashboardPanel'
 import { CHART_MAX_HOURS, STAGES } from './const'
+import { DashboardPanel } from './DashboardPanel'
 import { formatDuration } from './lib/format'
 import { TimeBucket } from './types'
 

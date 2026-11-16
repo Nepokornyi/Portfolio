@@ -1,7 +1,7 @@
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { DashboardPanel } from './DashboardPanel'
 import { SOURCES } from './const'
-import { TimelineEventState, TimelineState } from './types'
+import { DashboardPanel } from './DashboardPanel'
+import { SceneLayout, TimelineEventState, TimelineState } from './types'
 
 const shownClass = (isShown: boolean) =>
     isShown ? 'motion-safe:animate-fade-in-up' : 'invisible'
@@ -89,7 +89,7 @@ const TotalLeadTime = ({
 
 type TaskTimelineProps = {
     timeline: TimelineState | null
-    variant: 'steps' | 'list'
+    variant: SceneLayout['timeline']
     className?: string
 }
 

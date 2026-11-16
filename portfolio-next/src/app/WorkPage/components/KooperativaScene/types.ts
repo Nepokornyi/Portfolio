@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
@@ -7,7 +10,7 @@ export type Source = {
     color: string
 }
 
-export type StageId = 'waiting' | 'inProgress' | 'codeReview' | 'testing'
+type StageId = 'waiting' | 'inProgress' | 'codeReview' | 'testing'
 
 export type Stage = {
     id: StageId
@@ -89,19 +92,18 @@ export type SceneFrame = {
     bars: TimeBucket[]
     tasks: TaskRow[]
     timeline: TimelineState | null
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {
-    body: string
-    panel: string
+    page: string
+    panelPadding: string
     showSources: boolean
     statIds: StatId[]
     statGrid: string
     showStatDetail: boolean
     middle: string
     tasksPanel: string
-    taskRows: number
     timeline: 'steps' | 'list'
     timelinePanel: string
     timelineReplacesTasks: boolean

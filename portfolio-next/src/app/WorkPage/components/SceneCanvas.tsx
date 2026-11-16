@@ -4,6 +4,18 @@ import {
     SceneCursor,
 } from '@/app/WorkPage/components/SceneCursor'
 
+export type SceneBaseLayout<Target extends string> = {
+    aspect: string
+    fontSize: string
+    cursor: Record<Target, CursorPosition | null>
+    showPointer: boolean
+}
+
+export type SceneCursorState<Target extends string> = {
+    target: Target
+    isClicking: boolean
+}
+
 type SceneCanvasProps = {
     aspect: string
     fontSize: string

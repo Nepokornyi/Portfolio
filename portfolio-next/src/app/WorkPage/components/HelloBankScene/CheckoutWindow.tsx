@@ -9,8 +9,16 @@ import { OrderItem } from './OrderItem'
 import { PaymentMethods } from './PaymentMethods'
 import { InstalmentPanel, SceneFrame, SceneLayout } from './types'
 
-const SectionLabel = ({ children }: { children: ReactNode }) => (
-    <span className="shrink-0 text-[0.7em] uppercase tracking-[0.15em] text-white/40">
+const SectionLabel = ({
+    children,
+    className = '',
+}: {
+    children: ReactNode
+    className?: string
+}) => (
+    <span
+        className={`shrink-0 text-[0.7em] uppercase tracking-[0.15em] text-white/40 ${className}`}
+    >
         {children}
     </span>
 )
@@ -66,9 +74,9 @@ export const CheckoutWindow = ({
                     pictureClassName={layout.productPicture}
                 />
                 {layout.showPaymentLabel && (
-                    <div className="mt-[1.2em] flex">
-                        <SectionLabel>Payment method</SectionLabel>
-                    </div>
+                    <SectionLabel className="mt-[calc(1.2em/0.7)]">
+                        Payment method
+                    </SectionLabel>
                 )}
                 <PaymentMethods
                     options={frame.paymentMethodOptions}

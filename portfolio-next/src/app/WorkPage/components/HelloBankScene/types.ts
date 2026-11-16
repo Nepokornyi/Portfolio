@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type Product = {
     name: string
@@ -20,7 +23,7 @@ export type PaymentMethodOption = PaymentMethod & {
 
 export type TermMonths = 6 | 12 | 24
 
-export type TermOption = {
+type TermOption = {
     months: TermMonths
     isSelected: boolean
     isPressed: boolean
@@ -58,7 +61,7 @@ export type CursorTarget =
 export type SceneFrame = {
     paymentMethodOptions: PaymentMethodOption[]
     panel: InstalmentPanel
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {

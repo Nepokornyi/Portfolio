@@ -1,3 +1,4 @@
+import { clamp01 } from '@/app/WorkPage/lib/clamp01'
 import {
     CURSOR_TRAVEL_TICKS,
     PAYMENT_COUNT_TICKS,
@@ -16,8 +17,6 @@ import {
     SceneFrame,
     TermMonths,
 } from '../types'
-
-const clamp01 = (value: number) => Math.min(1, Math.max(0, value))
 
 const shownAfter = (clickTick: number) => clickTick + PRESS_TICKS
 

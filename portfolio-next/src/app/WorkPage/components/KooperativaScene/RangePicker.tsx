@@ -33,7 +33,7 @@ export const RangePicker = ({ picker, className = '' }: RangePickerProps) => (
         </div>
 
         {picker.isMenuOpen && (
-            <div className="absolute inset-x-0 top-full z-10 mt-[0.3em] flex flex-col border border-primary-stroke bg-primary-background py-[0.3em] shadow-lg shadow-black/60 motion-safe:animate-fade-in-up">
+            <div className="absolute inset-x-0 top-full mt-[0.3em] flex flex-col border border-primary-stroke bg-primary-background py-[0.3em] shadow-lg shadow-black/60 motion-safe:animate-fade-in-up">
                 {RANGE_OPTIONS.map((option) => (
                     <span
                         key={option}

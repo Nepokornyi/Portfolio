@@ -1,4 +1,7 @@
-import { SceneBaseLayout } from '@/app/WorkPage/components/SceneBrowserWindow'
+import {
+    SceneBaseLayout,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -44,7 +47,7 @@ export type SceneFrame = {
     total: number
     isContinuePressed: boolean
     isSummaryShown: boolean
-    cursor: { target: CursorTarget; isClicking: boolean }
+    cursor: SceneCursorState<CursorTarget>
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {

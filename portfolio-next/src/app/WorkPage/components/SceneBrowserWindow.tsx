@@ -1,20 +1,16 @@
 import { ReactNode } from 'react'
 import { SceneAddressBar } from '@/app/WorkPage/components/SceneAddressBar'
-import { SceneCanvas } from '@/app/WorkPage/components/SceneCanvas'
-import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+import {
+    SceneBaseLayout,
+    SceneCanvas,
+    SceneCursorState,
+} from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
-
-export type SceneBaseLayout<Target extends string> = {
-    aspect: string
-    fontSize: string
-    cursor: Record<Target, CursorPosition | null>
-    showPointer: boolean
-}
 
 type SceneBrowserWindowProps<Target extends string> = {
     address: string
     layout: SceneBaseLayout<Target>
-    cursor: { target: Target; isClicking: boolean }
+    cursor: SceneCursorState<Target>
     className?: string
     children: ReactNode
 }
