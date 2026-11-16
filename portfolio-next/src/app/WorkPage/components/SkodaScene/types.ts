@@ -1,3 +1,5 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
 export type ModelId = 'fabia' | 'octavia' | 'kodiaq'
@@ -43,4 +45,16 @@ export type SceneFrame = {
     isContinuePressed: boolean
     isSummaryShown: boolean
     cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = {
+    aspect: string
+    fontSize: string
+    body: string
+    preview: string
+    panel: string
+    modelList: string
+    modelOption: string
+    cursor: Record<CursorTarget, CursorPosition | null>
+    showPointer: boolean
 }
