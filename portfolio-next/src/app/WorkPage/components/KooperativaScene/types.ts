@@ -1,3 +1,5 @@
+import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
+
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
 export type Source = {
@@ -88,4 +90,23 @@ export type SceneFrame = {
     tasks: TaskRow[]
     timeline: TimelineState | null
     cursor: { target: CursorTarget; isClicking: boolean }
+}
+
+export type SceneLayout = {
+    aspect: string
+    fontSize: string
+    body: string
+    panel: string
+    showSources: boolean
+    statIds: StatId[]
+    statGrid: string
+    showStatDetail: boolean
+    middle: string
+    tasksPanel: string
+    taskRows: number
+    timeline: 'steps' | 'list'
+    timelinePanel: string
+    timelineReplacesTasks: boolean
+    cursor: Record<CursorTarget, CursorPosition | null>
+    showPointer: boolean
 }

@@ -1,5 +1,6 @@
 import {
     DashboardRange,
+    SceneLayout,
     Source,
     SourceId,
     Stage,
@@ -203,3 +204,51 @@ export const RANGE_OPTIONS = [
     MONTH_RANGE.label,
     'Last 90 days',
 ]
+
+export const DESKTOP_LAYOUT: SceneLayout = {
+    aspect: 'aspect-[3/2]',
+    fontSize: '1.8cqw',
+    body: 'gap-[0.7em] p-[0.9em]',
+    panel: 'px-[0.8em] py-[0.6em]',
+    showSources: true,
+    statIds: ['leadTime', 'reviewTime', 'mergeRequests', 'coverage'],
+    statGrid: 'grid-cols-4 gap-[0.7em]',
+    showStatDetail: true,
+    middle: 'flex-row gap-[0.7em]',
+    tasksPanel: 'w-[42%] shrink-0',
+    taskRows: 4,
+    timeline: 'steps',
+    timelinePanel: 'h-[8.6em]',
+    timelineReplacesTasks: false,
+    cursor: {
+        idle: { x: 80, y: 63 },
+        rangePicker: { x: 96, y: 11.2 },
+        rangeOption: { x: 95.5, y: 22.9 },
+        taskRow: { x: 87.1, y: 41.2 },
+    },
+    showPointer: true,
+}
+
+export const MOBILE_LAYOUT: SceneLayout = {
+    aspect: 'aspect-[3/4]',
+    fontSize: '3.6cqw',
+    body: 'gap-[0.5em] p-[0.6em]',
+    panel: 'px-[0.6em] py-[0.4em]',
+    showSources: false,
+    statIds: ['leadTime', 'reviewTime'],
+    statGrid: 'grid-cols-2 gap-[0.5em]',
+    showStatDetail: false,
+    middle: 'flex-col gap-[0.5em]',
+    tasksPanel: 'h-[12.7em] shrink-0',
+    taskRows: 4,
+    timeline: 'list',
+    timelinePanel: 'h-[12.7em]',
+    timelineReplacesTasks: true,
+    cursor: {
+        idle: null,
+        rangePicker: { x: 84.2, y: 10.9 },
+        rangeOption: { x: 84.2, y: 22.5 },
+        taskRow: { x: 50, y: 72.6 },
+    },
+    showPointer: false,
+}

@@ -33,7 +33,7 @@ const isPressed = (tick: number, clickTick: number) =>
     tick >= clickTick && tick < shownAfter(clickTick)
 
 const monthLoadStarted = shownAfter(STORY.rangeOptionClicked)
-const timelineStarted = shownAfter(STORY.taskClicked)
+const taskSelected = shownAfter(STORY.taskClicked)
 
 const getLoadedRange = (tick: number) =>
     tick < monthLoadStarted
@@ -106,16 +106,16 @@ const getTasks = (tick: number, range: DashboardRange): TaskRow[] =>
             key: task.key,
             title: task.title,
             leadTime: formatDuration(task.leadTimeHours),
-            isSelected: isSelectedTask && tick >= timelineStarted,
+            isSelected: isSelectedTask && tick >= taskSelected,
             isPressed: isSelectedTask && isPressed(tick, STORY.taskClicked),
         }
     })
 
 const getTimeline = (tick: number): TimelineState | null => {
-    if (tick < timelineStarted) return null
+    if (tick < taskSelected) return null
 
     const shownEvents =
-        Math.floor((tick - timelineStarted) / TIMELINE_STEP_TICKS) + 1
+        Math.floor((tick - taskSelected) / TIMELINE_STEP_TICKS) + 1
 
     return {
         taskKey: SELECTED_TASK.key,
@@ -142,7 +142,8 @@ const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
     if (tick < leaveFor(STORY.rangePickerClicked)) return 'idle'
     if (tick < leaveFor(STORY.rangeOptionClicked)) return 'rangePicker'
-    if (tick < leaveFor(STORY.taskClicked)) return 'rangeOption'
+    if (tick < monthLoadStarted) return 'rangeOption'
+    if (tick < leaveFor(STORY.taskClicked)) return 'idle'
     if (tick < STORY.taskClicked + CURSOR_TRAVEL_TICKS) return 'taskRow'
     return 'idle'
 }
