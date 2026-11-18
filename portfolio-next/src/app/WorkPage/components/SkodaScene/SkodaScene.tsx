@@ -3,8 +3,8 @@
 import { SceneLoop } from '@/app/WorkPage/components/SceneLoop'
 import { ConfiguratorWindow } from './ConfiguratorWindow'
 import {
-    LANDSCAPE_LAYOUT,
     HOLD_MS,
+    LANDSCAPE_LAYOUT,
     LOOP_TICKS,
     PORTRAIT_LAYOUT,
     TICK_MS,
