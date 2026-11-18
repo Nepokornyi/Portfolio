@@ -7,6 +7,7 @@ import { workProjects } from './const'
 import { WorkDescription } from './components/WorkDescription'
 import { WorkDetails } from './components/WorkDetails'
 import { WorkImage } from './components/WorkImage'
+import { WorkScenePreview } from './components/WorkScenePreview'
 import { WorkShowcase } from './components/WorkShowcase'
 
 export const WorkPage = () => {
@@ -25,10 +26,14 @@ export const WorkPage = () => {
                     title: project.title,
                     slide: (
                         <div className="grid lg:grid-cols-2 h-full">
-                            <WorkImage
-                                image={project.image}
-                                alt={project.imageAlt}
-                            />
+                            {project.Scene && project.showsSceneInSlide ? (
+                                <WorkScenePreview Scene={project.Scene} />
+                            ) : (
+                                <WorkImage
+                                    image={project.image}
+                                    alt={project.imageAlt}
+                                />
+                            )}
                             <WorkDescription project={project} />
                         </div>
                     ),

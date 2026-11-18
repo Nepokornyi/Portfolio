@@ -12,4 +12,5 @@ export type WorkProject = {
     about: string
     responsibilities: string[]
     Scene?: ComponentType
+    showsSceneInSlide?: boolean
 }
