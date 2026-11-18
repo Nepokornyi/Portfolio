@@ -26,7 +26,7 @@ export const WorkPage = () => {
                     title: project.title,
                     slide: (
                         <div className="grid lg:grid-cols-2 h-full">
-                            {project.Scene && project.showsSceneInSlide ? (
+                            {project.Scene ? (
                                 <WorkScenePreview Scene={project.Scene} />
                             ) : (
                                 <WorkImage

@@ -28,7 +28,6 @@ export const workProjects: WorkProject[] = [
             'Worked on the back end with NestJS.',
         ],
         Scene: PrintWorldScene,
-        showsSceneInSlide: true,
     },
     {
         title: 'Partners Banka',
