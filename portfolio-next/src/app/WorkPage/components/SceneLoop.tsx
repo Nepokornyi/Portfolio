@@ -33,19 +33,19 @@ export const SceneLoop = <Frame, Layout>({
             ref={containerRef}
             role="img"
             aria-label={label}
-            className="w-full"
+            className="w-full [container-type:inline-size]"
         >
             <Stage
                 key={`desktop-${loop}`}
                 frame={frame}
                 layout={desktopLayout}
-                className="mx-auto hidden w-full max-w-[calc(100cqh*3/2)] lg:block"
+                className="mx-auto hidden w-full max-w-[calc(100cqh*3/2)] [@container(min-width:480px)]:block"
             />
             <Stage
                 key={`mobile-${loop}`}
                 frame={frame}
                 layout={mobileLayout}
-                className="mx-auto w-full max-w-[360px] lg:hidden"
+                className="mx-auto w-full max-w-[min(360px,calc(100cqh*3/4))] [@container(min-width:480px)]:hidden"
             />
         </div>
     )
