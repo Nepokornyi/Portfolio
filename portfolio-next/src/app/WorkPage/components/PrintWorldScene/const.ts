@@ -72,7 +72,7 @@ export const FEED_TOKENS: FeedToken[] = [
     },
 ]
 
-export const DESKTOP_LAYOUT: SceneLayout = {
+export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     feed: 'left-0 top-[6%] h-[54%] w-[35%]',
@@ -90,7 +90,7 @@ export const DESKTOP_LAYOUT: SceneLayout = {
     showPointer: true,
 }
 
-export const MOBILE_LAYOUT: SceneLayout = {
+export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     feed: 'left-0 top-0 h-[30%] w-[66%]',

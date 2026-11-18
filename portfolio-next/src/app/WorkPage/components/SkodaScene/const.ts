@@ -48,7 +48,7 @@ export const PAINTS: Record<PaintId, Paint> = {
     },
 }
 
-export const DESKTOP_LAYOUT: SceneLayout = {
+export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     body: 'flex-row',
@@ -66,7 +66,7 @@ export const DESKTOP_LAYOUT: SceneLayout = {
     showPointer: true,
 }
 
-export const MOBILE_LAYOUT: SceneLayout = {
+export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     body: 'flex-col',

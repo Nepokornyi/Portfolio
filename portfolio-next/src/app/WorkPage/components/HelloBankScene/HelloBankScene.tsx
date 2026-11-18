@@ -3,10 +3,10 @@
 import { SceneLoop } from '@/app/WorkPage/components/SceneLoop'
 import { CheckoutWindow } from './CheckoutWindow'
 import {
-    DESKTOP_LAYOUT,
     HOLD_MS,
+    LANDSCAPE_LAYOUT,
     LOOP_TICKS,
-    MOBILE_LAYOUT,
+    PORTRAIT_LAYOUT,
     TICK_MS,
 } from './const'
 import { getSceneFrame } from './lib/sceneFrame'
@@ -19,7 +19,7 @@ export const HelloBankScene = () => (
         holdMs={HOLD_MS}
         getFrame={getSceneFrame}
         Stage={CheckoutWindow}
-        desktopLayout={DESKTOP_LAYOUT}
-        mobileLayout={MOBILE_LAYOUT}
+        landscapeLayout={LANDSCAPE_LAYOUT}
+        portraitLayout={PORTRAIT_LAYOUT}
     />
 )

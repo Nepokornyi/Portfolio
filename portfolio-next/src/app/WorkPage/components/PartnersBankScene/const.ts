@@ -63,7 +63,7 @@ export const ID_CHECKS = [
     'Document is valid',
 ]
 
-export const DESKTOP_LAYOUT: SceneLayout = {
+export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     showSummary: true,
@@ -77,7 +77,7 @@ export const DESKTOP_LAYOUT: SceneLayout = {
     showPointer: true,
 }
 
-export const MOBILE_LAYOUT: SceneLayout = {
+export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     showSummary: false,
