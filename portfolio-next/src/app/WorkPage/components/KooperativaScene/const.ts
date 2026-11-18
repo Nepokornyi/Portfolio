@@ -205,7 +205,7 @@ export const RANGE_OPTIONS = [
     'Last 90 days',
 ]
 
-export const DESKTOP_LAYOUT: SceneLayout = {
+export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     page: 'gap-[0.7em] p-[0.9em]',
@@ -228,7 +228,7 @@ export const DESKTOP_LAYOUT: SceneLayout = {
     showPointer: true,
 }
 
-export const MOBILE_LAYOUT: SceneLayout = {
+export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     page: 'gap-[0.5em] p-[0.6em]',

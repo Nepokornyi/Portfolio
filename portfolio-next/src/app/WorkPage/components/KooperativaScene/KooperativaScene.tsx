@@ -2,10 +2,10 @@
 
 import { SceneLoop } from '@/app/WorkPage/components/SceneLoop'
 import {
-    DESKTOP_LAYOUT,
+    LANDSCAPE_LAYOUT,
     HOLD_MS,
     LOOP_TICKS,
-    MOBILE_LAYOUT,
+    PORTRAIT_LAYOUT,
     TICK_MS,
 } from './const'
 import { DashboardWindow } from './DashboardWindow'
@@ -19,7 +19,7 @@ export const KooperativaScene = () => (
         holdMs={HOLD_MS}
         getFrame={getSceneFrame}
         Stage={DashboardWindow}
-        desktopLayout={DESKTOP_LAYOUT}
-        mobileLayout={MOBILE_LAYOUT}
+        landscapeLayout={LANDSCAPE_LAYOUT}
+        portraitLayout={PORTRAIT_LAYOUT}
     />
 )

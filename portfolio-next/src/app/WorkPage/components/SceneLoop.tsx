@@ -10,8 +10,8 @@ type SceneLoopProps<Frame, Layout> = {
     holdMs: number
     getFrame: (tick: number) => Frame
     Stage: ComponentType<{ frame: Frame; layout: Layout; className?: string }>
-    desktopLayout: Layout
-    mobileLayout: Layout
+    landscapeLayout: Layout
+    portraitLayout: Layout
 }
 
 export const SceneLoop = <Frame, Layout>({
@@ -21,8 +21,8 @@ export const SceneLoop = <Frame, Layout>({
     holdMs,
     getFrame,
     Stage,
-    desktopLayout,
-    mobileLayout,
+    landscapeLayout,
+    portraitLayout,
 }: SceneLoopProps<Frame, Layout>) => {
     const containerRef = useRef<HTMLDivElement>(null)
     const { step, loop } = useStepLoop(containerRef, loopTicks, tickMs, holdMs)
@@ -36,15 +36,15 @@ export const SceneLoop = <Frame, Layout>({
             className="w-full [container-type:inline-size]"
         >
             <Stage
-                key={`desktop-${loop}`}
+                key={`landscape-${loop}`}
                 frame={frame}
-                layout={desktopLayout}
+                layout={landscapeLayout}
                 className="mx-auto hidden w-full max-w-[calc(100cqh*3/2)] [@container(min-width:480px)]:block"
             />
             <Stage
-                key={`mobile-${loop}`}
+                key={`portrait-${loop}`}
                 frame={frame}
-                layout={mobileLayout}
+                layout={portraitLayout}
                 className="mx-auto w-full max-w-[min(360px,calc(100cqh*3/4))] [@container(min-width:480px)]:hidden"
             />
         </div>
