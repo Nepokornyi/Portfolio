@@ -23,8 +23,6 @@ export const SceneBrowserWindow = <Target extends string>({
     children,
 }: SceneBrowserWindowProps<Target>) => (
     <SceneCanvas
-        aspect={layout.aspect}
-        fontSize={layout.fontSize}
         cursorTarget={cursor.target}
         idleCursor={layout.idleCursor}
         isClicking={cursor.isClicking}

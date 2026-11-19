@@ -105,8 +105,6 @@ export const FEED_TOKENS: FeedToken[] = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     page: 'gap-[0.7em] p-[0.9em]',
     body: 'flex-row',
     panelGap: 'gap-[0.7em]',
@@ -117,8 +115,6 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     page: 'gap-[0.5em] p-[0.6em]',
     body: 'flex-col',
     panelGap: 'gap-[0.5em]',

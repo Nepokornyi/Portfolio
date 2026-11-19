@@ -46,8 +46,6 @@ export const TERMS: Term[] = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     body: 'flex-row',
     order: 'w-[55%] p-[1.6em]',
     panel: 'w-[45%] border-l p-[1.6em]',
@@ -60,8 +58,6 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     body: 'flex-col',
     order: 'shrink-0 px-[1.2em] py-[0.9em]',
     panel: 'flex-1 border-t px-[1.2em] py-[0.9em]',

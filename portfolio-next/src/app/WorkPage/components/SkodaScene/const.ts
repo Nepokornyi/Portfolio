@@ -56,8 +56,6 @@ export const PAINTS: Record<PaintId, Paint> = {
 }
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     body: 'flex-row',
     preview: 'w-[60%] p-[2em]',
     panel: 'w-[40%] border-l p-[1.4em]',
@@ -68,8 +66,6 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     body: 'flex-col',
     preview: 'h-[13em] shrink-0 p-[1em]',
     panel: 'flex-1 border-t px-[1.2em] pb-[1.2em] pt-[1em]',

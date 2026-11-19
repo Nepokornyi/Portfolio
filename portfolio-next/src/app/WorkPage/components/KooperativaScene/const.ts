@@ -208,8 +208,6 @@ export const RANGE_OPTIONS: RangeOption[] = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     page: 'gap-[0.7em] p-[0.9em]',
     panelPadding: 'px-[0.8em] py-[0.6em]',
     showSources: true,
@@ -226,8 +224,6 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     page: 'gap-[0.5em] p-[0.6em]',
     panelPadding: 'px-[0.6em] py-[0.4em]',
     showSources: false,

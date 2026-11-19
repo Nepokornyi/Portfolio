@@ -64,16 +64,12 @@ export const ID_CHECKS = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     showSummary: true,
     idleCursor: { x: 44, y: 78 },
     showPointer: true,
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     showSummary: false,
     idleCursor: null,
     showPointer: false,
