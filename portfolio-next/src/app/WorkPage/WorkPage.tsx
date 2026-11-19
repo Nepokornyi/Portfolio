@@ -16,7 +16,7 @@ export const WorkPage = () => {
             header={<SectionHeadline>{'<work>'}</SectionHeadline>}
             contentGridLayout="grid-rows-[auto_1fr] lg:grid-cols-2"
         >
-            <FlexContainer className="hidden h-full lg:flex items-center border-b">
+            <FlexContainer className="hidden h-full lg:flex items-center border-b border-r">
                 <Text className="lg:text-4xl my-6 lg:my-8">{'<work>'}</Text>
             </FlexContainer>
 

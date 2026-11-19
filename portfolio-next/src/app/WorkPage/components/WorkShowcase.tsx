@@ -22,7 +22,7 @@ export const WorkShowcase = ({ projects }: WorkShowcaseProps) => {
 
     return (
         <>
-            <FlexContainer className="h-full items-center justify-between border-b lg:border-l">
+            <FlexContainer className="h-full items-center justify-between border-b">
                 <Text className="text-lg lg:text-4xl lg:mr-0 my-6 lg:my-8 font-bold text-primary-dark-blue">
                     Featured Projects
                 </Text>
