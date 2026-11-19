@@ -1,7 +1,6 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
-import { TradeSide, TradeState } from './types'
-
-const SIDES: TradeSide[] = ['buy', 'sell']
+import { TRADE_TABS } from './const'
+import { CursorTarget, TradeState } from './types'
 
 type TradeFormProps = {
     trade: TradeState
@@ -14,12 +13,10 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
     return (
         <div className={`flex flex-col gap-[0.6em] ${className}`}>
             <div className="flex text-[0.8em]">
-                {SIDES.map((side) => (
+                {TRADE_TABS.map(({ side, cursorTarget }) => (
                     <span
                         key={side}
-                        data-cursor-target={
-                            side === 'sell' ? 'sellTab' : undefined
-                        }
+                        data-cursor-target={cursorTarget}
                         className={`flex-1 border-b pb-[0.4em] text-center ${
                             side === trade.side
                                 ? 'border-primary-stroke text-white'
@@ -32,7 +29,7 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
             </div>
 
             <div
-                data-cursor-target="amountField"
+                data-cursor-target={'amountField' satisfies CursorTarget}
                 className={`flex h-[2.2em] shrink-0 items-center border border-primary-stroke bg-primary-input-background px-[0.6em] text-[0.9em] tabular-nums ${
                     trade.isAmountFocused
                         ? 'shadow-[0_0_0_0.1em_var(--color-primary-stroke)]'
@@ -55,7 +52,7 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
             <SceneButton
                 isPressed={trade.isSubmitPressed}
                 variant={isBuy ? 'filled' : 'outline'}
-                cursorTarget="tradeButton"
+                cursorTarget={'tradeButton' satisfies CursorTarget}
             >
                 {trade.side} {trade.ticker}
             </SceneButton>

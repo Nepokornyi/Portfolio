@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
 
@@ -13,7 +14,6 @@ export type SliderMark = {
 export type LoanState = {
     amount: number
     sliderPosition: number
-    sliderMarks: SliderMark[]
     isDragging: boolean
     monthlyPayment: number
 }
@@ -55,7 +55,11 @@ export type SummaryRow = {
 }
 
 export type CursorTarget =
-    'idle' | 'sliderStart' | 'sliderEnd' | 'uploadButton' | 'primaryButton'
+    | typeof IDLE_TARGET
+    | 'sliderStart'
+    | 'sliderEnd'
+    | 'uploadButton'
+    | 'primaryButton'
 
 export type SceneFrame = {
     completedSteps: number

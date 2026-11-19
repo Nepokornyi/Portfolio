@@ -1,5 +1,5 @@
 import { RANGE_OPTIONS } from './const'
-import { RangePickerState } from './types'
+import { CursorTarget, RangePickerState } from './types'
 
 type RangePickerProps = {
     picker: RangePickerState
@@ -9,7 +9,7 @@ type RangePickerProps = {
 export const RangePicker = ({ picker, className = '' }: RangePickerProps) => (
     <div className={`relative w-[7.4em] shrink-0 ${className}`}>
         <div
-            data-cursor-target="rangePicker"
+            data-cursor-target={'rangePicker' satisfies CursorTarget}
             className={`flex h-[1.9em] items-center justify-between gap-[0.4em] border px-[0.6em] transition-colors duration-150 ${
                 picker.isMenuOpen
                     ? 'border-primary-stroke'

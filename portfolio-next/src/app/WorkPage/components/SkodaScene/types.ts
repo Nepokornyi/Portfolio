@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -35,7 +36,7 @@ export type PaintOption = Paint & {
 }
 
 export type CursorTarget =
-    | 'idle'
+    | typeof IDLE_TARGET
     | 'octaviaOption'
     | 'raceBlueSwatch'
     | 'mambaGreenSwatch'

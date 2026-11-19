@@ -1,5 +1,6 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { formatCrowns } from '@/app/WorkPage/lib/format'
+import { CursorTarget } from './types'
 
 type TotalBarProps = {
     total: number
@@ -21,7 +22,7 @@ export const TotalBar = ({
         </div>
         <SceneButton
             isPressed={isContinuePressed}
-            cursorTarget="continueButton"
+            cursorTarget={'continueButton' satisfies CursorTarget}
             className="mt-[0.6em]"
         >
             Continue

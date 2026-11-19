@@ -1,4 +1,4 @@
-import { FeedToken, SceneLayout } from './types'
+import { FeedToken, SceneLayout, TradeTab } from './types'
 
 export const TICK_MS = 100
 export const LOOP_TICKS = 98
@@ -102,6 +102,11 @@ export const FEED_TOKENS: FeedToken[] = [
         age: '1d',
         marketCap: 4.7,
     },
+]
+
+export const TRADE_TABS: TradeTab[] = [
+    { side: 'buy' },
+    { side: 'sell', cursorTarget: 'sellTab' },
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {

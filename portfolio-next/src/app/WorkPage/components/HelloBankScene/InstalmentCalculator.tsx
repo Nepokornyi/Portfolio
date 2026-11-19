@@ -1,7 +1,7 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { YEARLY_RATE } from './const'
-import { CalculatorState } from './types'
+import { CalculatorState, CursorTarget } from './types'
 
 const CalculatorFact = ({ label, value }: { label: string; value: string }) => (
     <div className="flex items-baseline justify-between gap-[0.6em] py-[0.3em]">
@@ -56,7 +56,7 @@ export const InstalmentCalculator = ({
             </div>
             <SceneButton
                 isPressed={calculator.isApplyPressed}
-                cursorTarget="applyButton"
+                cursorTarget={'applyButton' satisfies CursorTarget}
                 className="mt-[0.6em]"
             >
                 Apply
