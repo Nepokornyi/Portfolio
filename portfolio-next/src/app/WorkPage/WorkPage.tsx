@@ -5,7 +5,6 @@ import { Text } from '@/components/Text/Text'
 
 import { workProjects } from './const'
 import { WorkDescription } from './components/WorkDescription'
-import { WorkDetails } from './components/WorkDetails'
 import { WorkImage } from './components/WorkImage'
 import { WorkScenePreview } from '@/app/WorkPage/components/WorkScenePreview'
 import { WorkShowcase } from './components/WorkShowcase'
@@ -37,7 +36,6 @@ export const WorkPage = () => {
                             <WorkDescription project={project} />
                         </div>
                     ),
-                    details: <WorkDetails project={project} />,
                 }))}
             />
         </Frame>
