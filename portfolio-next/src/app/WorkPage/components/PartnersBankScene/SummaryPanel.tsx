@@ -23,7 +23,7 @@ export const SummaryPanel = ({
             {rows.map(({ label, value }) => (
                 <div
                     key={label}
-                    className={`flex items-baseline justify-between gap-[0.6em] border-b border-primary-hairline py-[0.6em] ${rowClassName}`}
+                    className={`flex items-center justify-between gap-[0.6em] border-b border-primary-hairline py-[0.6em] ${rowClassName}`}
                 >
                     <span className="text-white/40">{label}</span>
                     {value ? (

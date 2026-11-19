@@ -46,17 +46,16 @@ export const TERMS: Term[] = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    body: 'flex-row [@container(max-aspect-ratio:1.1)]:flex-col',
-    order: 'w-[55%] p-[1.6em] [@container(max-aspect-ratio:1.1)]:w-auto [@container(max-aspect-ratio:1.1)]:grow-[7] [@container(max-aspect-ratio:1.1)]:basis-0 [@container(max-aspect-ratio:1.1)]:px-[max(1.6em,calc((100%-40em)/2))]',
-    panel: 'w-[45%] border-l p-[1.6em] [@container(max-aspect-ratio:1.1)]:w-auto [@container(max-aspect-ratio:1.1)]:grow-[5] [@container(max-aspect-ratio:1.1)]:basis-0 [@container(max-aspect-ratio:1.1)]:border-l-0 [@container(max-aspect-ratio:1.1)]:border-t [@container(max-aspect-ratio:1.1)]:px-[max(1.6em,calc((100%-40em)/2))]',
-    productCard:
-        'flex-col gap-[0.8em] p-[1em] [@container(max-aspect-ratio:1.4)]:grow',
+    body: 'flex-row scene-stacked:flex-col',
+    order: 'w-[55%] p-[1.6em] scene-stacked:w-auto scene-stacked:grow-[7] scene-stacked:basis-0 scene-stacked:px-[calc((100%-40em)/2)]',
+    panel: 'w-[45%] border-l p-[1.6em] scene-stacked:w-auto scene-stacked:grow-[5] scene-stacked:basis-0 scene-stacked:border-l-0 scene-stacked:border-t scene-stacked:px-[calc((100%-40em)/2)]',
+    productCard: 'flex-col gap-[0.8em] p-[1em] scene-roomy:grow',
     productPicture:
-        'h-[10em] max-h-[16em] p-[0.6em] [@container(max-aspect-ratio:1.4)]:h-auto [@container(max-aspect-ratio:1.4)]:min-h-[7em] [@container(max-aspect-ratio:1.4)]:basis-[7em] [@container(max-aspect-ratio:1.4)]:grow [@container(max-aspect-ratio:1.1)]:max-h-[19em]',
+        'h-[10em] max-h-[16em] p-[0.6em] scene-roomy:h-auto scene-roomy:min-h-[7em] scene-roomy:basis-[7em] scene-roomy:grow scene-stacked:max-h-[19em]',
     productDetails: '',
     paymentLabel: '',
     paymentMethods:
-        'mt-[0.5em] [@container(max-aspect-ratio:1.1)]:grid [@container(max-aspect-ratio:1.1)]:grid-cols-2',
+        'mt-[0.5em] scene-stacked:grid scene-stacked:grid-cols-2',
     paymentNote: '',
     idleCursor: { x: 92, y: 34 },
     showPointer: true,
@@ -64,16 +63,16 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
     body: 'flex-col',
-    order: 'shrink-0 px-[1.2em] py-[0.9em] [@container(max-aspect-ratio:0.6)]:flex-1',
+    order: 'shrink-0 px-[1.2em] py-[0.9em] scene-tall:flex-1',
     panel: 'flex-1 border-t px-[1.2em] py-[0.9em]',
     productCard:
-        'flex-row items-center gap-[0.9em] p-[0.6em] [@container(max-aspect-ratio:0.6)]:grow [@container(max-aspect-ratio:0.6)]:flex-col [@container(max-aspect-ratio:0.6)]:items-stretch [@container(max-aspect-ratio:0.6)]:gap-[0.8em] [@container(max-aspect-ratio:0.6)]:p-[1em]',
+        'flex-row items-center gap-[0.9em] p-[0.6em] scene-tall:grow scene-tall:flex-col scene-tall:items-stretch scene-tall:gap-[0.8em] scene-tall:p-[1em]',
     productPicture:
-        'h-[3.4em] w-[4.4em] shrink-0 p-[0.4em] [@container(max-aspect-ratio:0.6)]:h-auto [@container(max-aspect-ratio:0.6)]:w-auto [@container(max-aspect-ratio:0.6)]:min-h-[7em] [@container(max-aspect-ratio:0.6)]:max-h-[16em] [@container(max-aspect-ratio:0.6)]:basis-[7em] [@container(max-aspect-ratio:0.6)]:grow [@container(max-aspect-ratio:0.6)]:p-[0.6em]',
-    productDetails: 'flex-1 [@container(max-aspect-ratio:0.6)]:flex-none',
-    paymentLabel: '[@container(min-aspect-ratio:0.6)]:hidden',
-    paymentMethods: 'mt-[0.8em] [@container(max-aspect-ratio:0.6)]:mt-[0.5em]',
-    paymentNote: '[@container(min-aspect-ratio:0.6)]:hidden',
+        'h-[3.4em] w-[4.4em] shrink-0 p-[0.4em] scene-tall:h-auto scene-tall:w-auto scene-tall:min-h-[7em] scene-tall:max-h-[16em] scene-tall:basis-[7em] scene-tall:grow scene-tall:p-[0.6em]',
+    productDetails: 'flex-1 scene-tall:flex-none',
+    paymentLabel: 'hidden scene-tall:block',
+    paymentMethods: 'mt-[0.8em] scene-tall:mt-[0.5em]',
+    paymentNote: 'hidden scene-tall:block',
     idleCursor: null,
     showPointer: false,
 }

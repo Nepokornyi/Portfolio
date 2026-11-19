@@ -113,6 +113,7 @@ export type SceneLayout = SceneBaseLayout & {
     showSources: boolean
     statGrid: string
     statDetail: string
+    extraStatTile: string
     middle: string
     tasksPanel: string
     tasksPanelAfterSelection: string

@@ -1,23 +1,27 @@
-import { SOURCES } from './const'
+import { ALWAYS_SHOWN_STAT_IDS, SOURCES } from './const'
 import { SourceLabel } from './SourceLabel'
 import { StatTileState } from './types'
 
 type StatTilesProps = {
     stats: StatTileState[]
     detailClassName: string
+    extraTileClassName: string
     className?: string
 }
 
 export const StatTiles = ({
     stats,
     detailClassName,
+    extraTileClassName,
     className = '',
 }: StatTilesProps) => (
     <div className={`grid shrink-0 ${className}`}>
         {stats.map(({ id, label, detail, source, value }) => (
             <div
                 key={id}
-                className="flex min-w-0 flex-col border border-primary-hairline px-[0.7em] py-[0.5em]"
+                className={`flex min-w-0 flex-col border border-primary-hairline px-[0.7em] py-[0.5em] ${
+                    ALWAYS_SHOWN_STAT_IDS.includes(id) ? '' : extraTileClassName
+                }`}
             >
                 <div className="flex items-center justify-between gap-[0.5em]">
                     <span className="truncate text-[0.75em] text-white/60">

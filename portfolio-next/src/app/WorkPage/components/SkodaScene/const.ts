@@ -56,15 +56,14 @@ export const PAINTS: Record<PaintId, Paint> = {
 }
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    body: 'flex-row [@container(max-aspect-ratio:1.2)]:flex-col',
-    preview:
-        'w-[60%] p-[2em] [@container(max-aspect-ratio:1.2)]:w-auto [@container(max-aspect-ratio:1.2)]:flex-1',
+    body: 'flex-row scene-stacked:flex-col',
+    preview: 'w-[60%] p-[2em] scene-stacked:w-auto scene-stacked:flex-1',
     carArea: '',
-    panel: 'w-[40%] border-l p-[1.4em] [@container(max-aspect-ratio:1.2)]:w-auto [@container(max-aspect-ratio:1.2)]:min-h-[26em] [@container(max-aspect-ratio:1.2)]:flex-1 [@container(max-aspect-ratio:1.2)]:border-l-0 [@container(max-aspect-ratio:1.2)]:border-t [@container(max-aspect-ratio:1.2)]:px-[max(1.4em,calc((100%-40em)/2))]',
+    panel: 'w-[40%] border-l p-[1.4em] scene-stacked:w-auto scene-stacked:min-h-[26em] scene-stacked:flex-1 scene-stacked:border-l-0 scene-stacked:border-t scene-stacked:px-[calc((100%-40em)/2)]',
     modelList: 'flex-col gap-[0.4em]',
     modelOption: 'h-[2.6em] items-center justify-between px-[0.8em]',
-    summary: '[@container(max-aspect-ratio:1.2)]:justify-center',
-    summarySaved: 'mt-auto [@container(max-aspect-ratio:1.2)]:mt-[1.6em]',
+    summary: 'scene-stacked:justify-center',
+    summarySaved: 'mt-auto scene-stacked:mt-[1.6em]',
     idleCursor: { x: 50, y: 84 },
     showPointer: true,
 }
@@ -72,15 +71,15 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 export const PORTRAIT_LAYOUT: SceneLayout = {
     body: 'flex-col',
     preview:
-        'h-[13em] shrink-0 p-[1em] [@container(max-aspect-ratio:0.6)]:h-auto [@container(max-aspect-ratio:0.6)]:max-h-[30em] [@container(max-aspect-ratio:0.6)]:flex-1 [@container(max-aspect-ratio:0.6)]:justify-center',
-    carArea: '[@container(max-aspect-ratio:0.6)]:max-h-[11em]',
+        'h-[13em] shrink-0 p-[1em] scene-tall:h-auto scene-tall:max-h-[30em] scene-tall:flex-1 scene-tall:justify-center',
+    carArea: 'scene-tall:max-h-[11em]',
     panel: 'flex-1 border-t px-[1.2em] pb-[1.2em] pt-[1em]',
     modelList:
-        'flex-row gap-[0.5em] [@container(max-aspect-ratio:0.6)]:flex-col [@container(max-aspect-ratio:0.6)]:gap-[0.4em]',
+        'flex-row gap-[0.5em] scene-tall:flex-col scene-tall:gap-[0.4em]',
     modelOption:
-        'h-[3.4em] flex-1 flex-col justify-center px-[0.5em] [@container(max-aspect-ratio:0.6)]:h-[2.6em] [@container(max-aspect-ratio:0.6)]:flex-none [@container(max-aspect-ratio:0.6)]:flex-row [@container(max-aspect-ratio:0.6)]:items-center [@container(max-aspect-ratio:0.6)]:justify-between [@container(max-aspect-ratio:0.6)]:px-[0.8em]',
-    summary: '[@container(max-aspect-ratio:0.6)]:justify-center',
-    summarySaved: 'mt-auto [@container(max-aspect-ratio:0.6)]:mt-[1.6em]',
+        'h-[3.4em] flex-1 flex-col justify-center px-[0.5em] scene-tall:h-[2.6em] scene-tall:flex-none scene-tall:flex-row scene-tall:items-center scene-tall:justify-between scene-tall:px-[0.8em]',
+    summary: 'scene-tall:justify-center',
+    summarySaved: 'mt-auto scene-tall:mt-[1.6em]',
     idleCursor: null,
     showPointer: false,
 }

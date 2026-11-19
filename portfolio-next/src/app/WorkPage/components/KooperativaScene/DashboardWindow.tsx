@@ -34,6 +34,7 @@ export const DashboardWindow = ({
                 <StatTiles
                     stats={frame.stats}
                     detailClassName={layout.statDetail}
+                    extraTileClassName={layout.extraStatTile}
                     className={layout.statGrid}
                 />
                 <div className={`flex min-h-0 flex-1 ${layout.middle}`}>

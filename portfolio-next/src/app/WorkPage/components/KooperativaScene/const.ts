@@ -5,6 +5,7 @@ import {
     Source,
     SourceId,
     Stage,
+    StatId,
     StatTile,
     Task,
     TimeBucket,
@@ -68,6 +69,8 @@ export const STAT_TILES: StatTile[] = [
         source: 'sonarqube',
     },
 ]
+
+export const ALWAYS_SHOWN_STAT_IDS: StatId[] = ['leadTime', 'reviewTime']
 
 export const CHART_MAX_HOURS = 144
 
@@ -213,11 +216,11 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     showSources: true,
     statGrid: 'grid-cols-4 gap-[0.7em]',
     statDetail: '',
-    middle: 'flex-row gap-[0.7em] [@container(max-aspect-ratio:1.2)]:flex-col',
-    tasksPanel: 'w-[42%] shrink-0 [@container(max-aspect-ratio:1.2)]:w-auto',
+    extraStatTile: '',
+    middle: 'flex-row gap-[0.7em] scene-stacked:flex-col',
+    tasksPanel: 'w-[42%] shrink-0 scene-stacked:w-auto',
     tasksPanelAfterSelection: '',
-    taskRow:
-        'min-h-[1.9em] max-h-[3em] [@container(max-aspect-ratio:1.4)]:flex-1',
+    taskRow: 'min-h-[1.9em] max-h-[3em] scene-roomy:flex-1',
     timeline: 'steps',
     timelinePanel: 'h-[8.6em]',
     timelinePanelBeforeSelection: '',
@@ -229,16 +232,16 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     page: 'gap-[0.5em] p-[0.6em]',
     panelPadding: 'px-[0.6em] py-[0.4em]',
     showSources: false,
-    statGrid:
-        'grid-cols-2 gap-[0.5em] [@container(min-aspect-ratio:0.6)]:[&>:nth-child(n+3)]:hidden',
-    statDetail: '[@container(min-aspect-ratio:0.6)]:hidden',
+    statGrid: 'grid-cols-2 gap-[0.5em]',
+    statDetail: 'hidden scene-very-tall:block',
+    extraStatTile: 'hidden scene-very-tall:flex',
     middle: 'flex-col gap-[0.5em]',
     tasksPanel: 'h-[12.7em] shrink-0',
-    tasksPanelAfterSelection: '[@container(min-aspect-ratio:0.6)]:hidden',
+    tasksPanelAfterSelection: 'hidden scene-very-tall:flex',
     taskRow: 'h-[1.9em]',
     timeline: 'list',
     timelinePanel: 'h-[12.7em]',
-    timelinePanelBeforeSelection: '[@container(min-aspect-ratio:0.6)]:hidden',
+    timelinePanelBeforeSelection: 'hidden scene-very-tall:flex',
     idleCursor: null,
     showPointer: false,
 }
