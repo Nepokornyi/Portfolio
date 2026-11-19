@@ -33,7 +33,7 @@ export const WorkCarousel = ({
                 aria-roledescription="carousel"
                 aria-label="Projects"
                 tabIndex={0}
-                className="flex overflow-x-auto snap-x snap-mandatory overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+                className="flex h-full overflow-x-auto snap-x snap-mandatory overscroll-x-contain [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
             >
                 {slides.map(({ label, content }, index) => (
                     <div
@@ -48,7 +48,7 @@ export const WorkCarousel = ({
                 ))}
             </div>
 
-            <div className="absolute left-0 top-full -translate-x-1/2 mt-2.5 lg:mt-5 flex flex-col gap-0.5">
+            <div className="absolute left-0 top-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-0.5">
                 {slides.map(({ label }, index) => {
                     const isActive = index === activeIndex
                     return (

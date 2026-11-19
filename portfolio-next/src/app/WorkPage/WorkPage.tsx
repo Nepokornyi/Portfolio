@@ -5,7 +5,6 @@ import { Text } from '@/components/Text/Text'
 
 import { workProjects } from './const'
 import { WorkDescription } from './components/WorkDescription'
-import { WorkDetails } from './components/WorkDetails'
 import { WorkImage } from './components/WorkImage'
 import { WorkScenePreview } from '@/app/WorkPage/components/WorkScenePreview'
 import { WorkShowcase } from './components/WorkShowcase'
@@ -15,9 +14,9 @@ export const WorkPage = () => {
         <Frame
             id="work"
             header={<SectionHeadline>{'<work>'}</SectionHeadline>}
-            contentGridLayout="lg:grid-cols-2"
+            contentGridLayout="grid-rows-[auto_1fr] lg:grid-cols-2"
         >
-            <FlexContainer className="hidden h-full lg:flex items-center border-b">
+            <FlexContainer className="hidden h-full lg:flex items-center border-b border-r">
                 <Text className="lg:text-4xl my-6 lg:my-8">{'<work>'}</Text>
             </FlexContainer>
 
@@ -37,7 +36,6 @@ export const WorkPage = () => {
                             <WorkDescription project={project} />
                         </div>
                     ),
-                    details: <WorkDetails project={project} />,
                 }))}
             />
         </Frame>
