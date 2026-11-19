@@ -1,3 +1,4 @@
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 import {
     BUY_AMOUNT,
     CANDLE_TICKS,
@@ -122,14 +123,14 @@ const CLICK_TICKS = [
 
 const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
-    if (tick < leaveFor(STORY.frogSelected)) return 'idle'
+    if (tick < leaveFor(STORY.frogSelected)) return IDLE_TARGET
     if (tick < leaveFor(STORY.amountFocused)) return 'frogCard'
     if (tick < leaveFor(STORY.buyClicked)) return 'amountField'
     if (tick < STORY.buyClicked + CURSOR_TRAVEL_TICKS) return 'tradeButton'
-    if (tick < leaveFor(STORY.sellSelected)) return 'idle'
+    if (tick < leaveFor(STORY.sellSelected)) return IDLE_TARGET
     if (tick < leaveFor(STORY.sellClicked)) return 'sellTab'
     if (tick < STORY.sellClicked + CURSOR_TRAVEL_TICKS) return 'tradeButton'
-    return 'idle'
+    return IDLE_TARGET
 }
 
 const isPressed = (tick: number, clickTick: number) =>

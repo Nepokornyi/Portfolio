@@ -1,10 +1,13 @@
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { CandleChart } from './CandleChart'
-import { formatChange, formatMarketCap } from './lib/format'
-import { PanelLabel } from './PanelLabel'
-import { PanelPlaceholder } from './PanelPlaceholder'
-import { TerminalPanel } from './TerminalPanel'
-import { ChartState } from './types'
+import { CandleChart } from '@/app/WorkPage/components/PrintWorldScene/CandleChart'
+import {
+    formatChange,
+    formatMarketCap,
+} from '@/app/WorkPage/components/PrintWorldScene/lib/format'
+import { PanelLabel } from '@/app/WorkPage/components/PrintWorldScene/PanelLabel'
+import { PanelPlaceholder } from '@/app/WorkPage/components/PrintWorldScene/PanelPlaceholder'
+import { TerminalPanel } from '@/app/WorkPage/components/PrintWorldScene/TerminalPanel'
+import { ChartState } from '@/app/WorkPage/components/PrintWorldScene/types'
 
 const ChartTitle = ({ chart }: { chart: ChartState }) => (
     <div className="flex min-w-0 items-baseline gap-[0.6em]">
