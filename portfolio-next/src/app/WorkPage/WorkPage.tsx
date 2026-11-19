@@ -14,7 +14,7 @@ export const WorkPage = () => {
         <Frame
             id="work"
             header={<SectionHeadline>{'<work>'}</SectionHeadline>}
-            contentGridLayout="lg:grid-cols-2"
+            contentGridLayout="grid-rows-[auto_1fr] lg:grid-cols-2"
         >
             <FlexContainer className="hidden h-full lg:flex items-center border-b">
                 <Text className="lg:text-4xl my-6 lg:my-8">{'<work>'}</Text>

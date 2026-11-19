@@ -24,7 +24,7 @@ export const WorkDescription = ({ project }: WorkDescriptionProps) => {
 
             <FlexContainer
                 flexDirection="flex-col"
-                className="h-full border-b justify-center pb-5 lg:py-10"
+                className="h-full border-b lg:border-b-0 justify-center pb-5 lg:py-10"
             >
                 <Text className="text-sm md:text-base lg:text-xl underline pb-1 text-white">
                     Technologies:

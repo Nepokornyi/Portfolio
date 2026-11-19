@@ -42,8 +42,6 @@ export const WorkShowcase = ({ projects }: WorkShowcaseProps) => {
                 activeIndex={activeIndex}
                 onSelect={scrollToSlide}
             />
-
-            <div className="lg:col-span-2 h-8 lg:h-[52px] my-12 lg:my-20" />
         </>
     )
 }
