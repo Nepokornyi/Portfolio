@@ -38,6 +38,7 @@ export const SlowestTasks = ({
                     className={`flex h-[1.9em] items-center gap-[0.6em] border-t border-primary-hairline px-[0.5em] transition-colors duration-150 ${rowStateClass(task)}`}
                 >
                     <span
+                        data-cursor-target={task.cursorTarget}
                         className={`shrink-0 text-[0.75em] tabular-nums ${
                             task.isSelected ? 'text-white' : 'text-white/50'
                         }`}

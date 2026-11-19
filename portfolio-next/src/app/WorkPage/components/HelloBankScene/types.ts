@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type Product = {
     name: string
@@ -14,6 +15,7 @@ export type PaymentMethodId = 'card' | 'instalments'
 export type PaymentMethod = {
     label: string
     note: string
+    cursorTarget?: CursorTarget
 }
 
 export type PaymentMethodOption = PaymentMethod & {
@@ -23,8 +25,12 @@ export type PaymentMethodOption = PaymentMethod & {
 
 export type TermMonths = 6 | 12 | 24
 
-type TermOption = {
+export type Term = {
     months: TermMonths
+    cursorTarget?: CursorTarget
+}
+
+type TermOption = Term & {
     isSelected: boolean
     isPressed: boolean
 }
@@ -52,7 +58,7 @@ export type InstalmentPanel =
     | { view: 'approved'; plan: InstalmentPlan }
 
 export type CursorTarget =
-    | 'idle'
+    | typeof IDLE_TARGET
     | 'instalmentsOption'
     | 'twelveMonthsButton'
     | 'twentyFourMonthsButton'
@@ -64,7 +70,7 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     body: string
     order: string
     panel: string

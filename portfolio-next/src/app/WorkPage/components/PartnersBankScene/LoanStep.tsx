@@ -1,5 +1,5 @@
 import { formatCrowns } from '@/app/WorkPage/lib/format'
-import { LOAN } from './const'
+import { LOAN, SLIDER_MARKS } from './const'
 import { LoanState } from './types'
 
 const LoanFact = ({ label, value }: { label: string; value: string }) => (
@@ -28,6 +28,14 @@ export const LoanStep = ({ loan }: LoanStepProps) => {
             <div className="flex flex-col gap-[0.3em]">
                 <div className="relative h-[1.4em]">
                     <span className="absolute inset-x-0 top-1/2 h-px bg-primary-hairline" />
+                    {SLIDER_MARKS.map(({ position, cursorTarget }) => (
+                        <span
+                            key={cursorTarget}
+                            data-cursor-target={cursorTarget}
+                            className="absolute top-1/2"
+                            style={{ left: `${position * 100}%` }}
+                        />
+                    ))}
                     <span
                         className="absolute left-0 top-1/2 h-px bg-primary-stroke motion-safe:transition-[width] motion-safe:duration-700 motion-safe:ease-in-out"
                         style={{ width: sliderPercent }}

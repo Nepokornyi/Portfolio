@@ -1,5 +1,6 @@
 import {
     DashboardRange,
+    RangeOption,
     SceneLayout,
     Source,
     SourceId,
@@ -110,6 +111,7 @@ export const SELECTED_TASK: Task = {
         (sum, event) => sum + (event.hoursAfterPrevious ?? 0),
         0,
     ),
+    cursorTarget: 'taskRow',
 }
 
 const bucket = (
@@ -199,10 +201,10 @@ export const MONTH_RANGE: DashboardRange = {
     ],
 }
 
-export const RANGE_OPTIONS = [
-    WEEK_RANGE.label,
-    MONTH_RANGE.label,
-    'Last 90 days',
+export const RANGE_OPTIONS: RangeOption[] = [
+    { label: WEEK_RANGE.label },
+    { label: MONTH_RANGE.label, cursorTarget: 'rangeOption' },
+    { label: 'Last 90 days' },
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
@@ -219,12 +221,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     timeline: 'steps',
     timelinePanel: 'h-[8.6em]',
     timelineReplacesTasks: false,
-    cursor: {
-        idle: { x: 80, y: 63 },
-        rangePicker: { x: 96, y: 11.2 },
-        rangeOption: { x: 95.5, y: 22.9 },
-        taskRow: { x: 87.1, y: 41.2 },
-    },
+    idleCursor: { x: 80, y: 63 },
     showPointer: true,
 }
 
@@ -242,11 +239,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     timeline: 'list',
     timelinePanel: 'h-[12.7em]',
     timelineReplacesTasks: true,
-    cursor: {
-        idle: null,
-        rangePicker: { x: 84.2, y: 10.9 },
-        rangeOption: { x: 84.2, y: 22.5 },
-        taskRow: { x: 50, y: 72.6 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

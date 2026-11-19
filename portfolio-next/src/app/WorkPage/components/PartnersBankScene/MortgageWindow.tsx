@@ -7,7 +7,7 @@ import { IdStep } from './IdStep'
 import { LoanStep } from './LoanStep'
 import { Stepper } from './Stepper'
 import { SummaryPanel } from './SummaryPanel'
-import { SceneFrame, SceneLayout, StepContent } from './types'
+import { CursorTarget, SceneFrame, SceneLayout, StepContent } from './types'
 
 const StepBody = ({ content }: { content: StepContent }) => {
     switch (content.step) {
@@ -69,6 +69,9 @@ export const MortgageWindow = ({
                         {primaryButton && (
                             <SceneButton
                                 isPressed={primaryButton.isPressed}
+                                cursorTarget={
+                                    'primaryButton' satisfies CursorTarget
+                                }
                                 className={`transition-opacity duration-300 ${
                                     primaryButton.isEnabled ? '' : 'opacity-40'
                                 }`}

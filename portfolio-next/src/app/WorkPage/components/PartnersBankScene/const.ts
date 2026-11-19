@@ -1,5 +1,5 @@
 import { formatCrowns } from '@/app/WorkPage/lib/format'
-import { SceneLayout, StepId } from './types'
+import { SceneLayout, SliderMark, StepId } from './types'
 
 export const TICK_MS = 100
 export const LOOP_TICKS = 116
@@ -43,6 +43,17 @@ export const LOAN = {
     yearlyRate: 0.0479,
 }
 
+const getSliderPosition = (amount: number) =>
+    (amount - LOAN.sliderMin) / (LOAN.sliderMax - LOAN.sliderMin)
+
+export const SLIDER_START_POSITION = getSliderPosition(LOAN.startAmount)
+export const SLIDER_END_POSITION = getSliderPosition(LOAN.amount)
+
+export const SLIDER_MARKS: SliderMark[] = [
+    { position: SLIDER_START_POSITION, cursorTarget: 'sliderStart' },
+    { position: SLIDER_END_POSITION, cursorTarget: 'sliderEnd' },
+]
+
 export const APPLICANT_NAME = 'Jan Novák'
 export const NET_INCOME = 85_000
 
@@ -67,13 +78,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     showSummary: true,
-    cursor: {
-        idle: { x: 44, y: 78 },
-        sliderStart: { x: 17.9, y: 43.1 },
-        sliderEnd: { x: 39.1, y: 43.1 },
-        uploadButton: { x: 32.1, y: 44.7 },
-        primaryButton: { x: 55.6, y: 94.6 },
-    },
+    idleCursor: { x: 44, y: 78 },
     showPointer: true,
 }
 
@@ -81,12 +86,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     showSummary: false,
-    cursor: {
-        idle: null,
-        sliderStart: { x: 28.7, y: 43.1 },
-        sliderEnd: { x: 60.6, y: 43.1 },
-        uploadButton: { x: 50, y: 44.7 },
-        primaryButton: { x: 77.5, y: 93.4 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

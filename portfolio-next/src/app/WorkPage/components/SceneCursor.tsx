@@ -1,22 +1,23 @@
+import { Ref } from 'react'
+
 export type CursorPosition = { x: number; y: number }
 
 type SceneCursorProps = {
-    position: CursorPosition | null
+    ref: Ref<HTMLDivElement>
     isClicking: boolean
     showPointer: boolean
 }
 
 export const SceneCursor = ({
-    position,
+    ref,
     isClicking,
     showPointer,
 }: SceneCursorProps) => {
-    if (!position) return null
-
     return (
         <div
+            ref={ref}
+            hidden
             className="pointer-events-none absolute z-20 motion-safe:transition-[left,top] motion-safe:duration-700 motion-safe:ease-in-out"
-            style={{ left: `${position.x}%`, top: `${position.y}%` }}
         >
             {!showPointer && isClicking && (
                 <span className="absolute -left-[0.8em] -top-[0.8em] size-[1.6em] rounded-full bg-white/30 motion-safe:animate-ping" />
