@@ -9,7 +9,7 @@ type WorkImageProps = {
 
 export const WorkImage = ({ image, alt }: WorkImageProps) => {
     return (
-        <FlexContainer className="aspect-[2/1] lg:aspect-auto lg:min-h-[350px] lg:h-full order-last lg:order-none lg:row-span-2 lg:border-r items-center justify-center bg-primary-dark-blue">
+        <FlexContainer className="max-lg:aspect-[3/4] max-lg:max-h-[85svh] max-lg:[@container(min-width:480px)]:aspect-[3/2] lg:min-h-[350px] lg:h-full order-last lg:order-none lg:row-span-2 lg:border-r items-center justify-center bg-primary-dark-blue">
             <div className="relative w-3/5 h-1/2 lg:w-1/2 lg:h-2/5">
                 <Image src={image} alt={alt} fill className="object-contain" />
             </div>

@@ -24,7 +24,7 @@ export const WorkPage = () => {
                 projects={workProjects.map((project) => ({
                     title: project.title,
                     slide: (
-                        <div className="grid lg:grid-cols-2 h-full">
+                        <div className="grid lg:grid-cols-2 h-full [container-type:inline-size]">
                             {project.Scene ? (
                                 <WorkScenePreview Scene={project.Scene} />
                             ) : (

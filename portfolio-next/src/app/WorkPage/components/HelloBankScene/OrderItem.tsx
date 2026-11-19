@@ -6,12 +6,14 @@ type OrderItemProps = {
     product: Product
     className: string
     pictureClassName: string
+    detailsClassName: string
 }
 
 export const OrderItem = ({
     product,
     className,
     pictureClassName,
+    detailsClassName,
 }: OrderItemProps) => (
     <div
         className={`flex shrink-0 border border-primary-hairline bg-white/[0.03] ${className}`}
@@ -19,7 +21,9 @@ export const OrderItem = ({
         <div className={`bg-primary-input-background ${pictureClassName}`}>
             <LaptopPicture className="size-full text-primary-stroke drop-shadow-[0_0_0.4em_currentColor]" />
         </div>
-        <div className="flex min-w-0 flex-1 items-center justify-between gap-[0.8em]">
+        <div
+            className={`flex min-w-0 items-center justify-between gap-[0.8em] ${detailsClassName}`}
+        >
             <div className="flex min-w-0 flex-col">
                 <span className="truncate font-bold leading-tight text-white">
                     {product.name}

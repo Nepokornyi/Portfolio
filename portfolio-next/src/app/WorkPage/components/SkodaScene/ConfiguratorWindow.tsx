@@ -43,6 +43,7 @@ export const ConfiguratorWindow = ({
                 model={frame.model}
                 paint={frame.paint}
                 className={layout.preview}
+                carAreaClassName={layout.carArea}
             />
 
             <div
@@ -54,6 +55,8 @@ export const ConfiguratorWindow = ({
                         model={frame.model}
                         paint={frame.paint}
                         total={frame.total}
+                        className={layout.summary}
+                        savedClassName={layout.summarySaved}
                     />
                 ) : (
                     <div key="options" className="flex flex-1 flex-col">

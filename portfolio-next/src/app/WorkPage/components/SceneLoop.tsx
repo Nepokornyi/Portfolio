@@ -33,19 +33,19 @@ export const SceneLoop = <Frame, Layout>({
             ref={containerRef}
             role="img"
             aria-label={label}
-            className="w-full [container-type:inline-size]"
+            className="relative size-full [--max-page-stretch:2]"
         >
             <Stage
                 key={`landscape-${loop}`}
                 frame={frame}
                 layout={landscapeLayout}
-                className="mx-auto hidden w-full max-w-[calc(100cqh*3/2)] [@container(min-width:480px)]:block"
+                className="hidden max-h-[calc(var(--max-page-stretch)*100cqw*2/3)] text-[length:min(1.8cqw,2.7cqh)] [@container(min-width:480px)]:block"
             />
             <Stage
                 key={`portrait-${loop}`}
                 frame={frame}
                 layout={portraitLayout}
-                className="mx-auto w-full max-w-[min(360px,calc(100cqh*3/4))] [@container(min-width:480px)]:hidden"
+                className="max-h-[calc(var(--max-page-stretch)*100cqw*4/3)] text-[length:min(3.6cqw,2.7cqh)] [@container(min-width:480px)]:hidden"
             />
         </div>
     )

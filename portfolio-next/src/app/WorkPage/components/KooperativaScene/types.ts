@@ -111,12 +111,14 @@ export type SceneLayout = SceneBaseLayout & {
     page: string
     panelPadding: string
     showSources: boolean
-    statIds: StatId[]
     statGrid: string
-    showStatDetail: boolean
+    statDetail: string
+    extraStatTile: string
     middle: string
     tasksPanel: string
+    tasksPanelAfterSelection: string
+    taskRow: string
     timeline: 'steps' | 'list'
     timelinePanel: string
-    timelineReplacesTasks: boolean
+    timelinePanelBeforeSelection: string
 }
