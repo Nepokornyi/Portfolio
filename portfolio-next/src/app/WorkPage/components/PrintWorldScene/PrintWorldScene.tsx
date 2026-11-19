@@ -9,7 +9,7 @@ import {
     TICK_MS,
 } from './const'
 import { getSceneFrame } from './lib/sceneFrame'
-import { SceneStage } from './SceneStage'
+import { TerminalWindow } from './TerminalWindow'
 
 export const PrintWorldScene = () => (
     <SceneLoop
@@ -18,7 +18,7 @@ export const PrintWorldScene = () => (
         tickMs={TICK_MS}
         holdMs={HOLD_MS}
         getFrame={getSceneFrame}
-        Stage={SceneStage}
+        Stage={TerminalWindow}
         landscapeLayout={LANDSCAPE_LAYOUT}
         portraitLayout={PORTRAIT_LAYOUT}
     />
