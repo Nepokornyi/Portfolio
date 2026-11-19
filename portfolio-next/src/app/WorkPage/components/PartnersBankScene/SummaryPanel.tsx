@@ -4,6 +4,7 @@ import { SummaryRow } from './types'
 type SummaryPanelProps = {
     rows: SummaryRow[]
     isApproved: boolean
+    rowListClassName: string
     rowClassName: string
     className?: string
 }
@@ -11,15 +12,16 @@ type SummaryPanelProps = {
 export const SummaryPanel = ({
     rows,
     isApproved,
+    rowListClassName,
     rowClassName,
     className = '',
 }: SummaryPanelProps) => (
     <div
         className={`flex flex-col border-primary-hairline bg-white/[0.03] py-[1.4em] ${className}`}
     >
-        <span className="font-bold text-white">Your mortgage</span>
+        <span className="mb-[0.64em] font-bold text-white">Your mortgage</span>
 
-        <div className="mt-[0.8em] flex flex-1 flex-col text-[0.8em]">
+        <div className={`flex flex-col text-[0.8em] ${rowListClassName}`}>
             {rows.map(({ label, value }) => (
                 <div
                     key={label}

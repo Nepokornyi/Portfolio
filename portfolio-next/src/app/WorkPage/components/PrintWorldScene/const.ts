@@ -104,6 +104,11 @@ export const FEED_TOKENS: FeedToken[] = [
     },
 ]
 
+const STACKED_FEED_COLUMNS = 2
+export const STACKED_FEED_ROWS = Math.ceil(
+    FEED_TOKENS.length / STACKED_FEED_COLUMNS,
+)
+
 export const TRADE_TABS: TradeTab[] = [
     { side: 'buy' },
     { side: 'sell', cursorTarget: 'sellTab' },

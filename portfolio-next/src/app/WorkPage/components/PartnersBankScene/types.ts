@@ -75,5 +75,6 @@ export type SceneLayout = SceneBaseLayout & {
     main: string
     step: string
     summary: string
+    summaryRowList: string
     summaryRow: string
 }

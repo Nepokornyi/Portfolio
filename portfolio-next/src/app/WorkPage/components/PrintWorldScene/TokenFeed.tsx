@@ -1,5 +1,8 @@
 import { CSSProperties } from 'react'
-import { FEED_TOKENS } from '@/app/WorkPage/components/PrintWorldScene/const'
+import {
+    FEED_TOKENS,
+    STACKED_FEED_ROWS,
+} from '@/app/WorkPage/components/PrintWorldScene/const'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
 import { formatMarketCap } from './lib/format'
 import { PanelLabel } from './PanelLabel'
@@ -61,7 +64,7 @@ export const TokenFeed = ({
             style={
                 {
                     '--feed-rows': FEED_TOKENS.length,
-                    '--feed-rows-per-column': Math.ceil(FEED_TOKENS.length / 2),
+                    '--feed-rows-per-column': STACKED_FEED_ROWS,
                 } as CSSProperties
             }
         >

@@ -85,6 +85,7 @@ export const MortgageWindow = ({
                 <SummaryPanel
                     rows={frame.summary}
                     isApproved={frame.isApproved}
+                    rowListClassName={layout.summaryRowList}
                     rowClassName={layout.summaryRow}
                     className={layout.summary}
                 />
