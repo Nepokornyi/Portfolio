@@ -4,13 +4,13 @@ import { StatTileState } from './types'
 
 type StatTilesProps = {
     stats: StatTileState[]
-    showDetail: boolean
+    detailClassName: string
     className?: string
 }
 
 export const StatTiles = ({
     stats,
-    showDetail,
+    detailClassName,
     className = '',
 }: StatTilesProps) => (
     <div className={`grid shrink-0 ${className}`}>
@@ -31,11 +31,11 @@ export const StatTiles = ({
                 <span className="mt-[0.15em] h-[1.3em] whitespace-nowrap text-[1.4em] font-bold leading-[1.3] tabular-nums text-white">
                     {value}
                 </span>
-                {showDetail && (
-                    <span className="truncate text-[0.7em] text-white/40">
-                        {detail}
-                    </span>
-                )}
+                <span
+                    className={`truncate text-[0.7em] text-white/40 ${detailClassName}`}
+                >
+                    {detail}
+                </span>
             </div>
         ))}
     </div>

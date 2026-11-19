@@ -72,18 +72,17 @@ export const CheckoutWindow = ({
                     product={PRODUCT}
                     className={`mt-[0.8em] ${layout.productCard}`}
                     pictureClassName={layout.productPicture}
+                    detailsClassName={layout.productDetails}
                 />
-                {layout.showPaymentLabel && (
-                    <SectionLabel className="mt-[calc(1.2em/0.7)]">
-                        Payment method
-                    </SectionLabel>
-                )}
+                <SectionLabel
+                    className={`mt-[calc(1.2em/0.7)] ${layout.paymentLabel}`}
+                >
+                    Payment method
+                </SectionLabel>
                 <PaymentMethods
                     options={frame.paymentMethodOptions}
-                    showNotes={layout.showPaymentNotes}
-                    className={
-                        layout.showPaymentLabel ? 'mt-[0.5em]' : 'mt-[0.8em]'
-                    }
+                    noteClassName={layout.paymentNote}
+                    className={layout.paymentMethods}
                 />
             </div>
 

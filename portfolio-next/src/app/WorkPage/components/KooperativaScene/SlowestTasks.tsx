@@ -11,12 +11,14 @@ const rowStateClass = ({ isSelected, isPressed }: TaskRow) => {
 type SlowestTasksProps = {
     tasks: TaskRow[]
     range: string
+    rowClassName: string
     className?: string
 }
 
 export const SlowestTasks = ({
     tasks,
     range,
+    rowClassName,
     className = '',
 }: SlowestTasksProps) => (
     <DashboardPanel
@@ -30,12 +32,12 @@ export const SlowestTasks = ({
     >
         <div
             key={range}
-            className="mt-[0.4em] flex flex-col motion-safe:animate-fade-in-up"
+            className="mt-[0.4em] flex flex-1 flex-col motion-safe:animate-fade-in-up"
         >
             {tasks.map((task) => (
                 <div
                     key={task.key}
-                    className={`flex h-[1.9em] items-center gap-[0.6em] border-t border-primary-hairline px-[0.5em] transition-colors duration-150 ${rowStateClass(task)}`}
+                    className={`flex items-center gap-[0.6em] border-t border-primary-hairline px-[0.5em] transition-colors duration-150 ${rowClassName} ${rowStateClass(task)}`}
                 >
                     <span
                         data-cursor-target={task.cursorTarget}

@@ -71,5 +71,9 @@ export type SceneFrame = {
 }
 
 export type SceneLayout = SceneBaseLayout & {
-    showSummary: boolean
+    body: string
+    main: string
+    step: string
+    summary: string
+    summaryRow: string
 }

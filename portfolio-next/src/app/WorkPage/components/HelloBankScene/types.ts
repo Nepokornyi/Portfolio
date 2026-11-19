@@ -76,6 +76,8 @@ export type SceneLayout = SceneBaseLayout & {
     panel: string
     productCard: string
     productPicture: string
-    showPaymentLabel: boolean
-    showPaymentNotes: boolean
+    productDetails: string
+    paymentLabel: string
+    paymentMethods: string
+    paymentNote: string
 }

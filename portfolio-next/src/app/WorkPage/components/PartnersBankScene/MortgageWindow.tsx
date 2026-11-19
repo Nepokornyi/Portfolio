@@ -44,8 +44,8 @@ export const MortgageWindow = ({
             cursor={frame.cursor}
             className={className}
         >
-            <div className="flex h-full">
-                <div className="flex flex-1 flex-col">
+            <div className={`flex h-full ${layout.body}`}>
+                <div className={`flex flex-col ${layout.main}`}>
                     <Stepper
                         completedSteps={frame.completedSteps}
                         className="px-[1em] pt-[1.4em]"
@@ -53,7 +53,7 @@ export const MortgageWindow = ({
 
                     <div
                         key={content.step}
-                        className="flex flex-1 flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up"
+                        className={`flex flex-col gap-[1.1em] px-[2em] pt-[1.6em] motion-safe:animate-fade-in-up ${layout.step}`}
                     >
                         {!frame.isApproved && (
                             <span className="text-[1.15em] font-bold leading-tight text-white">
@@ -82,13 +82,12 @@ export const MortgageWindow = ({
                     </div>
                 </div>
 
-                {layout.showSummary && (
-                    <SummaryPanel
-                        rows={frame.summary}
-                        isApproved={frame.isApproved}
-                        className="w-[36%]"
-                    />
-                )}
+                <SummaryPanel
+                    rows={frame.summary}
+                    isApproved={frame.isApproved}
+                    rowClassName={layout.summaryRow}
+                    className={layout.summary}
+                />
             </div>
         </SceneBrowserWindow>
     )

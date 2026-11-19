@@ -111,10 +111,14 @@ export const TRADE_TABS: TradeTab[] = [
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
     page: 'gap-[0.7em] p-[0.9em]',
-    body: 'flex-row',
+    body: 'flex-row [@container(max-aspect-ratio:1.2)]:flex-col',
     panelGap: 'gap-[0.7em]',
-    feed: 'w-[30%] shrink-0',
-    visibleTokens: FEED_TOKENS.length,
+    feed: 'w-[30%] shrink-0 [@container(max-aspect-ratio:1.2)]:w-auto',
+    feedList:
+        'flex-1 flex-col [@container(max-aspect-ratio:1.2)]:grid [@container(max-aspect-ratio:1.2)]:grid-flow-col [@container(max-aspect-ratio:1.2)]:grid-rows-5 [@container(max-aspect-ratio:1.2)]:gap-x-[1.6em]',
+    feedRow:
+        'min-h-[2.6em] max-h-[3.4em] [@container(max-aspect-ratio:1.4)]:h-[10%]',
+    main: 'flex-1',
     idleCursor: { x: 84, y: 60 },
     showPointer: true,
 }
@@ -123,8 +127,10 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     page: 'gap-[0.5em] p-[0.6em]',
     body: 'flex-col',
     panelGap: 'gap-[0.5em]',
-    feed: 'shrink-0',
-    visibleTokens: 3,
+    feed: 'flex-1',
+    feedList: 'flex-1 flex-col flex-wrap',
+    feedRow: 'h-[2.6em] w-full',
+    main: 'h-[65%] max-h-[36em] shrink-0',
     idleCursor: null,
     showPointer: false,
 }

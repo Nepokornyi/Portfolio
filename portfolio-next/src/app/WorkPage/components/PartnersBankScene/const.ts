@@ -75,13 +75,23 @@ export const ID_CHECKS = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    showSummary: true,
+    body: 'flex-row [@container(max-aspect-ratio:1.2)]:flex-col',
+    main: 'flex-1 [@container(max-aspect-ratio:1.2)]:flex-none [@container(max-aspect-ratio:1.2)]:px-[calc((100%-40em)/2)]',
+    step: 'flex-1 [@container(max-aspect-ratio:1.2)]:flex-none [@container(max-aspect-ratio:1.2)]:h-[18em]',
+    summary:
+        'w-[36%] border-l px-[1.4em] [@container(max-aspect-ratio:1.2)]:w-auto [@container(max-aspect-ratio:1.2)]:flex-1 [@container(max-aspect-ratio:1.2)]:border-l-0 [@container(max-aspect-ratio:1.2)]:border-t [@container(max-aspect-ratio:1.2)]:px-[calc((100%-40em)/2+2em)]',
+    summaryRow: 'max-h-[4em] [@container(max-aspect-ratio:1.4)]:flex-1',
     idleCursor: { x: 44, y: 78 },
     showPointer: true,
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    showSummary: false,
+    body: 'flex-col',
+    main: 'flex-1 [@container(max-aspect-ratio:0.6)]:flex-none',
+    step: 'flex-1 [@container(max-aspect-ratio:0.6)]:flex-none [@container(max-aspect-ratio:0.6)]:h-[18em]',
+    summary:
+        'flex-1 border-t px-[2em] [@container(min-aspect-ratio:0.6)]:hidden',
+    summaryRow: 'max-h-[5em] flex-1',
     idleCursor: null,
     showPointer: false,
 }

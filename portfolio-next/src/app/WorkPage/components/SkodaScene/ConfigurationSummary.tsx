@@ -23,14 +23,20 @@ type ConfigurationSummaryProps = {
     model: CarModel
     paint: Paint
     total: number
+    className: string
+    savedClassName: string
 }
 
 export const ConfigurationSummary = ({
     model,
     paint,
     total,
+    className,
+    savedClassName,
 }: ConfigurationSummaryProps) => (
-    <div className="flex flex-1 flex-col motion-safe:animate-fade-in-up">
+    <div
+        className={`flex flex-1 flex-col motion-safe:animate-fade-in-up ${className}`}
+    >
         <span className="font-bold leading-tight text-white">
             Your configuration
         </span>
@@ -55,7 +61,9 @@ export const ConfigurationSummary = ({
             </span>
         </div>
 
-        <div className="mt-auto flex items-center gap-[0.6em] font-bold text-primary-light-green">
+        <div
+            className={`flex items-center gap-[0.6em] font-bold text-primary-light-green ${savedClassName}`}
+        >
             <SceneCheckIcon className="size-[1.2em] shrink-0" />
             <span className="text-[0.9em]">Configuration saved</span>
         </div>
