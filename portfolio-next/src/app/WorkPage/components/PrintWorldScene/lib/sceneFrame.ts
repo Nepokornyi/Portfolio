@@ -179,7 +179,7 @@ export const getSceneFrame = (tick: number): SceneFrame => {
               }
             : null,
         trade:
-            tick >= STORY.tradeOpened
+            isChartOpen
                 ? {
                       ticker: FROG.ticker,
                       side: isSellSide ? 'sell' : 'buy',
