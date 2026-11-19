@@ -1,5 +1,5 @@
 import { formatCrowns } from '@/app/WorkPage/lib/format'
-import { SceneLayout, StepId } from './types'
+import { SceneLayout, SliderMark, StepId } from './types'
 
 export const TICK_MS = 100
 export const LOOP_TICKS = 116
@@ -42,6 +42,17 @@ export const LOAN = {
     years: 30,
     yearlyRate: 0.0479,
 }
+
+const getSliderPosition = (amount: number) =>
+    (amount - LOAN.sliderMin) / (LOAN.sliderMax - LOAN.sliderMin)
+
+export const SLIDER_START_POSITION = getSliderPosition(LOAN.startAmount)
+export const SLIDER_END_POSITION = getSliderPosition(LOAN.amount)
+
+export const SLIDER_MARKS: SliderMark[] = [
+    { position: SLIDER_START_POSITION, cursorTarget: 'sliderStart' },
+    { position: SLIDER_END_POSITION, cursorTarget: 'sliderEnd' },
+]
 
 export const APPLICANT_NAME = 'Jan Novák'
 export const NET_INCOME = 85_000

@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type SourceId = 'jira' | 'gitlab' | 'sonarqube'
 
@@ -91,7 +92,11 @@ export type TimelineState = {
     total: string | null
 }
 
-export type CursorTarget = 'idle' | 'rangePicker' | 'rangeOption' | 'taskRow'
+export type CursorTarget =
+    | typeof IDLE_TARGET
+    | 'rangePicker'
+    | 'rangeOption'
+    | 'taskRow'
 
 export type SceneFrame = {
     rangePicker: RangePickerState

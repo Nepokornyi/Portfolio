@@ -1,7 +1,7 @@
 import { useEffect, useEffectEvent, useLayoutEffect, useRef } from 'react'
 import { CursorPosition } from '@/app/WorkPage/components/SceneCursor'
 
-const IDLE_TARGET = 'idle'
+export const IDLE_TARGET = 'idle'
 // Offsets are whole pixels, and a transform animation adds an offsetParent, so a still target can measure 1 px apart
 const MEASUREMENT_TOLERANCE_PX = 2
 

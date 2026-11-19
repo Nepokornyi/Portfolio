@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type Product = {
     name: string
@@ -57,7 +58,7 @@ export type InstalmentPanel =
     | { view: 'approved'; plan: InstalmentPlan }
 
 export type CursorTarget =
-    | 'idle'
+    | typeof IDLE_TARGET
     | 'instalmentsOption'
     | 'twelveMonthsButton'
     | 'twentyFourMonthsButton'

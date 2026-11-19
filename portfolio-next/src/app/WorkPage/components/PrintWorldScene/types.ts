@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type FeedToken = {
     ticker: string
@@ -27,7 +28,7 @@ export type Candle = {
 }
 
 export type CursorTarget =
-    'idle' | 'frogCard' | 'amountField' | 'tradeButton' | 'sellTab'
+    typeof IDLE_TARGET | 'frogCard' | 'amountField' | 'tradeButton' | 'sellTab'
 
 export type ChartState = {
     token: FeedToken
@@ -44,6 +45,11 @@ export type TradeMark = {
 }
 
 export type TradeSide = 'buy' | 'sell'
+
+export type TradeTab = {
+    side: TradeSide
+    cursorTarget?: CursorTarget
+}
 
 export type TradeState = {
     ticker: string
