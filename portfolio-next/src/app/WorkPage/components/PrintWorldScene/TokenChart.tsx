@@ -43,20 +43,25 @@ type TokenChartProps = {
 
 export const TokenChart = ({ chart, className = '' }: TokenChartProps) => (
     <TerminalPanel
-        title={chart ? <ChartTitle chart={chart} /> : <PanelLabel>Chart</PanelLabel>}
+        title={
+            chart ? (
+                <ChartTitle chart={chart} />
+            ) : (
+                <PanelLabel>Chart</PanelLabel>
+            )
+        }
         aside={chart && <ChartPrice chart={chart} />}
         className={className}
     >
         {chart ? (
             <CandleChart
-                key="chart"
                 candles={chart.candles}
                 entry={chart.entry}
                 exit={chart.exit}
                 className="m-[0.8em] min-h-0 flex-1 motion-safe:animate-fade-in-up"
             />
         ) : (
-            <PanelPlaceholder key="empty" message="Select a token to see its chart" />
+            <PanelPlaceholder message="Select a token to see its chart" />
         )}
     </TerminalPanel>
 )

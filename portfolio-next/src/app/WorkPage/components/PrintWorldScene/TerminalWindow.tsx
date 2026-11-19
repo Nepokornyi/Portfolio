@@ -24,19 +24,21 @@ export const TerminalWindow = ({
     >
         <div className={`flex h-full flex-col ${layout.page}`}>
             <TerminalHeader toast={frame.toast} />
-            <div className={`flex min-h-0 flex-1 ${layout.body}`}>
+            <div
+                className={`flex min-h-0 flex-1 ${layout.body} ${layout.panelGap}`}
+            >
                 <TokenFeed
                     feed={frame.feed.slice(0, layout.visibleTokens)}
                     className={layout.feed}
                 />
                 <div
-                    className={`flex min-h-0 min-w-0 flex-1 flex-col ${layout.market}`}
+                    className={`flex min-h-0 min-w-0 flex-1 flex-col ${layout.panelGap}`}
                 >
                     <TokenChart chart={frame.chart} className="flex-1" />
                     <TradePanel
                         trade={frame.trade}
                         closedTrade={frame.closedTrade}
-                        className={layout.tradePanel}
+                        className="h-[9em] shrink-0"
                     />
                 </div>
             </div>

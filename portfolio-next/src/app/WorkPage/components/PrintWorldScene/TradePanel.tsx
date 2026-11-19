@@ -18,10 +18,7 @@ export const TradePanel = ({
 }: TradePanelProps) => (
     <TerminalPanel className={className}>
         {trade ? (
-            <div
-                key="trade"
-                className="flex flex-1 motion-safe:animate-fade-in-up"
-            >
+            <div className="flex flex-1 motion-safe:animate-fade-in-up">
                 <TradeForm trade={trade} className="w-[55%] p-[0.8em]" />
                 <div className="flex min-w-0 flex-1 border-l border-primary-hairline p-[0.8em]">
                     {closedTrade ? (
@@ -32,7 +29,7 @@ export const TradePanel = ({
                 </div>
             </div>
         ) : (
-            <PanelPlaceholder key="empty" message="Select a token to trade" />
+            <PanelPlaceholder message="Select a token to trade" />
         )}
     </TerminalPanel>
 )

@@ -143,7 +143,7 @@ export const getSceneFrame = (tick: number): SceneFrame => {
     const hasSold = tick > STORY.sellClicked
     const isSellSide = tick >= STORY.sellSelected
     const frogChart = getFrogChart(tick)
-    const isChartOpen = tick >= STORY.frogSelected
+    const isFrogSelected = tick >= STORY.frogSelected
 
     const feed = FEED_TOKENS.filter((token) => token.listedAt <= tick).map(
         (token) => {
@@ -156,7 +156,7 @@ export const getSceneFrame = (tick: number): SceneFrame => {
                     ? `${Math.floor((tick - token.listedAt) / CANDLE_TICKS)}s`
                     : token.age,
                 isNew,
-                isSelected: isChartOpen && token === FROG,
+                isSelected: isFrogSelected && token === FROG,
             }
         },
     )
@@ -171,33 +171,31 @@ export const getSceneFrame = (tick: number): SceneFrame => {
 
     return {
         feed,
-        chart: isChartOpen
+        chart: isFrogSelected
             ? {
                   ...frogChart,
                   entry: hasBought ? buyFill : null,
                   exit: hasSold ? sellFill : null,
               }
             : null,
-        trade:
-            isChartOpen
-                ? {
-                      ticker: FROG.ticker,
-                      side: isSellSide ? 'sell' : 'buy',
-                      amount: isSellSide
-                          ? sellAmount
-                          : BUY_AMOUNT.slice(0, typedDigits),
-                      isAmountFocused:
-                          tick >= STORY.amountFocused &&
-                          tick < STORY.buyClicked,
-                      isSubmitPressed:
-                          isPressed(tick, STORY.buyClicked) ||
-                          isPressed(tick, STORY.sellClicked),
-                      position:
-                          hasBought && !hasSold
-                              ? getPosition(frogChart.marketCap)
-                              : null,
-                  }
-                : null,
+        trade: isFrogSelected
+            ? {
+                  ticker: FROG.ticker,
+                  side: isSellSide ? 'sell' : 'buy',
+                  amount: isSellSide
+                      ? sellAmount
+                      : BUY_AMOUNT.slice(0, typedDigits),
+                  isAmountFocused:
+                      tick >= STORY.amountFocused && tick < STORY.buyClicked,
+                  isSubmitPressed:
+                      isPressed(tick, STORY.buyClicked) ||
+                      isPressed(tick, STORY.sellClicked),
+                  position:
+                      hasBought && !hasSold
+                          ? getPosition(frogChart.marketCap)
+                          : null,
+              }
+            : null,
         closedTrade: hasSold ? closedTrade : null,
         toast:
             hasBought && tick < STORY.toastHidden
