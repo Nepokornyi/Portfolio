@@ -63,7 +63,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
     body: 'flex-col',
-    order: 'shrink-0 px-[1.2em] py-[0.9em] scene-tall:flex-1',
+    order: 'shrink-0 px-[1.2em] py-[0.9em] scene-tall:min-h-fit scene-tall:flex-1',
     panel: 'flex-1 border-t px-[1.2em] py-[0.9em]',
     productCard:
         'flex-row items-center gap-[0.9em] p-[0.6em] scene-tall:grow scene-tall:flex-col scene-tall:items-stretch scene-tall:gap-[0.8em] scene-tall:p-[1em]',

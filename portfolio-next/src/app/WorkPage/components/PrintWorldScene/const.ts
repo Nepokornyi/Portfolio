@@ -115,7 +115,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     panelGap: 'gap-[0.7em]',
     feed: 'w-[30%] shrink-0 scene-stacked:w-auto',
     feedList:
-        'flex-1 flex-col scene-stacked:grid scene-stacked:grid-flow-col scene-stacked:grid-rows-5 scene-stacked:gap-x-[1.6em]',
+        'flex-1 flex-col scene-stacked:grid scene-stacked:grid-flow-col scene-stacked:grid-rows-[repeat(var(--feed-rows-per-column),minmax(0,1fr))] scene-stacked:gap-x-[1.6em]',
     feedRow: 'min-h-[2.6em] scene-roomy:h-[calc(100%/var(--feed-rows))]',
     main: 'flex-1',
     idleCursor: { x: 84, y: 60 },

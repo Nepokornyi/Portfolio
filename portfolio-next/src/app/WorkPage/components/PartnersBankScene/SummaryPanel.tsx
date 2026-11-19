@@ -39,7 +39,7 @@ export const SummaryPanel = ({
 
         <div
             key={String(isApproved)}
-            className={`mt-auto flex items-center gap-[0.7em] text-[0.9em] font-bold motion-safe:animate-fade-in-up ${
+            className={`mt-[1em] flex items-center gap-[0.7em] text-[0.9em] font-bold motion-safe:animate-fade-in-up ${
                 isApproved ? 'text-primary-light-green' : 'text-white/60'
             }`}
         >

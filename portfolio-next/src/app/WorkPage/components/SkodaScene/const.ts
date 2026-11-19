@@ -73,7 +73,7 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     preview:
         'h-[13em] shrink-0 p-[1em] scene-tall:h-auto scene-tall:max-h-[30em] scene-tall:flex-1 scene-tall:justify-center',
     carArea: 'scene-tall:max-h-[11em]',
-    panel: 'flex-1 border-t px-[1.2em] pb-[1.2em] pt-[1em]',
+    panel: 'flex-1 border-t px-[1.2em] pb-[1.2em] pt-[1em] scene-tall:min-h-fit',
     modelList:
         'flex-row gap-[0.5em] scene-tall:flex-col scene-tall:gap-[0.4em]',
     modelOption:

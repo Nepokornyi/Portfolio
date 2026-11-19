@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
+import { FEED_TOKENS } from '@/app/WorkPage/components/PrintWorldScene/const'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { FEED_TOKENS } from './const'
 import { formatMarketCap } from './lib/format'
 import { PanelLabel } from './PanelLabel'
 import { TerminalPanel } from './TerminalPanel'
@@ -58,7 +58,12 @@ export const TokenFeed = ({
     >
         <div
             className={`flex min-h-0 overflow-hidden ${listClassName}`}
-            style={{ '--feed-rows': FEED_TOKENS.length } as CSSProperties}
+            style={
+                {
+                    '--feed-rows': FEED_TOKENS.length,
+                    '--feed-rows-per-column': Math.ceil(FEED_TOKENS.length / 2),
+                } as CSSProperties
+            }
         >
             {feed.map((card) => (
                 <TokenRow
