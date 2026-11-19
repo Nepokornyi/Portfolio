@@ -1,9 +1,12 @@
-import { OpenPosition } from './OpenPosition'
-import { PanelPlaceholder } from './PanelPlaceholder'
-import { TerminalPanel } from './TerminalPanel'
-import { TradeForm } from './TradeForm'
-import { TradeResult } from './TradeResult'
-import { ClosedTrade, TradeState } from './types'
+import { OpenPosition } from '@/app/WorkPage/components/PrintWorldScene/OpenPosition'
+import { PanelPlaceholder } from '@/app/WorkPage/components/PrintWorldScene/PanelPlaceholder'
+import { TerminalPanel } from '@/app/WorkPage/components/PrintWorldScene/TerminalPanel'
+import { TradeForm } from '@/app/WorkPage/components/PrintWorldScene/TradeForm'
+import { TradeResult } from '@/app/WorkPage/components/PrintWorldScene/TradeResult'
+import {
+    ClosedTrade,
+    TradeState,
+} from '@/app/WorkPage/components/PrintWorldScene/types'
 
 type TradePanelProps = {
     trade: TradeState | null

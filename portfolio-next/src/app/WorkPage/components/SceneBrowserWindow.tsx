@@ -7,21 +7,21 @@ import {
 } from '@/app/WorkPage/components/SceneCanvas'
 import { AppWindow } from '@/components/AppWindow/AppWindow'
 
-type SceneBrowserWindowProps<Target extends string> = {
+type SceneBrowserWindowProps = {
     address: string
     layout: SceneBaseLayout
-    cursor: SceneCursorState<Target>
+    cursor: SceneCursorState<string>
     className?: string
     children: ReactNode
 }
 
-export const SceneBrowserWindow = <Target extends string>({
+export const SceneBrowserWindow = ({
     address,
     layout,
     cursor,
     className,
     children,
-}: SceneBrowserWindowProps<Target>) => (
+}: SceneBrowserWindowProps) => (
     <SceneCanvas
         cursorTarget={cursor.target}
         idleCursor={layout.idleCursor}

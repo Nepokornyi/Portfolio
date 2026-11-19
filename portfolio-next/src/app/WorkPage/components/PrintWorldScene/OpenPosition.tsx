@@ -1,5 +1,5 @@
-import { PanelLabel } from './PanelLabel'
-import { TradeState } from './types'
+import { PanelLabel } from '@/app/WorkPage/components/PrintWorldScene/PanelLabel'
+import { TradeState } from '@/app/WorkPage/components/PrintWorldScene/types'
 
 type OpenPositionProps = {
     position: TradeState['position']

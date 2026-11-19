@@ -14,6 +14,7 @@ const rotateX = plugin(function ({ addUtilities }) {
 })
 
 const sceneShapes = plugin(function ({ addVariant }) {
+    addVariant('scene-landscape', '@container (min-width: 480px)')
     addVariant('scene-roomy', '@container (max-aspect-ratio: 1.4)')
     addVariant('scene-stacked', '@container (max-aspect-ratio: 1.12)')
     addVariant('scene-tall', '@container (max-aspect-ratio: 0.58)')

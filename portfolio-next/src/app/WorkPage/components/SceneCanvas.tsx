@@ -1,9 +1,7 @@
 import { ReactNode } from 'react'
-import {
-    CursorPosition,
-    SceneCursor,
-} from '@/app/WorkPage/components/SceneCursor'
+import { SceneCursor } from '@/app/WorkPage/components/SceneCursor'
 import { useSceneCursorPosition } from '@/app/WorkPage/hooks/useSceneCursorPosition'
+import { CursorPosition } from '@/app/WorkPage/lib/sceneCursor'
 
 export type SceneBaseLayout = {
     idleCursor: CursorPosition | null

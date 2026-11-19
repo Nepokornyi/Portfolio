@@ -39,13 +39,13 @@ export const SceneLoop = <Frame, Layout>({
                 key={`landscape-${loop}`}
                 frame={frame}
                 layout={landscapeLayout}
-                className="hidden max-h-[calc(var(--max-page-stretch)*100cqw*2/3)] text-[length:min(1.8cqw,2.7cqh)] [@container(min-width:480px)]:block"
+                className="hidden max-h-[calc(var(--max-page-stretch)*100cqw*2/3)] text-[length:min(1.8cqw,2.7cqh)] scene-landscape:block"
             />
             <Stage
                 key={`portrait-${loop}`}
                 frame={frame}
                 layout={portraitLayout}
-                className="max-h-[calc(var(--max-page-stretch)*100cqw*4/3)] text-[length:min(3.6cqw,2.7cqh)] [@container(min-width:480px)]:hidden"
+                className="max-h-[calc(var(--max-page-stretch)*100cqw*4/3)] text-[length:min(3.6cqw,2.7cqh)] scene-landscape:hidden"
             />
         </div>
     )

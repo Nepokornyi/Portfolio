@@ -1,5 +1,5 @@
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { TradeToast } from './TradeToast'
+import { TradeToast } from '@/app/WorkPage/components/PrintWorldScene/TradeToast'
 
 type TerminalHeaderProps = {
     toast: string | null

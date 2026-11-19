@@ -1,4 +1,5 @@
 import { clamp01 } from '@/app/WorkPage/lib/clamp01'
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 import {
     CURSOR_TRAVEL_TICKS,
     PAYMENT_COUNT_TICKS,
@@ -107,13 +108,13 @@ const getInstalmentPanel = (tick: number): InstalmentPanel => {
 
 const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
-    if (tick < leaveFor(STORY.instalmentsClicked)) return 'idle'
+    if (tick < leaveFor(STORY.instalmentsClicked)) return IDLE_TARGET
     if (tick < leaveFor(STORY.twelveMonthsClicked)) return 'instalmentsOption'
     if (tick < leaveFor(STORY.twentyFourMonthsClicked))
         return 'twelveMonthsButton'
     if (tick < leaveFor(STORY.applyClicked)) return 'twentyFourMonthsButton'
     if (tick < shownAfter(STORY.applyClicked)) return 'applyButton'
-    return 'idle'
+    return IDLE_TARGET
 }
 
 export const getSceneFrame = (tick: number): SceneFrame => {

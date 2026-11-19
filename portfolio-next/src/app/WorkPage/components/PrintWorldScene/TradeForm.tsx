@@ -1,6 +1,9 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
-import { TRADE_TABS } from './const'
-import { CursorTarget, TradeState } from './types'
+import { TRADE_TABS } from '@/app/WorkPage/components/PrintWorldScene/const'
+import {
+    CursorTarget,
+    TradeState,
+} from '@/app/WorkPage/components/PrintWorldScene/types'
 
 type TradeFormProps = {
     trade: TradeState

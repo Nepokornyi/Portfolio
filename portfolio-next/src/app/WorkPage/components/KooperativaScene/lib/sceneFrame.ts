@@ -1,4 +1,5 @@
 import { clamp01 } from '@/app/WorkPage/lib/clamp01'
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 import {
     BAR_GROW_TICKS,
     BAR_STAGGER_TICKS,
@@ -140,12 +141,12 @@ const getTimeline = (tick: number): TimelineState | null => {
 
 const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
-    if (tick < leaveFor(STORY.rangePickerClicked)) return 'idle'
+    if (tick < leaveFor(STORY.rangePickerClicked)) return IDLE_TARGET
     if (tick < leaveFor(STORY.rangeOptionClicked)) return 'rangePicker'
     if (tick < monthLoadStarted) return 'rangeOption'
-    if (tick < leaveFor(STORY.taskClicked)) return 'idle'
+    if (tick < leaveFor(STORY.taskClicked)) return IDLE_TARGET
     if (tick < STORY.taskClicked + CURSOR_TRAVEL_TICKS) return 'taskRow'
-    return 'idle'
+    return IDLE_TARGET
 }
 
 const CLICK_TICKS = [

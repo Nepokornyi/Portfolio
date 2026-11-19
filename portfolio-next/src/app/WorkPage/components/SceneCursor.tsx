@@ -1,7 +1,5 @@
 import { Ref } from 'react'
 
-export type CursorPosition = { x: number; y: number }
-
 type SceneCursorProps = {
     ref: Ref<HTMLDivElement>
     isClicking: boolean
