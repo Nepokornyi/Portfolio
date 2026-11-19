@@ -10,6 +10,7 @@ export type FeedToken = {
     listedAt: number
     age: string
     marketCap: number
+    cursorTarget?: CursorTarget
 }
 
 export type FeedCard = FeedToken & {

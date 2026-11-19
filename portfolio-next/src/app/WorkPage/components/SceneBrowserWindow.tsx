@@ -25,7 +25,8 @@ export const SceneBrowserWindow = <Target extends string>({
     <SceneCanvas
         aspect={layout.aspect}
         fontSize={layout.fontSize}
-        cursorPosition={layout.cursor[cursor.target]}
+        cursorTarget={cursor.target}
+        fallbackCursorPosition={layout.cursor[cursor.target] ?? null}
         isClicking={cursor.isClicking}
         showPointer={layout.showPointer}
         className={className}

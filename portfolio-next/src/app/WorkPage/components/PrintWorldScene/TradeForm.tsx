@@ -17,6 +17,9 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
                 {SIDES.map((side) => (
                     <span
                         key={side}
+                        data-cursor-target={
+                            side === 'sell' ? 'sellTab' : undefined
+                        }
                         className={`flex-1 border-b pb-[0.4em] text-center ${
                             side === trade.side
                                 ? 'border-primary-stroke text-white'
@@ -29,6 +32,7 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
             </div>
 
             <div
+                data-cursor-target="amountField"
                 className={`flex h-[2.2em] shrink-0 items-center border border-primary-stroke bg-primary-input-background px-[0.6em] text-[0.9em] tabular-nums ${
                     trade.isAmountFocused
                         ? 'shadow-[0_0_0_0.1em_var(--color-primary-stroke)]'
@@ -51,6 +55,7 @@ export const TradeForm = ({ trade, className = '' }: TradeFormProps) => {
             <SceneButton
                 isPressed={trade.isSubmitPressed}
                 variant={isBuy ? 'filled' : 'outline'}
+                cursorTarget="tradeButton"
             >
                 {trade.side} {trade.ticker}
             </SceneButton>

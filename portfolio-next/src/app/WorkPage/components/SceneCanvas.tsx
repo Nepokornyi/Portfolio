@@ -3,11 +3,12 @@ import {
     CursorPosition,
     SceneCursor,
 } from '@/app/WorkPage/components/SceneCursor'
+import { useSceneCursorPosition } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type SceneBaseLayout<Target extends string> = {
     aspect: string
     fontSize: string
-    cursor: Record<Target, CursorPosition | null>
+    cursor: Partial<Record<Target, CursorPosition | null>>
     showPointer: boolean
 }
 
@@ -19,7 +20,8 @@ export type SceneCursorState<Target extends string> = {
 type SceneCanvasProps = {
     aspect: string
     fontSize: string
-    cursorPosition: CursorPosition | null
+    cursorTarget: string
+    fallbackCursorPosition: CursorPosition | null
     isClicking: boolean
     showPointer: boolean
     className?: string
@@ -29,20 +31,32 @@ type SceneCanvasProps = {
 export const SceneCanvas = ({
     aspect,
     fontSize,
-    cursorPosition,
+    cursorTarget,
+    fallbackCursorPosition,
     isClicking,
     showPointer,
     className = '',
     children,
-}: SceneCanvasProps) => (
-    <div className={className} style={{ containerType: 'inline-size' }}>
-        <div className={`relative ${aspect}`} style={{ fontSize }}>
-            {children}
-            <SceneCursor
-                position={cursorPosition}
-                isClicking={isClicking}
-                showPointer={showPointer}
-            />
+}: SceneCanvasProps) => {
+    const { canvasRef, cursorRef } = useSceneCursorPosition(
+        cursorTarget,
+        fallbackCursorPosition,
+    )
+
+    return (
+        <div className={className} style={{ containerType: 'inline-size' }}>
+            <div
+                ref={canvasRef}
+                className={`relative ${aspect}`}
+                style={{ fontSize }}
+            >
+                {children}
+                <SceneCursor
+                    ref={cursorRef}
+                    isClicking={isClicking}
+                    showPointer={showPointer}
+                />
+            </div>
         </div>
-    </div>
-)
+    )
+}
