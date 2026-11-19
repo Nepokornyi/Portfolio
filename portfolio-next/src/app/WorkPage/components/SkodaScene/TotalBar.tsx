@@ -19,7 +19,11 @@ export const TotalBar = ({
                 {formatCrowns(total)}
             </span>
         </div>
-        <SceneButton isPressed={isContinuePressed} className="mt-[0.6em]">
+        <SceneButton
+            isPressed={isContinuePressed}
+            cursorTarget="continueButton"
+            className="mt-[0.6em]"
+        >
             Continue
         </SceneButton>
     </div>

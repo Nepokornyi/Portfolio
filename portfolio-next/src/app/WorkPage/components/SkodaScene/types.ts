@@ -11,6 +11,7 @@ export type CarModel = {
     name: string
     bodyStyle: BodyStyle
     price: number
+    cursorTarget?: CursorTarget
 }
 
 export type PaintId = 'moonWhite' | 'raceBlue' | 'mambaGreen' | 'velvetRed'
@@ -20,6 +21,7 @@ export type Paint = {
     swatchColor: string
     carColor: string
     surcharge: number
+    cursorTarget?: CursorTarget
 }
 
 export type ModelOption = CarModel & {
@@ -50,7 +52,7 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     body: string
     preview: string
     panel: string

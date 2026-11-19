@@ -3,7 +3,7 @@ import {
     PaymentMethodId,
     Product,
     SceneLayout,
-    TermMonths,
+    Term,
 } from './types'
 
 export const TICK_MS = 100
@@ -33,12 +33,17 @@ export const PAYMENT_METHODS: Record<PaymentMethodId, PaymentMethod> = {
     instalments: {
         label: 'Instalments with Hello bank!',
         note: 'Split the price into monthly payments',
+        cursorTarget: 'instalmentsOption',
     },
 }
 
 export const YEARLY_RATE = 0.099
 
-export const TERMS: TermMonths[] = [6, 12, 24]
+export const TERMS: Term[] = [
+    { months: 6 },
+    { months: 12, cursorTarget: 'twelveMonthsButton' },
+    { months: 24, cursorTarget: 'twentyFourMonthsButton' },
+]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
@@ -50,13 +55,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     productPicture: 'h-[10em] p-[0.6em]',
     showPaymentLabel: true,
     showPaymentNotes: true,
-    cursor: {
-        idle: { x: 28, y: 88.5 },
-        instalmentsOption: { x: 34.5, y: 79.8 },
-        twelveMonthsButton: { x: 77, y: 21.1 },
-        twentyFourMonthsButton: { x: 90.3, y: 21.1 },
-        applyButton: { x: 82.5, y: 91.3 },
-    },
+    idleCursor: { x: 28, y: 88.5 },
     showPointer: true,
 }
 
@@ -70,12 +69,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     productPicture: 'h-[3.4em] w-[4.4em] shrink-0 p-[0.4em]',
     showPaymentLabel: false,
     showPaymentNotes: false,
-    cursor: {
-        idle: null,
-        instalmentsOption: { x: 50, y: 40.7 },
-        twelveMonthsButton: { x: 50, y: 57.1 },
-        twentyFourMonthsButton: { x: 80.9, y: 57.1 },
-        applyButton: { x: 49.5, y: 93.6 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

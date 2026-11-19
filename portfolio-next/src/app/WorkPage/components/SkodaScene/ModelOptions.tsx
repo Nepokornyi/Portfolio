@@ -13,9 +13,10 @@ export const ModelOptions = ({
     optionClassName,
 }: ModelOptionsProps) => (
     <div className={`flex shrink-0 ${className}`}>
-        {options.map(({ name, price, isSelected, isPressed }) => (
+        {options.map(({ name, price, cursorTarget, isSelected, isPressed }) => (
             <div
                 key={name}
+                data-cursor-target={cursorTarget}
                 className={`flex min-w-0 gap-[0.15em] border transition duration-150 ${optionClassName} ${
                     isSelected
                         ? 'border-primary-stroke bg-white/5 text-white'

@@ -9,7 +9,7 @@ import { AppWindow } from '@/components/AppWindow/AppWindow'
 
 type SceneBrowserWindowProps<Target extends string> = {
     address: string
-    layout: SceneBaseLayout<Target>
+    layout: SceneBaseLayout
     cursor: SceneCursorState<Target>
     className?: string
     children: ReactNode
@@ -26,7 +26,7 @@ export const SceneBrowserWindow = <Target extends string>({
         aspect={layout.aspect}
         fontSize={layout.fontSize}
         cursorTarget={cursor.target}
-        fallbackCursorPosition={layout.cursor[cursor.target] ?? null}
+        idleCursor={layout.idleCursor}
         isClicking={cursor.isClicking}
         showPointer={layout.showPointer}
         className={className}

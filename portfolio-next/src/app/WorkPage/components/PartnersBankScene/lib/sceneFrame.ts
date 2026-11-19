@@ -22,6 +22,7 @@ import {
     LoanState,
     PrimaryButtonState,
     SceneFrame,
+    SliderMark,
     StepContent,
     StepId,
     SummaryRow,
@@ -41,6 +42,14 @@ const getMonthlyPayment = (amount: number) => {
 const getSliderPosition = (amount: number) =>
     (amount - LOAN.sliderMin) / (LOAN.sliderMax - LOAN.sliderMin)
 
+const sliderStartPosition = getSliderPosition(LOAN.startAmount)
+const sliderEndPosition = getSliderPosition(LOAN.amount)
+
+const sliderMarks: SliderMark[] = [
+    { position: sliderStartPosition, cursorTarget: 'sliderStart' },
+    { position: sliderEndPosition, cursorTarget: 'sliderEnd' },
+]
+
 const getLoan = (tick: number): LoanState => {
     const hasGrabbed = tick > STORY.sliderGrabbed
     const dragProgress = clamp01(
@@ -53,9 +62,8 @@ const getLoan = (tick: number): LoanState => {
 
     return {
         amount,
-        sliderPosition: getSliderPosition(
-            hasGrabbed ? LOAN.amount : LOAN.startAmount,
-        ),
+        sliderPosition: hasGrabbed ? sliderEndPosition : sliderStartPosition,
+        sliderMarks,
         isDragging: tick >= STORY.sliderGrabbed && tick < STORY.sliderReleased,
         monthlyPayment: getMonthlyPayment(amount),
     }

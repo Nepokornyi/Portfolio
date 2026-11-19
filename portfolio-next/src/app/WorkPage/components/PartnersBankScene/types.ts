@@ -5,9 +5,15 @@ import {
 
 export type StepId = 'loan' | 'personal' | 'identity' | 'income' | 'approval'
 
+export type SliderMark = {
+    position: number
+    cursorTarget: CursorTarget
+}
+
 export type LoanState = {
     amount: number
     sliderPosition: number
+    sliderMarks: SliderMark[]
     isDragging: boolean
     monthlyPayment: number
 }
@@ -60,6 +66,6 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     showSummary: boolean
 }

@@ -69,6 +69,7 @@ export const MortgageWindow = ({
                         {primaryButton && (
                             <SceneButton
                                 isPressed={primaryButton.isPressed}
+                                cursorTarget="primaryButton"
                                 className={`transition-opacity duration-300 ${
                                     primaryButton.isEnabled ? '' : 'opacity-40'
                                 }`}

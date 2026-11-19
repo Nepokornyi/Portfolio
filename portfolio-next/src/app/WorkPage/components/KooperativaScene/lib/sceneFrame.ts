@@ -105,6 +105,7 @@ const getTasks = (tick: number, range: DashboardRange): TaskRow[] =>
             key: task.key,
             title: task.title,
             leadTime: formatDuration(task.leadTimeHours),
+            cursorTarget: task.cursorTarget,
             isSelected: isSelectedTask && tick >= taskSelected,
             isPressed: isSelectedTask && isPressed(tick, STORY.taskClicked),
         }

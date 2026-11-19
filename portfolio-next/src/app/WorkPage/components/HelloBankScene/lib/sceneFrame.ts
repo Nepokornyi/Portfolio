@@ -79,10 +79,10 @@ const getCalculator = (tick: number): CalculatorState => {
     const pressedTerm = getPressedTerm(tick)
 
     return {
-        termOptions: TERMS.map((months) => ({
-            months,
-            isSelected: months === term,
-            isPressed: months === pressedTerm,
+        termOptions: TERMS.map((option) => ({
+            ...option,
+            isSelected: option.months === term,
+            isPressed: option.months === pressedTerm,
         })),
         ...getCountedAmounts(tick),
         isApplyPressed: isPressed(tick, STORY.applyClicked),

@@ -36,6 +36,7 @@ export type Task = {
     key: string
     title: string
     leadTimeHours: number
+    cursorTarget?: CursorTarget
 }
 
 export type DashboardRange = {
@@ -43,6 +44,11 @@ export type DashboardRange = {
     stats: Record<StatId, number>
     buckets: TimeBucket[]
     tasks: Task[]
+}
+
+export type RangeOption = {
+    label: string
+    cursorTarget?: CursorTarget
 }
 
 export type TimelineEvent = {
@@ -66,6 +72,7 @@ export type TaskRow = {
     key: string
     title: string
     leadTime: string
+    cursorTarget?: CursorTarget
     isSelected: boolean
     isPressed: boolean
 }
@@ -95,7 +102,7 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     page: string
     panelPadding: string
     showSources: boolean

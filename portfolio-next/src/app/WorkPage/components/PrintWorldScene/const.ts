@@ -112,9 +112,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     panelGap: 'gap-[0.7em]',
     feed: 'w-[30%] shrink-0',
     visibleTokens: FEED_TOKENS.length,
-    cursor: {
-        idle: { x: 84, y: 60 },
-    },
+    idleCursor: { x: 84, y: 60 },
     showPointer: true,
 }
 
@@ -126,8 +124,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     panelGap: 'gap-[0.5em]',
     feed: 'shrink-0',
     visibleTokens: 3,
-    cursor: {
-        idle: null,
-    },
+    idleCursor: null,
     showPointer: false,
 }

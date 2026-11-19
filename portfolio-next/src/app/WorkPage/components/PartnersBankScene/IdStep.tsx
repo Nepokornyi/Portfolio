@@ -61,6 +61,7 @@ export const IdStep = ({ identity }: IdStepProps) => {
                     Add a photo of the front side of your ID card
                 </span>
                 <div
+                    data-cursor-target="uploadButton"
                     className={`flex h-[2.2em] items-center border border-primary-button px-[1.2em] font-bold italic text-primary-button transition-transform duration-100 ${
                         identity.isUploadPressed
                             ? 'translate-x-[0.2em] translate-y-[0.2em]'

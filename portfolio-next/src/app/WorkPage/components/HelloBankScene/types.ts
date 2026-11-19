@@ -14,6 +14,7 @@ export type PaymentMethodId = 'card' | 'instalments'
 export type PaymentMethod = {
     label: string
     note: string
+    cursorTarget?: CursorTarget
 }
 
 export type PaymentMethodOption = PaymentMethod & {
@@ -23,8 +24,12 @@ export type PaymentMethodOption = PaymentMethod & {
 
 export type TermMonths = 6 | 12 | 24
 
-type TermOption = {
+export type Term = {
     months: TermMonths
+    cursorTarget?: CursorTarget
+}
+
+type TermOption = Term & {
     isSelected: boolean
     isPressed: boolean
 }
@@ -64,7 +69,7 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     body: string
     order: string
     panel: string

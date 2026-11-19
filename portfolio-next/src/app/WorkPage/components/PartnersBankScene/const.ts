@@ -67,13 +67,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
     showSummary: true,
-    cursor: {
-        idle: { x: 44, y: 78 },
-        sliderStart: { x: 17.9, y: 43.1 },
-        sliderEnd: { x: 39.1, y: 43.1 },
-        uploadButton: { x: 32.1, y: 44.7 },
-        primaryButton: { x: 55.6, y: 94.6 },
-    },
+    idleCursor: { x: 44, y: 78 },
     showPointer: true,
 }
 
@@ -81,12 +75,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/4]',
     fontSize: '3.6cqw',
     showSummary: false,
-    cursor: {
-        idle: null,
-        sliderStart: { x: 28.7, y: 43.1 },
-        sliderEnd: { x: 60.6, y: 43.1 },
-        uploadButton: { x: 50, y: 44.7 },
-        primaryButton: { x: 77.5, y: 93.4 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

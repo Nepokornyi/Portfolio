@@ -5,10 +5,10 @@ import {
 } from '@/app/WorkPage/components/SceneCursor'
 import { useSceneCursorPosition } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
-export type SceneBaseLayout<Target extends string> = {
+export type SceneBaseLayout = {
     aspect: string
     fontSize: string
-    cursor: Partial<Record<Target, CursorPosition | null>>
+    idleCursor: CursorPosition | null
     showPointer: boolean
 }
 
@@ -21,7 +21,7 @@ type SceneCanvasProps = {
     aspect: string
     fontSize: string
     cursorTarget: string
-    fallbackCursorPosition: CursorPosition | null
+    idleCursor: CursorPosition | null
     isClicking: boolean
     showPointer: boolean
     className?: string
@@ -32,7 +32,7 @@ export const SceneCanvas = ({
     aspect,
     fontSize,
     cursorTarget,
-    fallbackCursorPosition,
+    idleCursor,
     isClicking,
     showPointer,
     className = '',
@@ -40,7 +40,7 @@ export const SceneCanvas = ({
 }: SceneCanvasProps) => {
     const { canvasRef, cursorRef } = useSceneCursorPosition(
         cursorTarget,
-        fallbackCursorPosition,
+        idleCursor,
     )
 
     return (
