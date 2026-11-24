@@ -8,8 +8,5 @@ export type WorkProject = {
     description: string
     technologies: string[]
     apps: string[]
-    role: string
-    about: string
-    responsibilities: string[]
     Scene?: ComponentType
 }
