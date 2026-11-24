@@ -1,5 +1,6 @@
 import { clamp01 } from '@/app/WorkPage/lib/clamp01'
 import { formatCrowns } from '@/app/WorkPage/lib/format'
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 import {
     APPLICANT_NAME,
     CHARS_PER_TICK,
@@ -207,14 +208,14 @@ const getSummary = (completedSteps: number): SummaryRow[] => {
 
 const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
-    if (tick < leaveFor(STORY.sliderGrabbed)) return 'idle'
+    if (tick < leaveFor(STORY.sliderGrabbed)) return IDLE_TARGET
     if (tick <= STORY.sliderGrabbed) return 'sliderStart'
     if (tick < leaveFor(STORY.loanSubmitted)) return 'sliderEnd'
     if (tick < leaveFor(STORY.idUploadClicked)) return 'primaryButton'
     if (tick < shownAfter(STORY.idUploadClicked)) return 'uploadButton'
     if (tick < STORY.applicationSent + CURSOR_TRAVEL_TICKS)
         return 'primaryButton'
-    return 'idle'
+    return IDLE_TARGET
 }
 
 const CLICK_TICKS = [

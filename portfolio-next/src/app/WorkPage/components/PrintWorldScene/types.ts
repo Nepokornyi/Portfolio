@@ -2,7 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
-import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 
 export type FeedToken = {
     ticker: string

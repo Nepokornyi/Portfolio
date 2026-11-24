@@ -1,9 +1,12 @@
 import { SceneBrowserWindow } from '@/app/WorkPage/components/SceneBrowserWindow'
-import { TerminalHeader } from './TerminalHeader'
-import { TokenChart } from './TokenChart'
-import { TokenFeed } from './TokenFeed'
-import { TradePanel } from './TradePanel'
-import { SceneFrame, SceneLayout } from './types'
+import { TerminalHeader } from '@/app/WorkPage/components/PrintWorldScene/TerminalHeader'
+import { TokenChart } from '@/app/WorkPage/components/PrintWorldScene/TokenChart'
+import { TokenFeed } from '@/app/WorkPage/components/PrintWorldScene/TokenFeed'
+import { TradePanel } from '@/app/WorkPage/components/PrintWorldScene/TradePanel'
+import {
+    SceneFrame,
+    SceneLayout,
+} from '@/app/WorkPage/components/PrintWorldScene/types'
 
 type TerminalWindowProps = {
     frame: SceneFrame

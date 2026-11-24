@@ -1,5 +1,5 @@
-import { PanelLabel } from './PanelLabel'
-import { ClosedTrade } from './types'
+import { PanelLabel } from '@/app/WorkPage/components/PrintWorldScene/PanelLabel'
+import { ClosedTrade } from '@/app/WorkPage/components/PrintWorldScene/types'
 
 type TradeResultProps = {
     closedTrade: ClosedTrade

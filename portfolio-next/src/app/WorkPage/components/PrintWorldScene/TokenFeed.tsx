@@ -4,10 +4,10 @@ import {
     STACKED_FEED_ROWS,
 } from '@/app/WorkPage/components/PrintWorldScene/const'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
-import { formatMarketCap } from './lib/format'
-import { PanelLabel } from './PanelLabel'
-import { TerminalPanel } from './TerminalPanel'
-import { FeedCard } from './types'
+import { formatMarketCap } from '@/app/WorkPage/components/PrintWorldScene/lib/format'
+import { PanelLabel } from '@/app/WorkPage/components/PrintWorldScene/PanelLabel'
+import { TerminalPanel } from '@/app/WorkPage/components/PrintWorldScene/TerminalPanel'
+import { FeedCard } from '@/app/WorkPage/components/PrintWorldScene/types'
 
 const TokenRow = ({
     card,

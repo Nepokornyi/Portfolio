@@ -1,4 +1,5 @@
 import { clamp01 } from '@/app/WorkPage/lib/clamp01'
+import { IDLE_TARGET } from '@/app/WorkPage/lib/sceneCursor'
 import {
     CURSOR_TRAVEL_TICKS,
     MODELS,
@@ -55,12 +56,12 @@ const getTotal = (tick: number) => {
 
 const getCursorTarget = (tick: number): CursorTarget => {
     const leaveFor = (clickTick: number) => clickTick - CURSOR_TRAVEL_TICKS
-    if (tick < leaveFor(STORY.octaviaClicked)) return 'idle'
+    if (tick < leaveFor(STORY.octaviaClicked)) return IDLE_TARGET
     if (tick < leaveFor(STORY.raceBlueClicked)) return 'octaviaOption'
     if (tick < leaveFor(STORY.mambaGreenClicked)) return 'raceBlueSwatch'
     if (tick < leaveFor(STORY.continueClicked)) return 'mambaGreenSwatch'
     if (tick < shownAfter(STORY.continueClicked)) return 'continueButton'
-    return 'idle'
+    return IDLE_TARGET
 }
 
 export const getSceneFrame = (tick: number): SceneFrame => {
