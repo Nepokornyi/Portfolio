@@ -1,13 +1,24 @@
+import { CSSProperties } from 'react'
+import {
+    FEED_TOKENS,
+    STACKED_FEED_ROWS,
+} from '@/app/WorkPage/components/PrintWorldScene/const'
 import { Rectangle } from '@/components/Rectangle/Rectangle'
 import { formatMarketCap } from './lib/format'
 import { PanelLabel } from './PanelLabel'
 import { TerminalPanel } from './TerminalPanel'
 import { FeedCard } from './types'
 
-const TokenRow = ({ card }: { card: FeedCard }) => (
+const TokenRow = ({
+    card,
+    className,
+}: {
+    card: FeedCard
+    className: string
+}) => (
     <div
         data-cursor-target={card.cursorTarget}
-        className={`flex h-[2.6em] shrink-0 items-center gap-[0.8em] border-b border-primary-hairline px-[0.8em] transition-colors duration-150 ${
+        className={`flex shrink-0 items-center gap-[0.8em] border-b border-primary-hairline px-[0.8em] transition-colors duration-150 ${className} ${
             card.isSelected
                 ? 'bg-white/5 shadow-[inset_0.2em_0_0_var(--color-primary-stroke)]'
                 : ''
@@ -33,17 +44,36 @@ const TokenRow = ({ card }: { card: FeedCard }) => (
 type TokenFeedProps = {
     feed: FeedCard[]
     className?: string
+    listClassName: string
+    rowClassName: string
 }
 
-export const TokenFeed = ({ feed, className = '' }: TokenFeedProps) => (
+export const TokenFeed = ({
+    feed,
+    className = '',
+    listClassName,
+    rowClassName,
+}: TokenFeedProps) => (
     <TerminalPanel
         title={<PanelLabel>Trending</PanelLabel>}
         aside={<span className="text-[0.7em] text-white/40">MC · age</span>}
         className={className}
     >
-        <div className="flex min-h-0 flex-col overflow-hidden">
+        <div
+            className={`flex min-h-0 overflow-hidden ${listClassName}`}
+            style={
+                {
+                    '--feed-rows': FEED_TOKENS.length,
+                    '--feed-rows-per-column': STACKED_FEED_ROWS,
+                } as CSSProperties
+            }
+        >
             {feed.map((card) => (
-                <TokenRow key={card.ticker} card={card} />
+                <TokenRow
+                    key={card.ticker}
+                    card={card}
+                    className={rowClassName}
+                />
             ))}
         </div>
     </TerminalPanel>

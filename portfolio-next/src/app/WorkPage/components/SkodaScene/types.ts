@@ -56,7 +56,10 @@ export type SceneFrame = {
 export type SceneLayout = SceneBaseLayout & {
     body: string
     preview: string
+    carArea: string
     panel: string
     modelList: string
     modelOption: string
+    summary: string
+    summarySaved: string
 }

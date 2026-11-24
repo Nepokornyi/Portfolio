@@ -4,24 +4,28 @@ import { SummaryRow } from './types'
 type SummaryPanelProps = {
     rows: SummaryRow[]
     isApproved: boolean
+    rowListClassName: string
+    rowClassName: string
     className?: string
 }
 
 export const SummaryPanel = ({
     rows,
     isApproved,
+    rowListClassName,
+    rowClassName,
     className = '',
 }: SummaryPanelProps) => (
     <div
-        className={`flex flex-col border-l border-primary-hairline bg-white/[0.03] p-[1.4em] ${className}`}
+        className={`flex flex-col border-primary-hairline bg-white/[0.03] py-[1.4em] ${className}`}
     >
-        <span className="font-bold text-white">Your mortgage</span>
+        <span className="mb-[0.64em] font-bold text-white">Your mortgage</span>
 
-        <div className="mt-[0.8em] flex flex-col text-[0.8em]">
+        <div className={`flex flex-col text-[0.8em] ${rowListClassName}`}>
             {rows.map(({ label, value }) => (
                 <div
                     key={label}
-                    className="flex items-baseline justify-between gap-[0.6em] border-b border-primary-hairline py-[0.6em]"
+                    className={`flex items-center justify-between gap-[0.6em] border-b border-primary-hairline py-[0.6em] ${rowClassName}`}
                 >
                     <span className="text-white/40">{label}</span>
                     {value ? (
@@ -37,7 +41,7 @@ export const SummaryPanel = ({
 
         <div
             key={String(isApproved)}
-            className={`mt-auto flex items-center gap-[0.7em] text-[0.9em] font-bold motion-safe:animate-fade-in-up ${
+            className={`mt-[1em] flex items-center gap-[0.7em] text-[0.9em] font-bold motion-safe:animate-fade-in-up ${
                 isApproved ? 'text-primary-light-green' : 'text-white/60'
             }`}
         >

@@ -17,15 +17,7 @@ export const DashboardWindow = ({
     layout,
     className = '',
 }: DashboardWindowProps) => {
-    const timelinePanel = (
-        <TaskTimeline
-            timeline={frame.timeline}
-            variant={layout.timeline}
-            className={`${layout.timelinePanel} ${layout.panelPadding}`}
-        />
-    )
-    const isTimelineInTaskPlace =
-        layout.timelineReplacesTasks && frame.timeline !== null
+    const isTaskSelected = frame.timeline !== null
 
     return (
         <SceneBrowserWindow
@@ -40,10 +32,9 @@ export const DashboardWindow = ({
                     showSources={layout.showSources}
                 />
                 <StatTiles
-                    stats={frame.stats.filter((stat) =>
-                        layout.statIds.includes(stat.id),
-                    )}
-                    showDetail={layout.showStatDetail}
+                    stats={frame.stats}
+                    detailClassName={layout.statDetail}
+                    extraTileClassName={layout.extraStatTile}
                     className={layout.statGrid}
                 />
                 <div className={`flex min-h-0 flex-1 ${layout.middle}`}>
@@ -51,17 +42,26 @@ export const DashboardWindow = ({
                         bars={frame.bars}
                         className={`flex-1 ${layout.panelPadding}`}
                     />
-                    {isTimelineInTaskPlace ? (
-                        timelinePanel
-                    ) : (
-                        <SlowestTasks
-                            tasks={frame.tasks}
-                            range={frame.rangePicker.range}
-                            className={`${layout.tasksPanel} ${layout.panelPadding}`}
-                        />
-                    )}
+                    <SlowestTasks
+                        tasks={frame.tasks}
+                        range={frame.rangePicker.range}
+                        rowClassName={layout.taskRow}
+                        className={`${layout.tasksPanel} ${layout.panelPadding} ${
+                            isTaskSelected
+                                ? layout.tasksPanelAfterSelection
+                                : ''
+                        }`}
+                    />
                 </div>
-                {!layout.timelineReplacesTasks && timelinePanel}
+                <TaskTimeline
+                    timeline={frame.timeline}
+                    variant={layout.timeline}
+                    className={`${layout.timelinePanel} ${layout.panelPadding} ${
+                        isTaskSelected
+                            ? ''
+                            : layout.timelinePanelBeforeSelection
+                    }`}
+                />
             </div>
         </SceneBrowserWindow>
     )

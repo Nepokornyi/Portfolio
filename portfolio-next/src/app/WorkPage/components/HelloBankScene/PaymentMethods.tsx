@@ -2,13 +2,13 @@ import { PaymentMethodOption } from './types'
 
 type PaymentMethodsProps = {
     options: PaymentMethodOption[]
-    showNotes: boolean
+    noteClassName: string
     className?: string
 }
 
 export const PaymentMethods = ({
     options,
-    showNotes,
+    noteClassName,
     className = '',
 }: PaymentMethodsProps) => (
     <div className={`flex shrink-0 flex-col gap-[0.5em] ${className}`}>
@@ -39,11 +39,11 @@ export const PaymentMethods = ({
                     >
                         {label}
                     </span>
-                    {showNotes && (
-                        <span className="truncate text-[0.7em] text-white/40">
-                            {note}
-                        </span>
-                    )}
+                    <span
+                        className={`truncate text-[0.7em] text-white/40 ${noteClassName}`}
+                    >
+                        {note}
+                    </span>
                 </div>
             </div>
         ))}

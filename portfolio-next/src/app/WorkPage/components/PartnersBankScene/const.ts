@@ -75,17 +75,24 @@ export const ID_CHECKS = [
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
-    showSummary: true,
+    body: 'flex-row scene-stacked:flex-col',
+    main: 'flex-1 scene-stacked:flex-none scene-stacked:px-[calc((100%-40em)/2)]',
+    step: 'flex-1 scene-stacked:flex-none scene-stacked:min-h-[18.9em]',
+    summary:
+        'w-[36%] border-l px-[1.4em] scene-stacked:w-auto scene-stacked:flex-1 scene-stacked:justify-center scene-stacked:border-l-0 scene-stacked:border-t scene-stacked:px-[calc((100%-40em)/2+2em)]',
+    summaryRowList: 'flex-1 scene-stacked:contents',
+    summaryRow: 'max-h-[4em] scene-roomy:flex-1',
     idleCursor: { x: 44, y: 78 },
     showPointer: true,
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
-    showSummary: false,
+    body: 'flex-col',
+    main: 'flex-1 scene-tall:flex-none',
+    step: 'flex-1 scene-tall:flex-none scene-tall:min-h-[19.6em]',
+    summary: 'hidden flex-1 justify-center border-t px-[2em] scene-tall:flex',
+    summaryRowList: 'contents',
+    summaryRow: 'max-h-[5em] flex-1',
     idleCursor: null,
     showPointer: false,
 }

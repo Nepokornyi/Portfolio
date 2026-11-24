@@ -104,31 +104,37 @@ export const FEED_TOKENS: FeedToken[] = [
     },
 ]
 
+const STACKED_FEED_COLUMNS = 2
+export const STACKED_FEED_ROWS = Math.ceil(
+    FEED_TOKENS.length / STACKED_FEED_COLUMNS,
+)
+
 export const TRADE_TABS: TradeTab[] = [
     { side: 'buy' },
     { side: 'sell', cursorTarget: 'sellTab' },
 ]
 
 export const LANDSCAPE_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/2]',
-    fontSize: '1.8cqw',
     page: 'gap-[0.7em] p-[0.9em]',
-    body: 'flex-row',
+    body: 'flex-row scene-stacked:flex-col',
     panelGap: 'gap-[0.7em]',
-    feed: 'w-[30%] shrink-0',
-    visibleTokens: FEED_TOKENS.length,
+    feed: 'w-[30%] shrink-0 scene-stacked:w-auto',
+    feedList:
+        'flex-1 flex-col scene-stacked:grid scene-stacked:grid-flow-col scene-stacked:grid-rows-[repeat(var(--feed-rows-per-column),minmax(0,1fr))] scene-stacked:gap-x-[1.6em]',
+    feedRow: 'min-h-[2.6em] scene-roomy:h-[calc(100%/var(--feed-rows))]',
+    main: 'flex-1',
     idleCursor: { x: 84, y: 60 },
     showPointer: true,
 }
 
 export const PORTRAIT_LAYOUT: SceneLayout = {
-    aspect: 'aspect-[3/4]',
-    fontSize: '3.6cqw',
     page: 'gap-[0.5em] p-[0.6em]',
     body: 'flex-col',
     panelGap: 'gap-[0.5em]',
-    feed: 'shrink-0',
-    visibleTokens: 3,
+    feed: 'flex-1',
+    feedList: 'flex-1 flex-col flex-wrap',
+    feedRow: 'h-[2.6em] w-full',
+    main: 'h-[65%] max-h-[36em] shrink-0',
     idleCursor: null,
     showPointer: false,
 }

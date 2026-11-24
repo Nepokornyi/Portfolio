@@ -90,5 +90,7 @@ export type SceneLayout = SceneBaseLayout & {
     body: string
     panelGap: string
     feed: string
-    visibleTokens: number
+    feedList: string
+    feedRow: string
+    main: string
 }

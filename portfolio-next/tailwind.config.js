@@ -13,6 +13,13 @@ const rotateX = plugin(function ({ addUtilities }) {
     })
 })
 
+const sceneShapes = plugin(function ({ addVariant }) {
+    addVariant('scene-roomy', '@container (max-aspect-ratio: 1.4)')
+    addVariant('scene-stacked', '@container (max-aspect-ratio: 1.12)')
+    addVariant('scene-tall', '@container (max-aspect-ratio: 0.58)')
+    addVariant('scene-very-tall', '@container (max-aspect-ratio: 0.48)')
+})
+
 module.exports = {
     content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: false,
@@ -61,5 +68,5 @@ module.exports = {
             },
         },
     },
-    plugins: [rotateX],
+    plugins: [rotateX, sceneShapes],
 }
