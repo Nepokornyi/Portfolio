@@ -79,9 +79,9 @@ export type SceneFrame = {
 }
 
 export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+    page: string
+    body: string
+    panelGap: string
     feed: string
-    chart: string
-    trade: string
-    pnl: string
-    toast: string
+    visibleTokens: number
 }
