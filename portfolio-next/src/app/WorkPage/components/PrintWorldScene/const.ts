@@ -1,4 +1,4 @@
-import { FeedToken, SceneLayout } from './types'
+import { FeedToken, SceneLayout, TradeTab } from './types'
 
 export const TICK_MS = 100
 export const LOOP_TICKS = 98
@@ -44,6 +44,7 @@ export const FEED_TOKENS: FeedToken[] = [
         listedAt: STORY.frogListed,
         age: '',
         marketCap: FROG_CLOSES[0],
+        cursorTarget: 'frogCard',
     },
     {
         ticker: 'MOON',
@@ -103,6 +104,11 @@ export const FEED_TOKENS: FeedToken[] = [
     },
 ]
 
+export const TRADE_TABS: TradeTab[] = [
+    { side: 'buy' },
+    { side: 'sell', cursorTarget: 'sellTab' },
+]
+
 export const LANDSCAPE_LAYOUT: SceneLayout = {
     aspect: 'aspect-[3/2]',
     fontSize: '1.8cqw',
@@ -111,13 +117,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     panelGap: 'gap-[0.7em]',
     feed: 'w-[30%] shrink-0',
     visibleTokens: FEED_TOKENS.length,
-    cursor: {
-        idle: { x: 84, y: 60 },
-        frogCard: { x: 15.5, y: 26 },
-        amountField: { x: 49.5, y: 83.2 },
-        tradeButton: { x: 49.7, y: 91 },
-        sellTab: { x: 57.9, y: 76.8 },
-    },
+    idleCursor: { x: 84, y: 60 },
     showPointer: true,
 }
 
@@ -129,12 +129,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     panelGap: 'gap-[0.5em]',
     feed: 'shrink-0',
     visibleTokens: 3,
-    cursor: {
-        idle: null,
-        frogCard: { x: 30, y: 25.4 },
-        amountField: { x: 28.8, y: 84.8 },
-        tradeButton: { x: 29, y: 92.6 },
-        sellTab: { x: 40.3, y: 78.4 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

@@ -12,7 +12,7 @@ export const PaymentMethods = ({
     className = '',
 }: PaymentMethodsProps) => (
     <div className={`flex shrink-0 flex-col gap-[0.5em] ${className}`}>
-        {options.map(({ label, note, isSelected, isPressed }) => (
+        {options.map(({ label, note, cursorTarget, isSelected, isPressed }) => (
             <div
                 key={label}
                 className={`flex items-center gap-[0.8em] border px-[0.9em] py-[0.5em] transition duration-150 ${
@@ -22,6 +22,7 @@ export const PaymentMethods = ({
                 } ${isPressed ? 'translate-y-[0.15em] opacity-60' : ''}`}
             >
                 <span
+                    data-cursor-target={cursorTarget}
                     className={`flex size-[1em] shrink-0 items-center justify-center rounded-full border transition-colors duration-150 ${
                         isSelected ? 'border-primary-stroke' : 'border-white/40'
                     }`}

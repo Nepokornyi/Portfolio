@@ -1,6 +1,6 @@
 import { SceneCheckIcon } from '@/app/WorkPage/components/SceneCheckIcon'
 import { APPLICANT_NAME } from './const'
-import { IdentityState } from './types'
+import { CursorTarget, IdentityState } from './types'
 
 const IdCard = ({ scanProgress }: { scanProgress: number }) => {
     const isScanning = scanProgress < 1
@@ -61,6 +61,7 @@ export const IdStep = ({ identity }: IdStepProps) => {
                     Add a photo of the front side of your ID card
                 </span>
                 <div
+                    data-cursor-target={'uploadButton' satisfies CursorTarget}
                     className={`flex h-[2.2em] items-center border border-primary-button px-[1.2em] font-bold italic text-primary-button transition-transform duration-100 ${
                         identity.isUploadPressed
                             ? 'translate-x-[0.2em] translate-y-[0.2em]'

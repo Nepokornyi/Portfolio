@@ -2,6 +2,7 @@ import {
     SceneBaseLayout,
     SceneCursorState,
 } from '@/app/WorkPage/components/SceneCanvas'
+import { IDLE_TARGET } from '@/app/WorkPage/hooks/useSceneCursorPosition'
 
 export type BodyStyle = 'hatchback' | 'liftback' | 'suv'
 
@@ -11,6 +12,7 @@ export type CarModel = {
     name: string
     bodyStyle: BodyStyle
     price: number
+    cursorTarget?: CursorTarget
 }
 
 export type PaintId = 'moonWhite' | 'raceBlue' | 'mambaGreen' | 'velvetRed'
@@ -20,6 +22,7 @@ export type Paint = {
     swatchColor: string
     carColor: string
     surcharge: number
+    cursorTarget?: CursorTarget
 }
 
 export type ModelOption = CarModel & {
@@ -33,7 +36,7 @@ export type PaintOption = Paint & {
 }
 
 export type CursorTarget =
-    | 'idle'
+    | typeof IDLE_TARGET
     | 'octaviaOption'
     | 'raceBlueSwatch'
     | 'mambaGreenSwatch'
@@ -50,7 +53,7 @@ export type SceneFrame = {
     cursor: SceneCursorState<CursorTarget>
 }
 
-export type SceneLayout = SceneBaseLayout<CursorTarget> & {
+export type SceneLayout = SceneBaseLayout & {
     body: string
     preview: string
     panel: string

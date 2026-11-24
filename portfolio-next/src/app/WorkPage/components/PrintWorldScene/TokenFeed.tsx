@@ -6,6 +6,7 @@ import { FeedCard } from './types'
 
 const TokenRow = ({ card }: { card: FeedCard }) => (
     <div
+        data-cursor-target={card.cursorTarget}
         className={`flex h-[2.6em] shrink-0 items-center gap-[0.8em] border-b border-primary-hairline px-[0.8em] transition-colors duration-150 ${
             card.isSelected
                 ? 'bg-white/5 shadow-[inset_0.2em_0_0_var(--color-primary-stroke)]'

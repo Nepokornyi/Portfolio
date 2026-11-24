@@ -17,7 +17,12 @@ export const TOTAL_COUNT_TICKS = 6
 
 export const MODELS: Record<ModelId, CarModel> = {
     fabia: { name: 'Fabia', bodyStyle: 'hatchback', price: 399_900 },
-    octavia: { name: 'Octavia', bodyStyle: 'liftback', price: 639_900 },
+    octavia: {
+        name: 'Octavia',
+        bodyStyle: 'liftback',
+        price: 639_900,
+        cursorTarget: 'octaviaOption',
+    },
     kodiaq: { name: 'Kodiaq', bodyStyle: 'suv', price: 1_049_900 },
 }
 
@@ -33,12 +38,14 @@ export const PAINTS: Record<PaintId, Paint> = {
         swatchColor: 'bg-primary-blue',
         carColor: 'text-primary-blue',
         surcharge: 12_000,
+        cursorTarget: 'raceBlueSwatch',
     },
     mambaGreen: {
         name: 'Mamba Green',
         swatchColor: 'bg-primary-light-green',
         carColor: 'text-primary-light-green',
         surcharge: 18_000,
+        cursorTarget: 'mambaGreenSwatch',
     },
     velvetRed: {
         name: 'Velvet Red',
@@ -56,13 +63,7 @@ export const LANDSCAPE_LAYOUT: SceneLayout = {
     panel: 'w-[40%] border-l p-[1.4em]',
     modelList: 'flex-col gap-[0.4em]',
     modelOption: 'h-[2.6em] items-center justify-between px-[0.8em]',
-    cursor: {
-        idle: { x: 50, y: 84 },
-        octaviaOption: { x: 79.5, y: 26.3 },
-        raceBlueSwatch: { x: 70.1, y: 48.4 },
-        mambaGreenSwatch: { x: 75.8, y: 48.4 },
-        continueButton: { x: 89.9, y: 91.9 },
-    },
+    idleCursor: { x: 50, y: 84 },
     showPointer: true,
 }
 
@@ -74,12 +75,6 @@ export const PORTRAIT_LAYOUT: SceneLayout = {
     panel: 'flex-1 border-t px-[1.2em] pb-[1.2em] pt-[1em]',
     modelList: 'flex-row gap-[0.5em]',
     modelOption: 'h-[3.4em] flex-1 flex-col justify-center px-[0.5em]',
-    cursor: {
-        idle: null,
-        octaviaOption: { x: 50, y: 53.9 },
-        raceBlueSwatch: { x: 20.4, y: 69 },
-        mambaGreenSwatch: { x: 31.9, y: 69 },
-        continueButton: { x: 49.5, y: 92.8 },
-    },
+    idleCursor: null,
     showPointer: false,
 }

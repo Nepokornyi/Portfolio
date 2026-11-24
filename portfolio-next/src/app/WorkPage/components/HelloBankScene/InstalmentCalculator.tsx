@@ -1,7 +1,7 @@
 import { SceneButton } from '@/app/WorkPage/components/SceneButton'
 import { formatCrowns } from '@/app/WorkPage/lib/format'
 import { YEARLY_RATE } from './const'
-import { CalculatorState } from './types'
+import { CalculatorState, CursorTarget } from './types'
 
 const CalculatorFact = ({ label, value }: { label: string; value: string }) => (
     <div className="flex items-baseline justify-between gap-[0.6em] py-[0.3em]">
@@ -19,18 +19,21 @@ export const InstalmentCalculator = ({
 }: InstalmentCalculatorProps) => (
     <div className="mt-[0.8em] flex flex-1 flex-col motion-safe:animate-fade-in-up">
         <div className="flex shrink-0 gap-[0.5em]">
-            {calculator.termOptions.map(({ months, isSelected, isPressed }) => (
-                <div
-                    key={months}
-                    className={`flex h-[2.4em] flex-1 items-center justify-center border transition duration-150 ${
-                        isSelected
-                            ? 'border-primary-stroke bg-white/5 font-bold text-primary-stroke'
-                            : 'border-primary-hairline text-white/60'
-                    } ${isPressed ? 'translate-y-[0.15em] opacity-60' : ''}`}
-                >
-                    <span className="text-[0.8em]">{months} months</span>
-                </div>
-            ))}
+            {calculator.termOptions.map(
+                ({ months, cursorTarget, isSelected, isPressed }) => (
+                    <div
+                        key={months}
+                        data-cursor-target={cursorTarget}
+                        className={`flex h-[2.4em] flex-1 items-center justify-center border transition duration-150 ${
+                            isSelected
+                                ? 'border-primary-stroke bg-white/5 font-bold text-primary-stroke'
+                                : 'border-primary-hairline text-white/60'
+                        } ${isPressed ? 'translate-y-[0.15em] opacity-60' : ''}`}
+                    >
+                        <span className="text-[0.8em]">{months} months</span>
+                    </div>
+                ),
+            )}
         </div>
 
         <div className="mt-auto flex shrink-0 flex-col pt-[1em]">
@@ -53,6 +56,7 @@ export const InstalmentCalculator = ({
             </div>
             <SceneButton
                 isPressed={calculator.isApplyPressed}
+                cursorTarget={'applyButton' satisfies CursorTarget}
                 className="mt-[0.6em]"
             >
                 Apply
